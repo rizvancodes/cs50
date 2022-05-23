@@ -1,0 +1,44 @@
+sort1 uses: Bubble Sort
+
+How do you know?: Slowest time in worst case and faster time in best case
+sort1 sorted5000 time = 0.038
+sort1 sorted10000 time = 0.079
+sort1 sorted50000 time = 0.619
+
+sort1 reversed5000 time = 0.090
+sort1 reversed10000 time = 0.286
+sort1 reversed50000 time = 5.767
+
+sort1 random5000 time = 0.069
+sort1 random10000 time = 0.292
+sort1 random50000 time = 7.769
+
+sort2 uses: Merge Sort
+
+How do you know?: Quickest at sorting
+sort2 sorted5000 time = 0.018
+sort2 sorted10000 time = 0.048
+sort2 sorted50000 time = 0.597
+
+sort2 reversed5000 time = 0.034
+sort2 reversed10000 time = 0.060
+sort2 reversed50000 time = 0.642
+
+sort2 random5000 time = 0.034
+sort2 random10000 time = 0.286
+sort2 random50000 time = 0.574
+
+sort3 uses: Selection Sort
+
+How do you know?: Similar times for worst and best case
+sort3 sorted5000 time = 0.086
+sort3 sorted10000 time = 0.210
+sort3 sorted50000 time = 3.315
+
+sort2 reversed5000 time = 0.068
+sort2 reversed10000 time = 0.176
+sort2 reversed50000 time = 3.259
+
+sort2 random5000 time = 0.068
+sort2 random10000 time = 0.159
+sort2 random50000 time = 3.239

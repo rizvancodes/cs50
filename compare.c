@@ -1,18 +1,12 @@
 #include <stdio.h>
 #include <string.h>
 #include <cs50.h>
+#include <ctype.h>
 
 int main(void)
 {
     char *s = get_string("s: ");
-    char *t = get_string("t: ");
+    char *t = s;
 
-    if (strcmp(s, t) == 0)
-    {
-        printf("Same\n");
-    }
-    else
-    {
-        printf("Different\n");
-    }
+    t[0] = toupper
 }

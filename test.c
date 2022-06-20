@@ -6,4 +6,5 @@ int main(void)
     int *p = &n;
     printf("%i\n", n);
     printf("%p\n", p);
+    printf("%i\n", *p);
 }

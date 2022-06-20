@@ -5,12 +5,9 @@
 int main(void)
 {
     char *s = "HI";
-    printf("%p\n", s);
-    printf("%c\n", *s);
+    char c = s[0];
+    char *p = &s;
+    printf("%p\n", c);
+    printf("%p\n", p);
 
-    for(int i = 0; i < 3; i++)
-    {
-        printf("%c", *s + i);
-    }
-    printf("\n");
 }

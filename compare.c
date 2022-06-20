@@ -15,7 +15,7 @@ int main(void)
 
     for(int i = 0, n = strlen(s); i < n; i++)
     {
-        t[i] = s[i];
+        *(t + i) = *(s + i);
     }
     if (strlen > 0)
     {

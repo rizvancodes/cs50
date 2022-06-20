@@ -7,7 +7,7 @@ int main(void)
     char *s = get_string("s: ");
     char *t = get_string("t: ");
 
-    if (s == t)
+    if (strcmp(s, t) == 0)
     {
         printf("Same\n");
     }

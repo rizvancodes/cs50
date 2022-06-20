@@ -4,9 +4,10 @@
 
 int main(void)
 {
-    char *s = "HI";
-    char *c = &s[0];
-    printf("%p\n", s);
-    printf("%p\n", c);
+    char *s = "HI!";
+    printf("%c\n", *s);
+    printf("%c\n", *(s + 1));
+    printf("%c\n", *(s + 2));
+    printf("%c\n", *(s + 3));
 
 }

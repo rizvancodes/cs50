@@ -40,7 +40,14 @@ int main(int argc, char *argv[])
 
     // TODO: Read samples from input file and write updated data to output file
     //Declare buffer for wav file
-    uin
+    char ch;
+    int16_t buffer;
+    while((ch = fgetc(argv[1])) != EOF )
+    {
+        fread(buffer, sizeof(int16_t), 2, argv[1]);
+        
+
+    }
     //loop and Begin reading into a buffer array
     //multiply each 16 bit integer by 2
     //if eof is reached

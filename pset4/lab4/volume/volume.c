@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
     while((ch = fgetc(argv[1])) != EOF )
     {
         fread(buffer, sizeof(int16_t), 2, argv[1]);
-        temp = buffer * 2;
+        temp = buffer * factor;
         fwrite(temp, sizeof(int16_t), 2, argv[2]);
     }
     // Close files

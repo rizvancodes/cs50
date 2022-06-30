@@ -5,9 +5,9 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
     for (i = 0; i < height; i++)
     {
-        for (j = 0; j < height; j++)
+        for (j = 0; j < width; j++)
         {
-            
+            printf(image[i][j].RGBTRIPLE)
         }
     }
     return;

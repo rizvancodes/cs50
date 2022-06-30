@@ -39,6 +39,10 @@ int main(int argc, char *argv[])
     fwrite(header, sizeof(uint8_t), HEADER_SIZE, argv[2]);
 
     // TODO: Read samples from input file and write updated data to output file
+    //Seek 45th byte from file
+    //loop and Begin reading into a buffer array
+    //multiply each 16 bit integer by 2
+    //if eof is reached
 
     // Close files
     fclose(input);

@@ -7,8 +7,8 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            RGBTRIPLE x = image[i][j].RGBTRIPLE;
-            printf("x");
+            int x = image[i][j].rgbtRed;
+            printf();
         }
     }
     return;

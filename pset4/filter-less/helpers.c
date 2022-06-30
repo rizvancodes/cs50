@@ -3,11 +3,12 @@
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
-    for (i = 0; i < height; i++)
+    for (int i = 0; i < height; i++)
     {
-        for (j = 0; j < width; j++)
+        for (int j = 0; j < width; j++)
         {
-            printf(image[i][j].RGBTRIPLE)
+            RGBTRIPLE x = image[i][j].RGBTRIPLE;
+            printf("x");
         }
     }
     return;

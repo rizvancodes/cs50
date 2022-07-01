@@ -90,6 +90,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < round(width / 2.0); j++)
         {
             iterate(i, j, 0);
+            sum / 
         }
     }
 
@@ -100,6 +101,6 @@ int iterate(int x, int y, int z)
 {
     if (z == 9)
     {
-        
+        return sum
     }
 }

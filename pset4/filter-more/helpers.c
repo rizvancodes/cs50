@@ -120,6 +120,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int m = -1; m <= 1; m++)
                 {
+                    agx = -1
                     if (i + k >= 0 && i + k < height && j + m >= 0 && j + m < width)
                     {
                         count++;
@@ -132,7 +133,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
                     else if (i + k >= -1 && i + k <= height && j + m >= -1 && j + m <= width)
                     {
-                        
+
                     }
                 }
             }

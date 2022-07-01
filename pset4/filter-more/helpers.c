@@ -105,7 +105,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         }
     }
     //iterate over 2d array
-    float count = 0.00;
     int redgx = 0;
     int greengx = 0;
     int bluegx = 0;
@@ -157,12 +156,30 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
-            if (sqrt())
-            image[i][j].rgbtBlue =
-            image[i][j].rgbtRed =
-            image[i][j].rgbtGreen =
-
-            count = 0;
+            if (round(sqrt((redgx*redgx)+(redgy+redgy))) >= 255)
+            {
+                image[i][j].rgbtRed = 255
+            }
+            else
+            {
+                image[i][j].rgbtBlue = round(sqrt((redgx*redgx)+(redgy+redgy)))
+            }
+            if (round(sqrt((bluegx*bluegx)+(bluegy+bluegy))) >= 255)
+            {
+                image[i][j].rgbtBlue = 255
+            }
+            else
+            {
+                image[i][j].rgbtBlue = round(sqrt((bluegx*bluegx)+(bluegy+bluegy)))
+            }
+            if (round(sqrt((greengx*bluegx)+(bluegy+bluegy))) >= 255)
+            {
+                image[i][j].rgbtBlue = 255
+            }
+            else
+            {
+                image[i][j].rgbtBlue = round(sqrt((bluegx*bluegx)+(bluegy+bluegy)))
+            }
             redgx = redgy = bluegx = bluegy = greengx = greengy = 0;
         }
     }

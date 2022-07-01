@@ -113,11 +113,11 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     int greengy = 0;
     int bluegy = 0;
 
-    int Gx[3][3] =
+    int gx[3][3] =
         {
         {-1 0 1}, {-2 0 2}, {-1 0 1}
         };
-    int Gy[3][3] =
+    int gy[3][3] =
         {
         {-1 -2 -1}, {0 0 0}, {1 2 1}
         };
@@ -137,16 +137,21 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                             if (i + k >= 0 && i + k < height && j + m >= 0 && j + m < width)
                             {
                             count++;
-                            redgx += copy[i + k][j + m].rgbtRed;
-                            redgy += copy[i + k][j + m].rgbtRed;
-                            bluegx += copy[i + k][j + m].rgbtBlue;
-                            bluegy += copy[i + k][j + m].rgbtBlue;
-                            greengx += copy[i + k][j + m].rgbtGreen;
-                            greengy += copy[i + k][j + m].rgbtGreen;
+                            redgx += gx[l][n]*copy[i + k][j + m].rgbtRed;
+                            redgy += gy[l][n]*copy[i + k][j + m].rgbtRed;
+                            bluegx += gx[l][n]*copy[i + k][j + m].rgbtBlue;
+                            bluegy += gy[l][n]*copy[i + k][j + m].rgbtBlue;
+                            greengx += gx[l][n]*copy[i + k][j + m].rgbtGreen;
+                            greengy += gy[l][n]*copy[i + k][j + m].rgbtGreen;
                             }
                             else if (i + k >= -1 && i + k <= height && j + m >= -1 && j + m <= width)
                             {
-                                
+                            redgx += 0;
+                            redgy += 0;
+                            bluegx += 0;
+                            bluegy += 0;
+                            greengx += 0;
+                            greengy += 0;
                             }
                         }
                     }

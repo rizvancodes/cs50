@@ -95,5 +95,50 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
+        //create a copy of the array
+    RGBTRIPLE copy[height][width];
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            copy[i][j] = image[i][j];
+        }
+    }
+    //iterate over 2d array
+    float count = 0.00;
+    int redgx = 0;
+    int greengx = 0;
+    int bluegx = 0;
+    int redgy = 0;
+    int greengy = 0;
+    int bluegy = 0;
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            for (int k = -1; k <= 1; k++)
+            {
+                for (int m = -1; m <= 1; m++)
+                {
+                    if (i + k >= -1 && i + k < height && j + m >= 0 && j + m < width)
+                    {
+                        count++;
+                        redgx += copy[i + k][j + m].rgbtRed;
+                        redgy += copy[i + k][j + m].rgbtRed;
+                        bluegx += copy[i + k][j + m].rgbtBlue;
+                        bluegy += copy[i + k][j + m].rgbtBlue;
+                        greengx += copy[i + k][j + m].rgbtGreen;
+                        greengy += copy[i + k][j + m].rgbtGreen;
+                    }
+                }
+            }
+            image[i][j].rgbtBlue =
+            image[i][j].rgbtRed =
+            image[i][j].rgbtGreen =
+
+            count = 0;
+            redgx = redgy = bluegx = bluegy = greengx = greengy = 0;
+        }
+    }
     return;
 }

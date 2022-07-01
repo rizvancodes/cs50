@@ -85,7 +85,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         }
     }
     //iterate over 2d array
-    float counter = 0.00;
+    float count = 0.00;
     int redsum = 0;
     int greensum = 0
     int bluesum = 0
@@ -107,7 +107,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
-
+            image[i][j].rgbtBlue = round(new_blue / count);
+            image[i][j].rgbtRed = round(new_red / count);
+            image[i][j].rgbtGreen = round(new_green / count);
         }
     }
 

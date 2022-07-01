@@ -11,3 +11,5 @@ void reflect(int height, int width, RGBTRIPLE image[height][width]);
 
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width]);
+
+int iterate(int x, int y, int z);

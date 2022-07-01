@@ -76,7 +76,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     //create a copy of the array
-    RGBTRIPLE copy[height][width]
+    RGBTRIPLE copy[height][width];
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < round(width / 2.0); j++)
@@ -87,8 +87,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     //iterate over 2d array
     float count = 0.00;
     int redsum = 0;
-    int greensum = 0
-    int bluesum = 0
+    int greensum = 0;
+    int bluesum = 0;
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < round(width / 2.0); j++)
@@ -101,20 +101,19 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     if (i + k >= 0 && i + k < height && j + m >= 0 && j + m < width)
                     {
                         count++;
-                        new_red += copy[i + k][j + m].rgbtRed;
-                        new_blue += copy[i + k][j + m].rgbtBlue;
-                        new_green += copy[i + k][j + m].rgbtGreen;
+                        redsum += copy[i + k][j + m].rgbtRed;
+                        bluesum += copy[i + k][j + m].rgbtBlue;
+                        greensum += copy[i + k][j + m].rgbtGreen;
                     }
                 }
             }
-            image[i][j].rgbtBlue = round(new_blue / count);
-            image[i][j].rgbtRed = round(new_red / count);
-            image[i][j].rgbtGreen = round(new_green / count);
+            image[i][j].rgbtBlue = round(bluesum / count);
+            image[i][j].rgbtRed = round(redsum / count);
+            image[i][j].rgbtGreen = round(greensum / count);
 
-            counter = 0;
+            count = 0;
             redsum = bluesum = greensum = 0;
         }
     }
-
     return;
 }

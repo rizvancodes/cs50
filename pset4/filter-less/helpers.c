@@ -85,13 +85,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         }
     }
     //iterate over 2d array
-    for (int i = 0; i < height; i++)
-    {
-        for (int j = 0; j < round(width / 2.0); j++)
-        {
-            for (int k = 0)
-        }
-    }
-
+    
     return;
 }

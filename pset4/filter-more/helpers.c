@@ -135,7 +135,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         {
                             if (i + k >= 0 && i + k < height && j + m >= 0 && j + m < width)
                             {
-                            count++;
                             redgx += gx[l][n]*copy[i + k][j + m].rgbtRed;
                             redgy += gy[l][n]*copy[i + k][j + m].rgbtRed;
                             bluegx += gx[l][n]*copy[i + k][j + m].rgbtBlue;
@@ -158,27 +157,27 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             }
             if (round(sqrt((redgx*redgx)+(redgy+redgy))) >= 255)
             {
-                image[i][j].rgbtRed = 255
+                image[i][j].rgbtRed = 255;
             }
             else
             {
-                image[i][j].rgbtBlue = round(sqrt((redgx*redgx)+(redgy+redgy)))
+                image[i][j].rgbtBlue = round(sqrt((redgx*redgx)+(redgy+redgy)));
             }
             if (round(sqrt((bluegx*bluegx)+(bluegy+bluegy))) >= 255)
             {
-                image[i][j].rgbtBlue = 255
+                image[i][j].rgbtBlue = 255;
             }
             else
             {
-                image[i][j].rgbtBlue = round(sqrt((bluegx*bluegx)+(bluegy+bluegy)))
+                image[i][j].rgbtBlue = round(sqrt((bluegx*bluegx)+(bluegy+bluegy)));
             }
-            if (round(sqrt((greengx*bluegx)+(bluegy+bluegy))) >= 255)
+            if (round(sqrt((greengx*greengx)+(greengy+greengy))) >= 255)
             {
-                image[i][j].rgbtBlue = 255
+                image[i][j].rgbtGreen = 255;
             }
             else
             {
-                image[i][j].rgbtBlue = round(sqrt((bluegx*bluegx)+(bluegy+bluegy)))
+                image[i][j].rgbtGreen = round(sqrt((greengx*greengx)+(greengy+greengy)));
             }
             redgx = redgy = bluegx = bluegy = greengx = greengy = 0;
         }

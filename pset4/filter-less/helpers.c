@@ -92,7 +92,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         {
             if (i = 0 && j = 0)
             {
-                float x = (copy[i][j].rgbtred + copy[i + 1][j].rgbtred
+                image[i][j] = round(copy[i][j].rgbtred + copy[i + 1][j].rgbtred
             }
         }
     }

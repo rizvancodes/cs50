@@ -112,6 +112,16 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     int redgy = 0;
     int greengy = 0;
     int bluegy = 0;
+
+    int Gx[2][2] =
+        {
+        {-1 0 1}, {-2 0 2}, {-1 0 1}
+        };
+    int Gy[2][2] =
+        {
+        {-1 -2 -1}, {0 0 0}, {1 2 1}
+        };
+        
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)

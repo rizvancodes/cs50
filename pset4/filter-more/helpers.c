@@ -130,6 +130,10 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         greengx += copy[i + k][j + m].rgbtGreen;
                         greengy += copy[i + k][j + m].rgbtGreen;
                     }
+                    else
+                    {
+                        
+                    }
                 }
             }
             image[i][j].rgbtBlue =

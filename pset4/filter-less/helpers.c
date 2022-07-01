@@ -64,11 +64,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            float x = ((image[i][j].rgbtRed + image[i][j].rgbtGreen + image[i][j].rgbtBlue) / 3.0);
-            int avg = round(x);
-            image[i][j].rgbtRed = avg;
-            image[i][j].rgbtGreen = avg;
-            image[i][j].rgbtBlue = avg;
+            RGBTRIPLE x = image[i][j];
+            image[i][j] = image[i][width - 1 - j];
+            image[i][(width - 1) - j] = x;
         }
     }
     return;

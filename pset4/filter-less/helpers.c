@@ -96,8 +96,3 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     return;
 }
 
-int iterate(int x, int y)
-{
-    
-}
-

@@ -130,7 +130,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         greengx += copy[i + k][j + m].rgbtGreen;
                         greengy += copy[i + k][j + m].rgbtGreen;
                     }
-                    else
+                    else if (i + k >= -1 && i + k <= height && j + m >= -1 && j + m <= width)
                     {
                         
                     }

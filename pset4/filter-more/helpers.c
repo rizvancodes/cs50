@@ -113,20 +113,16 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         {
             for (int k = -1; k <= 1; k++)
             {
-                for (int l = 0; l < 3; l++)
-                {
                     for (int m = -1; m <= 1; m++)
                     {
-                        for (int n = 0; n < 3; n++)
-                        {
                             if (i + k >= 0 && i + k < height && j + m >= 0 && j + m < width)
                             {
-                            redgx += gx[l][n]*copy[i + k][j + m].rgbtRed;
-                            redgy += gy[l][n]*copy[i + k][j + m].rgbtRed;
-                            bluegx += gx[l][n]*copy[i + k][j + m].rgbtBlue;
-                            bluegy += gy[l][n]*copy[i + k][j + m].rgbtBlue;
-                            greengx += gx[l][n]*copy[i + k][j + m].rgbtGreen;
-                            greengy += gy[l][n]*copy[i + k][j + m].rgbtGreen;
+                            redgx += gx[k + 1][m + 1]*copy[i + k][j + m].rgbtRed;
+                            redgy += gy[k + 1][m + 1]*copy[i + k][j + m].rgbtRed;
+                            bluegx += gx[k + 1][m + 1]*copy[i + k][j + m].rgbtBlue;
+                            bluegy += gy[k + 1][m + 1]*copy[i + k][j + m].rgbtBlue;
+                            greengx += gx[k + 1][m + 1]*copy[i + k][j + m].rgbtGreen;
+                            greengy += gy[k + 1][m + 1]*copy[i + k][j + m].rgbtGreen;
                             }
                             else if (i + k >= -1 && i + k <= height && j + m >= -1 && j + m <= width)
                             {
@@ -137,9 +133,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                             greengx += 0;
                             greengy += 0;
                             }
-                        }
                     }
-                }
             }
             if (round(sqrt((redgx*redgx)+(redgy*redgy))) <= 255)
             {

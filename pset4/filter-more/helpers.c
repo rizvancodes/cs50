@@ -157,6 +157,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
+            if (sqrt())
             image[i][j].rgbtBlue =
             image[i][j].rgbtRed =
             image[i][j].rgbtGreen =

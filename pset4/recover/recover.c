@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
  }
 
 //declare new buffer
-BYTE* buffer = malloc(BLOCK_SIZE);
+BYTE* buffer[BLOCK_SIZE];
 
 //number of jpegs
 int jpegnum = 0;
@@ -54,22 +54,21 @@ while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, input) == BLOCK_SIZE)
       jpegnum++;
       if (jpegnum == 1)
       {
-         fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, output);
+         fwrite(buffer, BLOCK_SIZE, 1, output);
       }
       else
       {
          fclose(output);
          free(filename);
-         free(buffer);
          //store filename as ###.jpg in filename
          sprintf(filename, "%03i.jpg", jpegnum);
-         fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, output);
+         fwrite(buffer, BLOCK_SIZE, 1, output);
       }
    }
    else
    {
       //continue to write 512 bytes until a new jpeg is found
-      fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, output);
+      fwrite(buffer, BLOCK_SIZE, 1, output);
    }
 
 }
@@ -77,5 +76,4 @@ while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, input) == BLOCK_SIZE)
 fclose(input);
 fclose(output);
 free(filename);
-free(buffer);
 }

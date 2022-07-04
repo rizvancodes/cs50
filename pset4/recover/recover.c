@@ -5,7 +5,7 @@
 
 typedef uint8_t BYTE;
 
-BYTE BLOCK_SIZE = 512;
+int BLOCK_SIZE = 512;
 
 int main(int argc, char *argv[])
 {

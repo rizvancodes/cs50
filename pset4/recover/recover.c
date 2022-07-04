@@ -20,7 +20,14 @@ int main(int argc, char *argv[])
 FILE *f = fopen(argv[1], "r");
 
 //look for beginning of jpeg
-if ()
+//declare new buffer
+
+//begin reading from raw file
+while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]) == BLOCK_SIZE)
+{
+
+
+}
 
 //open a new jpeg to write into
 

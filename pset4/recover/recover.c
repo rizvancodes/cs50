@@ -17,12 +17,13 @@ int main(int argc, char *argv[])
  }
 
 //declare new buffer
-BYTE* buffer[];
+BYTE buffer[512];
 
 //number of jpegs
 int jpegnum = 0;
 
 //name of current file
+
 char *filename = malloc(sizeof(char) * 8);
 
 //store filename as ###.jpg in filename
@@ -35,7 +36,7 @@ FILE *input = fopen(argv[1], "r");
         printf("Could not open file.\n");
         return 2;
     }
-FILE *output_file = NULL;
+FILE *output = NULL;
 
 //begin reading from new file as long as fread returns a value of 512 bytes read
 while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, input) == BLOCK_SIZE)
@@ -54,7 +55,6 @@ while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, input) == BLOCK_SIZE)
       else
       {
          fclose(output);
-         free(filename);
          //store filename as ###.jpg in filename
          sprintf(filename, "%03i.jpg", jpegnum);
          output = fopen(filename, "w");

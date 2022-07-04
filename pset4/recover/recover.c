@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
          return 2;
       }
 
-   FILE *output;
+   FILE *output = NULL;
 
    //begin reading from new file as long as fread returns a value of 512 bytes read
    while (fread(buffer, 512, 1, input) == 512)

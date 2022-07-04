@@ -14,10 +14,23 @@ int main(int argc, char *argv[])
       return 1;
    }
 
-   //declare new buffer of size 12 bytes
+   //declare new buffer of size 512 bytes
    BYTE buffer[512];
 
    //number of jpegs counter
    int jpegnum = 0;
+
+   //filename array to store filename
+   char filename[8];
+
+   //open memory card file
+   FILE *input = fopen(argv[1], "r");
+      if (input == NULL)
+      {
+         printf("Could not open file.\n");
+         return 2;
+      }
+
+   FILE *output;
 
 }

@@ -45,13 +45,12 @@ while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, input) == BLOCK_SIZE)
       }
       else
       {
-         fclose(output);
          free(filename);
          free(buffer);
          //store filename as ###.jpg in filename
          sprintf(filename, "%03i.jpg", jpegnum);
          //open new jpeg file
-         FILE *output = fopen(filename. "w");
+         FILE *output = fopen(filename, "w");
          fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, output);
       }
    }

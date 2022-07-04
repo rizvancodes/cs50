@@ -26,6 +26,7 @@ BYTE buffer[malloc(BLOCK_SIZE)];
 int jpegnum = 0
 //name of current file
 char *filename
+filename = malloc()
 //begin reading from new file as long as fread returns a value of 512 bytes read
 while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]) == BLOCK_SIZE)
 {

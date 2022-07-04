@@ -19,12 +19,15 @@ int main(int argc, char *argv[])
 //open memory card file
 FILE *f = fopen(argv[1], "r");
 
+
 //declare new buffer
 BYTE buffer[malloc(BLOCK_SIZE)];
 
 //begin reading from new file as long as fread returns a value of 512 bytes read
 while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]) == BLOCK_SIZE)
 {
+//open new jpeg file
+FILE *f = fopen()
 //begin reading from raw file
 fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]);
 //look for beginning of jpeg

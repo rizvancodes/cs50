@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
  }
 
 //open memory card file
-FILE *f = fopen(argv[1], "r");
+FILE *ptr1 = fopen(argv[1], "r");
 
 
 //declare new buffer
@@ -32,7 +32,7 @@ while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]) == BLOCK_SIZE)
 {
 //open new jpeg file
 //begin reading from raw file
-   fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]);
+   fread(buffer, sizeof(BYTE), BLOCK_SIZE, ptr1);
 //look for beginning of jpeg
    if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
    {

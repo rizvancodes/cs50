@@ -38,16 +38,16 @@ int main(int argc, char *argv[])
    {
       if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
       {
+         jpegnum++;
          if (jpegnum != 0)
          {
             fclose(output);
-            jpegnum++;
          }
          sprintf(filename, "%03i.jpg", jpegnum);
          output = fopen(filename, "w");
          fwrite(buffer, 512, 1, output);
       }
-      else
+      else if (jpgnum > 0)
       {
          fwrite(buffer, 512, 1, output);
       }

@@ -30,20 +30,24 @@ filename = malloc(sizeof(char) * 8);
 //begin reading from new file as long as fread returns a value of 512 bytes read
 while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]) == BLOCK_SIZE)
 {
-//open new jpeg file
 //begin reading from raw file
    fread(buffer, sizeof(BYTE), BLOCK_SIZE, input);
 //look for beginning of jpeg
    if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
    {
+      //if another signature is found stop and close new jpeg
       fclose(output)
+      //count number of jpegs
       jpegnum++;
+      //store filename as ###.jpg in filename
       sprintf(filename, "%03i.jpg", jpegnum);
+      //open new jpeg file
       FILE *output = fopen(filename. "w");
       fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, output);
    }
    else
    {
+      //continue to write 512 bytes until a new jpeg is found
       fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, output);
    }
    free(filename);
@@ -51,9 +55,6 @@ while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]) == BLOCK_SIZE)
 
 }
 
-//open a new jpeg to write into
-
-//continue to write 512 bytes until a new jpeg is found
 
 //stop and close new jpeg
 

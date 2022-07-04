@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
  }
 
 //open memory card file
+FILE *f = fopen(argv[1], "r");
 
 //look for beginning of jpeg
 
@@ -24,6 +25,8 @@ int main(int argc, char *argv[])
 
 //continue to write 512 bytes until a new jpeg is found
 
-//close new jpeg and begin to write a new jpeg
+//stop and close new jpeg
+
+//repeat and begin to write a new jpeg
 
 }

@@ -32,7 +32,7 @@ while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]) == BLOCK_SIZE)
 {
 //open new jpeg file
 //begin reading from raw file
-   fread(buffer, sizeof(BYTE), BLOCK_SIZE, ptr1);
+   fread(buffer, sizeof(BYTE), BLOCK_SIZE, input);
 //look for beginning of jpeg
    if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
    {

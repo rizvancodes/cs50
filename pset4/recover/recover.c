@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
          output = fopen(filename, "w");
          fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, output);
       }
-      else if (jpegnum > 0)
+      else if (jpegnum >= 0)
       {
          fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, output);
       }

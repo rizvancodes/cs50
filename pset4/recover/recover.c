@@ -21,9 +21,9 @@ FILE *f = fopen(argv[1], "r");
 
 //look for beginning of jpeg
 //declare new buffer
-BYTE buffer[malloc(BLOCK_SIZE * )];
+BYTE buffer[malloc(BLOCK_SIZE * blocknum)];
 //begin reading from raw file
-
+int blocknum = 0
 while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]) == BLOCK_SIZE)
 {
 

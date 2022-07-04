@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef uint8_t BYTE;
+
 int main(int argc, char *argv[])
 {
  //check for invalid usage
@@ -10,5 +12,5 @@ int main(int argc, char *argv[])
     return 1;
  }
 
- 
+
 }

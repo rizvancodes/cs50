@@ -35,15 +35,24 @@ while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]) == BLOCK_SIZE)
 //look for beginning of jpeg
    if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
    {
-      //if another signature is found stop and close new jpeg
-      fclose(output)
-      //count number of jpegs
-      jpegnum++;
-      //store filename as ###.jpg in filename
-      sprintf(filename, "%03i.jpg", jpegnum);
-      //open new jpeg file
-      FILE *output = fopen(filename. "w");
-      fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, output);
+      jpegnum++
+      if (jpegnum == 1)
+      {
+         //store filename as ###.jpg in filename
+         sprintf(filename, "%03i.jpg", jpegnum);
+         //open new jpeg file
+         FILE *output = fopen(filename. "w");
+         fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, output);
+      }
+      else
+      {
+         fclose(output)
+         //store filename as ###.jpg in filename
+         sprintf(filename, "%03i.jpg", jpegnum);
+         //open new jpeg file
+         FILE *output = fopen(filename. "w");
+         fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, output);
+      }
    }
    else
    {

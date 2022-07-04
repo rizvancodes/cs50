@@ -36,10 +36,15 @@ while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]) == BLOCK_SIZE)
 //look for beginning of jpeg
    if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
    {
+      fclose(output)
       jpegnum++;
       sprintf(filename, "%03i.jpg", jpegnum);
       FILE *output = fopen(filename. "w");
-      fwrite(buffer, sizeof(BYTE))
+      fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, output);
+   }
+   else
+   {
+      fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, output);
    }
    free(filename);
    free(buffer);

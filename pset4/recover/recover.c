@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
    }
 
    //declare new buffer of size 512 bytes
-   BYTE buffer[BLOCK_SIZE];
+   BYTE *buffer = malloc(BLOCK_SIZE);
 
    //number of jpegs counter
    int jpegnum = 0;
@@ -63,6 +63,7 @@ int main(int argc, char *argv[])
 
 fclose(input);
 fclose(output);
+free(buffer);
 
 return 0;
 }

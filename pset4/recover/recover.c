@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
 FILE *f = fopen(argv[1], "r");
 
 //look for beginning of jpeg
+if ()
 
 //open a new jpeg to write into
 

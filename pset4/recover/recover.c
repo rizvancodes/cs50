@@ -78,9 +78,4 @@ fclose(input);
 fclose(output);
 free(filename);
 free(buffer);
-
-//stop and close new jpeg
-
-//repeat and begin to write a new jpeg
-
 }

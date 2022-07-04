@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
  }
 
 //declare new buffer
-BYTE* buffer[BLOCK_SIZE];
+BYTE* buffer[];
 
 //number of jpegs
 int jpegnum = 0;

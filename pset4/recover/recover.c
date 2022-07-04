@@ -39,13 +39,19 @@ int main(int argc, char *argv[])
       if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
       {
          jpegnum++;
-         if (jpegnum != 0)
+         if (jpegnum == 1)
+         {
+            sprintf(filename, "%03i.jpg", jpegnum);
+            output = fopen(filename, "w");
+            fwrite(buffer, 512, 1, output);
+         }
+         else
          {
             fclose(output);
+            sprintf(filename, "%03i.jpg", jpegnum);
+            output = fopen(filename, "w");
+            fwrite(buffer, 512, 1, output);
          }
-         sprintf(filename, "%03i.jpg", jpegnum);
-         output = fopen(filename, "w");
-         fwrite(buffer, 512, 1, output);
       }
       else if (jpegnum > 0)
       {

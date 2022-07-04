@@ -21,7 +21,8 @@ FILE *input = fopen(argv[1], "r");
 
 
 //declare new buffer
-BYTE buffer[malloc(BLOCK_SIZE * sizeof(BYTE))];
+BYTE buffer[];
+BYTE* buffer = malloc(BLOCK_SIZE * sizeof(BYTE));
 //number of jpegs
 int jpegnum = 0;
 //name of current file

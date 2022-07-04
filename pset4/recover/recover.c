@@ -38,7 +38,7 @@ while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]) == BLOCK_SIZE)
    {
       jpegnum++;
       sprintf(filename, "%03i.jpg", jpegnum);
-      FILE *f = fopen();
+      FILE *f = fopen(*filename);
    }
    free(filename);
    free(buffer);

@@ -5,7 +5,7 @@
 
 typedef uint8_t BYTE;
 
-BYTE BLOCK_SIZE = 512;
+int BLOCK_SIZE = 512;
 
 int main(int argc, char *argv[])
 {
@@ -21,21 +21,20 @@ FILE *input = fopen(argv[1], "r");
 
 
 //declare new buffer
-BYTE buffer[BLOCK_SIZE];
-BYTE* buffer = malloc(BLOCK_SIZE * sizeof(BYTE));
+BYTE* buffer = malloc(BLOCK_SIZE);
 //number of jpegs
 int jpegnum = 0;
 //name of current file
 char *filename = malloc(sizeof(char) * 8);
 //begin reading from new file as long as fread returns a value of 512 bytes read
-while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]) == BLOCK_SIZE)
+while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, input) == BLOCK_SIZE)
 {
 //begin reading from raw file
    fread(buffer, sizeof(BYTE), BLOCK_SIZE, input);
 //look for beginning of jpeg
    if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
    {
-      jpegnum++
+      jpegnum++;
       if (jpegnum == 1)
       {
          //store filename as ###.jpg in filename

@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
    }
 
    //declare new buffer of size 512 bytes
-   BYTE buffer[512];
+   BYTE buffer[sizeof(BYTE) * 512];
 
    //number of jpegs counter
    int jpegnum = 0;
@@ -41,11 +41,20 @@ int main(int argc, char *argv[])
          if (jpegnum != 0)
          {
             fclose(output);
+            jpegnum++;
          }
          sprintf(filename, "%03i.jpg", jpegnum);
          output = fopen(filename, "w");
-         fwrite(buffer, 512, 1, output);
+         fwrite(buffer, sizeof(BYTE) * 512, 1, output);
+      }
+      else
+      {
+         fwrite(buffer, sizeof(BYTE) * 512, 1, output);
       }
    }
 
+fclose(input);
+fclose(output);
+
+return 0;
 }

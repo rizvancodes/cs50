@@ -16,6 +16,18 @@ int main(int argc, char *argv[])
     return 1;
  }
 
+//declare new buffer
+BYTE* buffer = malloc(BLOCK_SIZE);
+
+//number of jpegs
+int jpegnum = 0;
+
+//name of current file
+char *filename = malloc(sizeof(char) * 8);
+
+//store filename as ###.jpg in filename
+sprintf(filename, "%03i.jpg", jpegnum);
+
 //open memory card file
 FILE *input = fopen(argv[1], "r");
     if (input == NULL)
@@ -30,12 +42,7 @@ FILE *output = fopen(filename, "w");
         printf("Could not open file.\n");
         return 3;
     }
-//declare new buffer
-BYTE* buffer = malloc(BLOCK_SIZE);
-//number of jpegs
-int jpegnum = 0;
-//name of current file
-char *filename = malloc(sizeof(char) * 8);
+
 //begin reading from new file as long as fread returns a value of 512 bytes read
 while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, input) == BLOCK_SIZE)
 {
@@ -47,10 +54,6 @@ while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, input) == BLOCK_SIZE)
       jpegnum++;
       if (jpegnum == 1)
       {
-         //store filename as ###.jpg in filename
-         sprintf(filename, "%03i.jpg", jpegnum);
-         //open new jpeg file
-         FILE *output = fopen(filename, "w");
          fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, output);
       }
       else
@@ -60,8 +63,6 @@ while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, input) == BLOCK_SIZE)
          free(buffer);
          //store filename as ###.jpg in filename
          sprintf(filename, "%03i.jpg", jpegnum);
-         //open new jpeg file
-         FILE *output = fopen(filename, "w");
          fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, output);
       }
    }

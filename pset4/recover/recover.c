@@ -5,6 +5,8 @@
 
 typedef uint8_t BYTE;
 
+int BLOCK_SIZE = 512;
+
 int main(int argc, char *argv[])
 {
  //check for invalid usage
@@ -13,6 +15,10 @@ int main(int argc, char *argv[])
     printf("Usage: ./recover filename.raw\n");
     return 1;
  }
+
+//open memory card file
+
+//look for beginning of jpeg
 
 
 }

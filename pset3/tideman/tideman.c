@@ -182,7 +182,7 @@ void sort_pairs(void)
     }
     return;
 }
-
+//This function is a recursive function to check whether a cycle is formed as a 2D array named locked pairs is being created
 bool check_cycle(int start, int end)
 {
     //Does the current loser equal the starting winner

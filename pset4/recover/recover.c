@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
  }
 
 //open memory card file
-FILE *ptr1 = fopen(argv[1], "r");
+FILE *input = fopen(argv[1], "r");
 
 
 //declare new buffer
@@ -38,7 +38,7 @@ while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]) == BLOCK_SIZE)
    {
       jpegnum++;
       sprintf(filename, "%03i.jpg", jpegnum);
-      FILE *f = fopen(*filename);
+      FILE *output = fopen(*filename);
    }
    free(filename);
    free(buffer);

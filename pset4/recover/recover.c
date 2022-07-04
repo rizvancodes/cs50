@@ -23,23 +23,26 @@ FILE *f = fopen(argv[1], "r");
 //declare new buffer
 BYTE buffer[malloc(BLOCK_SIZE)];
 //number of jpegs
-int jpegnum = 0
+int jpegnum = 0;
 //name of current file
-char *filename
-filename = malloc()
+char *filename;
+filename = malloc(sizeof(char) * 8);
 //begin reading from new file as long as fread returns a value of 512 bytes read
 while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]) == BLOCK_SIZE)
 {
 //open new jpeg file
 //begin reading from raw file
-fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]);
+   fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]);
 //look for beginning of jpeg
-if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
-{
-   jpegnum++;
-   sprintf(filename, "%03i.jpg", jpegnum);
-   FILE *f = fopen()
-}
+   if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+   {
+      jpegnum++;
+      sprintf(filename, "%03i.jpg", jpegnum);
+      FILE *f = fopen();
+   }
+   free(filename);
+   free(buffer);
+
 }
 
 //open a new jpeg to write into

@@ -20,5 +20,10 @@ int main(int argc, char *argv[])
 
 //look for beginning of jpeg
 
+//open a new jpeg to write into
+
+//continue to write 512 bytes until a new jpeg is found
+
+//close new jpeg and begin to write a new jpeg
 
 }

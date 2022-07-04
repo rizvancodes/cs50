@@ -20,9 +20,9 @@ int main(int argc, char *argv[])
 FILE *f = fopen(argv[1], "r");
 
 //declare new buffer
-BYTE buffer[malloc(BLOCK_SIZE * blocknum)];
-//count the number of blocks read for each jpeg
-int blocknum = 0;
+BYTE buffer[malloc(BLOCK_SIZE)];
+
+//begin reading from new file as long as fread returns a value of 512 bytes read
 while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]) == BLOCK_SIZE)
 {
 //begin reading from raw file

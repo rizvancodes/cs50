@@ -19,14 +19,14 @@ int main(int argc, char *argv[])
 //open memory card file
 FILE *f = fopen(argv[1], "r");
 
-//look for beginning of jpeg
 //declare new buffer
 BYTE buffer[malloc(BLOCK_SIZE * blocknum)];
-//begin reading from raw file
+//count the number of blocks read for each jpeg
 int blocknum = 0
 while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]) == BLOCK_SIZE)
 {
-
+//begin reading from raw file
+//look for beginning of jpeg
 
 }
 

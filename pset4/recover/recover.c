@@ -5,6 +5,8 @@
 
 typedef uint8_t BYTE;
 
+int BLOCK_SIZE = sizeof(BYTE) * 512;
+
 int main(int argc, char *argv[])
 {
    //check for invalid usage
@@ -15,7 +17,7 @@ int main(int argc, char *argv[])
    }
 
    //declare new buffer of size 512 bytes
-   BYTE buffer[512];
+   BYTE buffer[BLOCK_SIZE];
 
    //number of jpegs counter
    int jpegnum = 0;
@@ -34,7 +36,7 @@ int main(int argc, char *argv[])
    FILE *output = fopen(filename, "w");
 
    //begin reading from new file as long as fread returns a value of 512 bytes read
-   while (fread(buffer, 512, 1, input) == 512)
+   while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, input) == 512)
    {
       if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
       {
@@ -43,19 +45,19 @@ int main(int argc, char *argv[])
          {
             sprintf(filename, "%03i.jpg", jpegnum);
             output = fopen(filename, "w");
-            fwrite(buffer, 512, 1, output);
+            fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, output);
          }
          else
          {
             fclose(output);
             sprintf(filename, "%03i.jpg", jpegnum);
             output = fopen(filename, "w");
-            fwrite(buffer, 512, 1, output);
+            fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, output);
          }
       }
       else if (jpegnum > 0)
       {
-         fwrite(buffer, 512, 1, output);
+         fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, output);
       }
    }
 

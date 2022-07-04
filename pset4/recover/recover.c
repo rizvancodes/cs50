@@ -27,11 +27,13 @@ BYTE buffer[malloc(BLOCK_SIZE)];
 while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]) == BLOCK_SIZE)
 {
 //open new jpeg file
-FILE *f = fopen()
 //begin reading from raw file
 fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]);
 //look for beginning of jpeg
-if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3])
+if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+{
+   FILE *f = fopen()
+}
 }
 
 //open a new jpeg to write into

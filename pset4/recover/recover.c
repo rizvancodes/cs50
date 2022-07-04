@@ -35,13 +35,7 @@ FILE *input = fopen(argv[1], "r");
         printf("Could not open file.\n");
         return 2;
     }
-
-FILE *output = fopen(filename, "w");
-    if (output == NULL)
-    {
-        printf("Could not open file.\n");
-        return 3;
-    }
+FILE *output_file = NULL;
 
 //begin reading from new file as long as fread returns a value of 512 bytes read
 while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, input) == BLOCK_SIZE)
@@ -54,6 +48,7 @@ while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, input) == BLOCK_SIZE)
       jpegnum++;
       if (jpegnum == 1)
       {
+         output = fopen(filename, "w");
          fwrite(buffer, BLOCK_SIZE, 1, output);
       }
       else
@@ -62,6 +57,7 @@ while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, input) == BLOCK_SIZE)
          free(filename);
          //store filename as ###.jpg in filename
          sprintf(filename, "%03i.jpg", jpegnum);
+         output = fopen(filename, "w");
          fwrite(buffer, BLOCK_SIZE, 1, output);
       }
    }

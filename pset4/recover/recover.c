@@ -40,14 +40,11 @@ int main(int argc, char *argv[])
       {
          if (jpegnum != 0)
          {
-            sprintf(filename, "%03i.jpg", jpegnum);
-            output = fopen(filename, "w");
-            fwrite(buffer, 512, 1, output);
+            fclose(output);
          }
-         else
-         {
-            fclose(output)
-         }
+         sprintf(filename, "%03i.jpg", jpegnum);
+         output = fopen(filename, "w");
+         fwrite(buffer, 512, 1, output);
       }
    }
 

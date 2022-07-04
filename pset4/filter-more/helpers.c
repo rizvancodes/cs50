@@ -60,7 +60,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 //iterate column in 3x3 box
                 for (int m = -1; m <= 1; m++)
                 {
-                    //i is the 
+                    //[i][j] is the current array item; k is the step required to select the previous row; m is the step required to select the previous column
+                    //in the first iteration [i - 1][j - 1] will be the first item in the 3x3 box surrounding [i][j];
+                    //we will iterate through the array going from left to right until we reach the third column at which point m = 1
+                    //we then continue to iterate through the rows until k = 1
                     if (i + k >= 0 && i + k < height && j + m >= 0 && j + m < width)
                     {
                         count++;

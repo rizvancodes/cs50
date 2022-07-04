@@ -13,4 +13,11 @@ int main(int argc, char *argv[])
       printf("Usage: ./recover filename.raw\n");
       return 1;
    }
+
+   //declare new buffer of size 12 bytes
+   BYTE buffer[512];
+
+   //number of jpegs counter
+   int jpegnum = 0;
+
 }

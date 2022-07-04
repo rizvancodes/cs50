@@ -212,6 +212,7 @@ void lock_pairs(void)
     int i;
     for (i = 0; i < pair_count; i++)
     {
+        //check whether a cycle is created if a new pair were to be locked in
         if (check_cycle(pairs[i].winner, pairs[i].loser) == false)
         {
             locked[pairs[i].winner][pairs[i].loser] = true;

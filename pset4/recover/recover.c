@@ -18,8 +18,18 @@ int main(int argc, char *argv[])
 
 //open memory card file
 FILE *input = fopen(argv[1], "r");
+    if (input == NULL)
+    {
+        printf("Could not open file.\n");
+        return 2;
+    }
 
-
+FILE *output = fopen(filename, "w");
+    if (output == NULL)
+    {
+        printf("Could not open file.\n");
+        return 3;
+    }
 //declare new buffer
 BYTE* buffer = malloc(BLOCK_SIZE);
 //number of jpegs
@@ -45,6 +55,7 @@ while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, input) == BLOCK_SIZE)
       }
       else
       {
+         fclose(output);
          free(filename);
          free(buffer);
          //store filename as ###.jpg in filename

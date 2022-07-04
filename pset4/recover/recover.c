@@ -24,7 +24,7 @@ int jpegnum = 0;
 
 //name of current file
 
-char *filename = malloc(sizeof(char) * 8);
+char filename[8];
 
 //store filename as ###.jpg in filename
 sprintf(filename, "%03i.jpg", jpegnum);
@@ -71,5 +71,5 @@ while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, input) == BLOCK_SIZE)
 
 fclose(input);
 fclose(output);
-free(filename);
+
 }

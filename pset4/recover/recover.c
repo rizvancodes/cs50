@@ -43,13 +43,13 @@ int main(int argc, char *argv[])
          if (jpegnum != 0)
          {
             fclose(output);
-            jpegnum++;
          }
+         jpegnum++;
          sprintf(filename, "%03i.jpg", jpegnum);
          output = fopen(filename, "w");
          fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, output);
       }
-      else if (jpegnum >= 0)
+      else if (jpegnum > 0)
       {
          fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, output);
       }

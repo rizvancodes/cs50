@@ -36,7 +36,10 @@ int main(int argc, char *argv[])
    //begin reading from new file as long as fread returns a value of 512 bytes read
    while (fread(buffer, sizeof(BYTE) * 512, 1, input) == 512)
    {
-      
+      if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+      {
+         
+      }
    }
 
 }

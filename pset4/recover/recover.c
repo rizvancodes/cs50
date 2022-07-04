@@ -41,12 +41,14 @@ while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]) == BLOCK_SIZE)
          //store filename as ###.jpg in filename
          sprintf(filename, "%03i.jpg", jpegnum);
          //open new jpeg file
-         FILE *output = fopen(filename. "w");
+         FILE *output = fopen(filename, "w");
          fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, output);
       }
       else
       {
-         fclose(output)
+         fclose(output);
+         free(filename);
+         free(buffer);
          //store filename as ###.jpg in filename
          sprintf(filename, "%03i.jpg", jpegnum);
          //open new jpeg file
@@ -59,11 +61,13 @@ while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]) == BLOCK_SIZE)
       //continue to write 512 bytes until a new jpeg is found
       fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, output);
    }
-   free(filename);
-   free(buffer);
 
 }
 
+fclose(input);
+fclose(output);
+free(filename);
+free(buffer);
 
 //stop and close new jpeg
 

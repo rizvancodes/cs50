@@ -22,10 +22,11 @@ FILE *f = fopen(argv[1], "r");
 //declare new buffer
 BYTE buffer[malloc(BLOCK_SIZE * blocknum)];
 //count the number of blocks read for each jpeg
-int blocknum = 0
+int blocknum = 0;
 while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]) == BLOCK_SIZE)
 {
 //begin reading from raw file
+fread(buffer, sizeof(BYTE), BLOCK_SIZE, argv[1]);
 //look for beginning of jpeg
 
 }

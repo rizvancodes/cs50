@@ -29,7 +29,11 @@ int main(void)
     }
     tmp[3] = 4;
 
+    free(list);
+
     list = tmp;
+
+    free(tmp);
 
     for (int i = 0; i < 4; i++)
     {

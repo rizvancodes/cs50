@@ -3,7 +3,6 @@
 
 int main(void)
 {
-    int list[3];
-    list[0] = 1;
-    lis
+    int *list = malloc(sizeof(int) * 3);
+    
 }

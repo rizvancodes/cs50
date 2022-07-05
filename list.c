@@ -12,4 +12,8 @@ int main(void)
     list[0] = 1;
     list[1] = 2;
     list[3] = 3;
+
+    //Time passes
+
+    list = malloc(sizeof(int)* 4);
 }

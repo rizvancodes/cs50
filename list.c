@@ -15,5 +15,10 @@ int main(void)
 
     //Time passes
 
-    list = malloc(sizeof(int)* 4);
+    int *tmp = malloc(sizeof(int)* 4);
+    if (tmp == NULL)
+    {
+        free(list);
+        return 1;
+    }
 }

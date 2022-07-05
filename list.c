@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>
+#include <stdlib.h>
 
 int main(void)
 {
@@ -11,7 +12,7 @@ int main(void)
 
     list[0] = 1;
     list[1] = 2;
-    list[3] = 3;
+    list[2] = 3;
 
     //Time passes
 
@@ -21,4 +22,18 @@ int main(void)
         free(list);
         return 1;
     }
+
+    for (int i = 0; i < 3; i++)
+    {
+        tmp[i] = list[i];
+    }
+    tmp[3] = 4;
+
+    list = tmp;
+
+    for (int i = 0; i < 4; i++)
+    {
+        printf("%i\n", list[i]);
+    }
+    return 0;
 }

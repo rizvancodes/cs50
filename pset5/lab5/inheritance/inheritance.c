@@ -40,7 +40,7 @@ int main(void)
 person *create_family(int generations)
 {
     // TODO: Allocate memory for new person
-    person *family = malloc(sizeof(person));
+    person *child = malloc(sizeof(person));
     if (n == NULL)
     {
         free_family(person);

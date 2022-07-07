@@ -43,8 +43,8 @@ person *create_family(int generations)
     person *p = malloc(sizeof(person));
     if (p == NULL)
     {
-        free_family(person);
-        return 1;
+        free_family(p);
+        return p;
     }
     // If there are still generations left to create
     if (generations > 1)
@@ -83,7 +83,7 @@ void free_family(person *p)
     if (p == NULL)
     {
         free(p);
-        return 1;
+        return;
     }
     // TODO: Free parents recursively
     else

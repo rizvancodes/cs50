@@ -45,6 +45,7 @@ bool load(const char *dictionary)
         return false;
     }
     //read from the dictionary one string at a time
+    fscanf(input, "%s", word);
     //create a new node for each word
     //hash word to obtain hash value
     //insert node into hash table at that location

@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <cs50.h>
 #include <strings.h>
+#include <stdlib.h>
 
 #include "dictionary.h"
 
@@ -65,7 +66,7 @@ bool load(const char *dictionary)
     while (fscanf(input, "%s", wscn) != EOF)
     {
         //create a new node for each word
-        node *n = malloc(sizeof(node))
+        node *n = malloc(sizeof(node));
         if (n == NULL)
         {
             return false;

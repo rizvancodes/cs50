@@ -79,7 +79,7 @@ bool load(const char *dictionary)
         //insert new node
         n->next = table[hval];
         //set head pointer to point to new node
-        table[hval]->next = n;
+        table[hval] = n;
         dsize++;
     }
         fclose(input);

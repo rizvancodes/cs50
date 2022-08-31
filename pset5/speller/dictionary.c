@@ -74,7 +74,7 @@ bool load(const char *dictionary)
         //copy word into node
         strcopy(n->word, wscn);
         //hash word to find index
-        int hval = hash(word);
+        int hval = hash(wscn);
         //set next pointer as first node in linked list
         n->next = table[hval];
         //set head pointer to point to new node

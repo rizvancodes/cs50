@@ -35,7 +35,7 @@ bool check(const char *word)
     node *cursor = table[bucket];
     while (cursor != NULL)
     {
-        if (strcasecmp(word, cursor->word) == 0)
+        if (strcasecmp(cursor->word, word) == 0)
         {
             return true;
         }

@@ -30,6 +30,7 @@ bool check(const char *word)
     node *cursor = table[hashval];
     while (cursor != NULL)
     {
+        if (strcasecmp())
         cursor = cursor->next
     }
     return false;

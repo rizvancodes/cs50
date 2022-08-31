@@ -45,7 +45,7 @@ bool load(const char *dictionary)
         return false;
     }
     //read from the dictionary one string at a time
-    char *word[malloc(sizeof())]
+    char word[malloc(sizeof(LENGTH + 1))]
     while (fscanf(input, "%s", word) != EOF)
     {
         fscanf(input, "%s", word);

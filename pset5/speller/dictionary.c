@@ -61,7 +61,7 @@ bool load(const char *dictionary)
         //set next pointer as first node in linked list
         n->next = table[hval].next;
         //set head pointer to point to new node
-        table[hval].next
+        table[hval].next = n.next
 
     }
 

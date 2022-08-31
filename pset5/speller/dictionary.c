@@ -59,7 +59,7 @@ bool load(const char *dictionary)
         //hash word to find index
         hval = hash(word);
         //set next pointer as first node in linked list
-        n->table[hval].next;
+        n->next = table[hval].next;
         //set head pointer to point to new node
         table[hval].next
 

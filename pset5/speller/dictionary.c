@@ -103,9 +103,9 @@ bool unload(void)
 {
     // TODO
     node *cursor = table[0]
-    while {cursor = NULL}
+    while {cursor != NULL}
     {
-        
+        if (cursor )
     }
     return false;
 }

@@ -14,7 +14,7 @@ typedef struct node
 node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 26;
+const unsigned int N = 1;
 
 // Hash table
 node *table[N];
@@ -57,7 +57,7 @@ bool load(const char *dictionary)
         //copy word into node
         strcopy(n->word, wscn)
 
-        
+
         //set next pointer as NULL
         n->next = NULL;
     }

@@ -27,6 +27,7 @@ bool check(const char *word)
 {
     // TODO
     int hashval = hash(word);
+    cursor
     while (next != NULL)
     {
 

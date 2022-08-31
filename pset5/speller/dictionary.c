@@ -45,7 +45,7 @@ bool load(const char *dictionary)
         return false;
     }
     //read from the dictionary one string at a time and copy into array of char, word
-    char wscn[malloc(sizeof(LENGTH + 1))]
+    char wscn[malloc(sizeof(LENGTH + 1))];
     while (fscanf(input, "%s", wscn) != EOF)
     {
         //create a new node for each word

@@ -102,10 +102,13 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    node *cursor = table[0]
+    node *cursor = table[0];
+    node *tmp = cursor;
     while {cursor != NULL}
     {
-        if (cursor )
+        cursor = cursor->next
+        free(tmp);
+        tmp = cursor;
     }
-    return false;
+    return true;
 }

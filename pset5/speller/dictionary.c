@@ -6,6 +6,7 @@
 #include <cs50.h>
 #include <strings.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "dictionary.h"
 
@@ -72,7 +73,7 @@ bool load(const char *dictionary)
             return false;
         }
         //copy word into node
-        strcopy(n->word, wscn);
+        strcpy(n->word, wscn);
         //hash word to find index
         int hval = hash(wscn);
         //set next pointer as first node in linked list
@@ -83,23 +84,14 @@ bool load(const char *dictionary)
     }
         fclose(input);
         return true;
-    }
-
-    //hash word to obtain hash value
-    //insert node into hash table at that location
-    n->next = NULL;
-    return false;
 }
+
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
     // TODO
-    if (loaded == true)
-    {
     return dsize;
-    }
-    return 0;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
@@ -108,9 +100,9 @@ bool unload(void)
     // TODO
     node *cursor = table[0];
     node *tmp = cursor;
-    while {cursor != NULL}
+    while (cursor != NULL)
     {
-        cursor = cursor->next
+        cursor = cursor->next;
         free(tmp);
         tmp = cursor;
     }

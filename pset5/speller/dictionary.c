@@ -27,9 +27,9 @@ bool check(const char *word)
 {
     // TODO
     int hashval = hash(word);
-    while (table[hashval].next != NULL)
+    while (next != NULL)
     {
-        
+
     }
     return false;
 }

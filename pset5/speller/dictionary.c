@@ -55,11 +55,13 @@ bool load(const char *dictionary)
             return false;
         }
         //copy word into node
-        strcopy(n->word, wscn)
+        strcopy(n->word, wscn);
         //hash word to find index
-        hval = hash(word)
+        hval = hash(word);
         //set next pointer as first node in linked list
         n->table[hval].next;
+        //set head pointer to point to new node
+        table[hval].next
 
     }
 

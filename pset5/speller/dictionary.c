@@ -31,8 +31,8 @@ int dsize = 0;
 bool check(const char *word)
 {
     // TODO
-    int hashval = hash(word);
-    node *cursor = table[hashval];
+    int bucket = hash(word);
+    node *cursor = table[bucket];
     while (cursor != NULL)
     {
         if (strcasecmp(word, cursor->word) == 0)

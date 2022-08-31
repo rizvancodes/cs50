@@ -56,7 +56,7 @@ bool load(const char *dictionary)
         }
         //copy word into node
         strcopy(n->word, wscn)
-        
+        hval = hash(word)
 
         //set next pointer as NULL
         n->next = NULL;

@@ -26,6 +26,8 @@ int dsize = 0;
 bool check(const char *word)
 {
     // TODO
+    int hashval = hash(word);
+    table[hashval]
     return false;
 }
 

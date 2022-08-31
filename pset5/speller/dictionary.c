@@ -56,7 +56,7 @@ bool load(const char *dictionary)
     //hash word to obtain hash value
     //insert node into hash table at that location
     strcopy(n->word, //insert word variable// )
-    n
+    n->next = NULL;
     return false;
 }
 

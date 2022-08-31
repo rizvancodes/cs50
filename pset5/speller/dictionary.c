@@ -44,7 +44,7 @@ bool load(const char *dictionary)
         printf("Could not open file.\n");
         return false;
     }
-    //read from the dictionary one string at a time
+    //read from the dictionary one string at a time and copy into array of char, word
     char word[malloc(sizeof(LENGTH + 1))]
     while (fscanf(input, "%s", word) != EOF)
     {

@@ -79,12 +79,12 @@ bool load(const char *dictionary)
         //initialize node in hash table if first instance
         if (table[hval] == NULL)
         {
-            table[hval] == n;
+            table[hval] = n;
         }
         //insert new node
         n->next = table[hval];
         //set head pointer to point to new node
-        table[hval]->next = n;
+        table[hval] = n;
         dsize++;
     }
         fclose(input);

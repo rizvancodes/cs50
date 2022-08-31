@@ -28,9 +28,9 @@ bool check(const char *word)
     // TODO
     int hashval = hash(word);
     node *cursor = table[hashval];
-    while (cursor.next != NULL)
+    while (cursor != NULL)
     {
-
+        
     }
     return false;
 }

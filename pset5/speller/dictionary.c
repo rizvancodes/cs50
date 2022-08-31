@@ -76,15 +76,10 @@ bool load(const char *dictionary)
         strcpy(n->word, wscn);
         //hash word to find index
         int hval = hash(wscn);
-        //initialize node in hash table if first instance
-        if (table[hval] == NULL)
-        {
-            table[hval] = n;
-        }
         //insert new node
         n->next = table[hval];
         //set head pointer to point to new node
-        table[hval] = n;
+        table[hval]->next = n;
         dsize++;
     }
         fclose(input);
@@ -111,7 +106,7 @@ bool unload(void)
     {
         cursor = cursor->next;
         free(tmp);
-        temp = cursor;
+        tmp = cursor;
     }
     }
     return true;

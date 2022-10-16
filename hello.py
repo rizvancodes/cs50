@@ -1,5 +1,5 @@
+import cs50
 
-
-x = get_int("Type your first number ")
-y = get_int("Type your second number ")
+x = cs50.get_int("Type your first number ")
+y = cs50.get_int("Type your second number ")
 print(x + y)

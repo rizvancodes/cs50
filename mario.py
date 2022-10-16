@@ -1,9 +1,12 @@
+def main():
+    height = get_height()
+    for i in range(height):
+        print("#")
 
-try:
-    x = int(input("Size: "))
-except:
-        print("That is not an int!")
-        exit()
-
-for i in range(x):
-    print("#")
+def get_height():
+    while True:
+        try:
+            x = int(input("Size: "))
+        except:
+                print("That is not an int!")
+                exit()

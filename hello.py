@@ -1,3 +1,5 @@
-answer = input("What is your name? ")
+from cs50 import get_int
 
-print(f"hello, {answer}")
+x = get_int("Type your first number ")
+y = get_int("Type your second number ")
+print(x + y)

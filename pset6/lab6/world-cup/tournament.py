@@ -20,7 +20,7 @@ def main():
     with open(wcfile) as file:
         reader = csv.DictReader(file)
         for team in reader:
-            team['rating'] = int(team['rating'])
+            team["rating"] = int(team["rating"])
             teams.append(team)
 
     counts = {}

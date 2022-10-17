@@ -19,13 +19,13 @@ def main():
     wcfile = sys.argv[1]
     with open(wcfile) as file:
         reader = csv.DictReader(file)
-        for team in reader
+        for team in reader:
             team['rating'] = int(team['rating'])
             teams.append(team)
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
-    while N > 0
+    while N > 0:
         winner = simulate_tournament(teams)
         if winner in counts:
             counts[winner] += 1
@@ -62,7 +62,7 @@ def simulate_round(teams):
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     # Simulate tournament
-    while len(teams) > 1
+    while len(teams) > 1:
         teams = simulate_round(teams)
     return teams[0]["teams"]
 

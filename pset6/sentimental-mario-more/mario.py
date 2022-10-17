@@ -6,7 +6,6 @@ def main():
             height = int(input("Type an integer between 1 and 8 "))
         except ValueError:
             print("That is not an int!")
-            exit()
 
     for i in range(height):
         for j in range(height - (i + 1)):

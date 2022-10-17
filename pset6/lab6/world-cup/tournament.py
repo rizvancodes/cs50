@@ -20,7 +20,7 @@ def main():
     with open(wcfile) as file:
         reader = csv.DictReader(file)
         for row in reader
-            teams.append
+            teams.append(row)
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
 

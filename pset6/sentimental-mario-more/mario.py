@@ -5,12 +5,12 @@ def main():
         height = int(input("Type an integer between 1 and 8 "))
 
     for i in range(1, height):
-        for i in range(1, height - i):
+        for j in range(1, height - i):
             print(" ", end="")
-        for i in range(1, i):
+        for k in range(1, i):
             print("#", end="")
         print("  ", end="")
-        for i in range(1, i):
+        for l in range(1, i):
             print("#")
 
 if __name__ == "__main__":

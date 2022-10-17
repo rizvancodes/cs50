@@ -6,7 +6,9 @@ def main():
 
     for i in range(height):
         print(i)
-        for j in range(he)
+        for j in range(height):
+            print("#", end="")
+
 
 
 if __name__ == "__main__":

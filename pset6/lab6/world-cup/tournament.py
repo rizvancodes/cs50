@@ -18,10 +18,10 @@ def main():
     # TODO: Read teams into memory from file
     wcfile = sys.argv[1]
     with open(wcfile) as file:
-        reader = csv.DictReader(file)
+        reader = csv.DictReader(wcfile)
         for team in reader
+        team['rating'] = int(team['rating'])
             teams.append(team)
-            teamd                                               
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
 

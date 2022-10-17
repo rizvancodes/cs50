@@ -57,7 +57,8 @@ def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     twinners = []
 
-    # Simulate games for all 
+    # Simulate tournament
+    for i in range(0, len(teams), )
 
 
 if __name__ == "__main__":

@@ -6,9 +6,9 @@ def main():
 
     for i in range(height):
         for i in range(height - 1):
-            print(" ", "")
+            print(" ", end="")
         for i in range(i):
-            print("#  ", "")
+            print("#  ", end="")
         for i in range(i):
             print("#")
 

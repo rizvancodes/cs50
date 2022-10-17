@@ -19,7 +19,8 @@ def main():
     wcfile = sys.argv[1]
     with open(wcfile) as file:
         reader = csv.DictReader(file)
-
+        for row in reader
+        
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
 

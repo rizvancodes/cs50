@@ -7,11 +7,11 @@ def main():
     for i in range(1, height):
         for j in range(1, height - i):
             print(" ", end="")
-        for k in range(1, height):
+        for k in range(1, i):
             print("#", end="")
         print("  ", end="")
-        for l in range(1, height):
-            print("#")
+        for l in range(1, i):
+            print("#", end="")
 
 if __name__ == "__main__":
     main()

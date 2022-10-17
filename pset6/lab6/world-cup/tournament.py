@@ -58,7 +58,7 @@ def simulate_tournament(teams):
     twinners = []
 
     # Simulate tournament
-    for i in range(0, len(teams), )
+    
 
 
 if __name__ == "__main__":

@@ -7,7 +7,7 @@ def main():
     for i in range(height):
         print(i)
         for j in range(height - 1):
-            print(" ", end="")
+            print(j)
 
 
 

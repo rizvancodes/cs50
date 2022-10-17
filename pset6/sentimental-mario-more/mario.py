@@ -5,6 +5,7 @@ def main():
         height = int(input("Type an integer between 1 and 8 "))
 
     for i in range(height):
+        print(i)
         for j in range(height - 1):
             print(" ", end="")
 

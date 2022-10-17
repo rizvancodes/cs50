@@ -8,6 +8,7 @@ def main():
         for j in range(height - (i + 1)):
             print(" ", end="")
         for k in range(i + 1):
+            print(k, end="")
             print("#", end="")
         print("  ", end="")
 

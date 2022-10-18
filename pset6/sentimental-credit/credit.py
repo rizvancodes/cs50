@@ -3,7 +3,7 @@
 cardNum = list(input("Type your card number: "))
 print(cardNum)
 altp = ""
-for i in cardNum[::2]:
+for i in cardNum[-2::2]:
     altp += (str(int(i) * 2))
 for i in altp:
     print(i)

@@ -14,7 +14,7 @@ words = len(wordList)
 sentenceList = sampleString.split(".")
 sentences = len(sentenceList) - 1
 
-grade = round(0.0588 * ((alpha/words) * 100)) - 0.296 * ((sentences/words) * 100) - 15.8
+grade = round((0.0588 * ((alpha/words) * 100)) - (0.296 * (((sentences/words) * 100) - 15.8)))
 
 
 

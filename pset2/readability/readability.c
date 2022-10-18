@@ -23,7 +23,7 @@ int main(void)
     printf("%i sentences\n", sentencecount);
     float L = ((float)lettercount / (float)wordcount) * 100;
     float S = ((float)sentencecount / (float)wordcount) * 100;
-    int index = round(0.0588 * L - 0.296 * S - 15.8);
+    int index = round((0.0588 * L) - (0.296 * (S - 15.8)));
 
     if (index < 1)
     {

@@ -4,6 +4,7 @@ def main():
     num = input("Type your card number: ")
     if luhns(num):
         if len(list(num)) == 15:
+            if 
             print("AMEX")
         elif len(list(num)) == 16:
             if int(list(num)[0]) == 4:

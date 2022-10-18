@@ -4,7 +4,7 @@ cardNum = list(input("Type your card number: "))
 print(cardNum)
 newList = []
 for i in cardNum[::2]:
-    newList.append(str(int(i) * 2).split)
+    newList.append(str(int(i) * 2))
 print(newList)
 
 #get alternate digits starting at -2, multiply by 2 and store as string

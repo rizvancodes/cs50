@@ -11,5 +11,9 @@ for i in sampleString:
 wordList = sampleString.split()
 words = len(wordList)
 
+sentenceList = sampleString.split(".")
+sentences = len(sentenceList) - 1
+
 print(alpha)
 print(words)
+print(sentences)

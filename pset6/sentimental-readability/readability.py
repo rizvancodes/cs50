@@ -18,7 +18,9 @@ sentences = len(sentenceList) - 1
 
 grade = round(0.0588 * alpha/words * 100 - 0.296 * sentences/words * 100 - 15.8)
 
-print(alpha)
-print(words)
-print(sentences)
-print(f"Grade: {grade}")
+if grade < 1:
+    print("Before Grade 1")
+elif grade > 16:
+    print("Grade 16+")
+else:
+    print(f"Grade: {grade}")

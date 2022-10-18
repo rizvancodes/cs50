@@ -5,8 +5,8 @@ print(cardNum)
 altp = ""
 for i in cardNum[::2]:
     altp += (str(int(i) * 2))
-
-print(altp)
+altpList = altp.split(" ")
+print(altpList)
 
 
 #get alternate digits starting at -2, multiply by 2 and store as string

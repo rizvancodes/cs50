@@ -1,11 +1,14 @@
 # TODO
 #get card number as string, cast as list
-def main()
+def main():
+    num = input("Type your card number: ")
+    if luhns(num):
+        if len(list(num)) == 15
+            print("AMEX")
 
 
-def luhns():
-    cardNum = list(input("Type your card number: "))
-    print(cardNum)
+def luhns(str):
+    cardNum = list(str)
     odd = cardNum[-2::-2]
     even = cardNum[-1::-2]
     checksum = 0
@@ -13,7 +16,7 @@ def luhns():
         checksum += sum(getDigits(int(j) * 2))
     for k in even:
         checksum += int(k)
-    return checksum
+    return checksum % 10 == 0
 
 def getDigits(x):
     return [int(i) for i in str(x)]

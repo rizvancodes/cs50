@@ -15,7 +15,7 @@ def main():
             if int(list(num)[0]) == 4:
                 print("VISA")
             elif int(list(num)[0]) == 5:
-                if int(list(num)[1]) == 1 or 2 or 3 or 4 or 5:
+                if int(list(num)[1]) <= 5:
                     print("MASTERCARD")
                 else:
                     print("INVALID")

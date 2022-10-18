@@ -3,8 +3,10 @@
 def main():
     num = input("Type your card number: ")
     if luhns(num):
-        if len(list(num)) == 15
+        if len(list(num)) == 15:
             print("AMEX")
+        elif len(list(num)) == 16:
+            if 
 
 
 def luhns(str):

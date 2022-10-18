@@ -1,4 +1,6 @@
 # TODO
+import re
+
 sampleString = input("Enter your text: ")
 alpha = 0
 words = 0

@@ -14,7 +14,7 @@ words = len(wordList)
 sentenceList = sampleString.split(".")
 sentences = len(sentenceList) - 1
 
-
+Grade = 
 
 print(alpha)
 print(words)

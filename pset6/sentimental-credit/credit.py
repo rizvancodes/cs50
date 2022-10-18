@@ -1,7 +1,7 @@
 # TODO
-#get card number as string
+#get card number as string, cast as list
 cardNum = list(input("Type your card number: "))
-#use list to store digits
+print(cardNum)
 
 #get alternate digits starting at -2, multiply by 2 and store as string
 #take each digit, cast as int and sum

@@ -10,8 +10,10 @@ def main():
                 print("VISA")
             else:
                 print("MASTERCARD")
-        elif len(list()):
+        elif len(list(num)) == 13:
             print("VISA")
+        else:
+            print("INVALID")
 
 
 def luhns(str):

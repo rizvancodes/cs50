@@ -6,7 +6,12 @@ def main():
         if len(list(num)) == 15:
             print("AMEX")
         elif len(list(num)) == 16:
-            if 
+            if int(list(num)[0]) == 4:
+                print("VISA")
+            else:
+                print("MASTERCARD")
+        elif len(list()):
+            print("VISA")
 
 
 def luhns(str):

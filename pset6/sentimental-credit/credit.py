@@ -1,7 +1,8 @@
 # TODO
 #get card number as string, cast as list
 def main()
-    
+
+
 def luhns():
     cardNum = list(input("Type your card number: "))
     print(cardNum)
@@ -12,10 +13,10 @@ def luhns():
         checksum += sum(getDigits(int(j) * 2))
     for k in even:
         checksum += int(k)
-    print(checksum)
+    return checksum
 
 def getDigits(x):
-        return [int(i) for i in str(x)]
+    return [int(i) for i in str(x)]
 
 if __name__ == "__main__":
     main()

@@ -2,7 +2,9 @@
 #get card number as string, cast as list
 cardNum = list(input("Type your card number: "))
 print(cardNum)
-odd = 
+odd = cardNum[-2::-2]
+even = cardNum[-1::-2]
+for 
 altp = ""
 for i in cardNum[-2::2]:
     altp += (str(int(i) * 2))

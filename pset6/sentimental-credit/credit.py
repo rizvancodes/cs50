@@ -4,12 +4,17 @@ def main():
     num = input("Type your card number: ")
     if luhns(num):
         if len(list(num)) == 15:
-            if 
-            print("AMEX")
+            if int(list(num)[0] == 3):
+                if int(list(num)[1] == 4 or 7)
+                    print("AMEX")
+                else:
+                    print("INVALID")
+            else:
+                print("INVALID")
         elif len(list(num)) == 16:
             if int(list(num)[0]) == 4:
                 print("VISA")
-            else:
+            elif :
                 print("MASTERCARD")
         elif len(list(num)) == 13:
             print("VISA")

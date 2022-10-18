@@ -2,9 +2,10 @@
 #get card number as string, cast as list
 cardNum = list(input("Type your card number: "))
 print(cardNum)
-altp
+altp = ""
 for i in cardNum[::2]:
-    altp + (str(int(i) * 2))
+    altp += (str(int(i) * 2))
+
 print(altp)
 
 

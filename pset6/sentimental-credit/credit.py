@@ -5,7 +5,7 @@ def main():
     if luhns(num):
         if len(list(num)) == 15:
             if int(list(num)[0] == 3):
-                if int(list(num)[1] == 4 or 7)
+                if int(list(num)[1] == 4 or 7):
                     print("AMEX")
                 else:
                     print("INVALID")
@@ -14,8 +14,11 @@ def main():
         elif len(list(num)) == 16:
             if int(list(num)[0]) == 4:
                 print("VISA")
-            elif :
-                print("MASTERCARD")
+            elif int(list(num)[0]) == 5:
+                if int(list(num)[0]) == 1 or 2 or 3 or 4 or 5:
+                    print("MASTERCARD")
+                else:
+                    print("INVALID")
         elif len(list(num)) == 13:
             print("VISA")
         else:

@@ -2,11 +2,11 @@
 #get card number as string, cast as list
 cardNum = list(input("Type your card number: "))
 print(cardNum)
-newList = []
+altp
 for i in cardNum[::2]:
-    newList.append((str(int(i) * 2)))
-for 
-print(newList)
+    altp + (str(int(i) * 2))
+print(altp)
+
 
 #get alternate digits starting at -2, multiply by 2 and store as string
 #take each digit, cast as int and sum

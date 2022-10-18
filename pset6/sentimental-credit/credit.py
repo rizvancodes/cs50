@@ -14,6 +14,8 @@ def main():
             print("VISA")
         else:
             print("INVALID")
+    else:
+        print("INVALID")
 
 
 def luhns(str):

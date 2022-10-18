@@ -5,7 +5,7 @@ def main():
     if luhns(num):
         if len(list(num)) == 15:
             if int(list(num)[0] == 3):
-                if int(list(num)[1]) == 4 or int(list(num)[1]) == 7:
+                if int(list(num)[1]) == 7 or int(list(num)[1]) == 4:
                     print("AMEX")
                 else:
                     print("INVALID")

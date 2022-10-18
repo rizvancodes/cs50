@@ -8,6 +8,7 @@ def main():
     checksum = 0
     for j in odd:
         checksum += sum(getDigits(int(j) * 2))
+    for k in even
     checksum += sum(getDigits for k in even)
     print(checksum)
 

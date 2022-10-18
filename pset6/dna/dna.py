@@ -5,12 +5,17 @@ import sys
 def main():
 
     # TODO: Check for command-line usage
-    if len(sys.argv) != 2:
-        sys.exit("Usage: python dna.py DATABASE")
+    if len(sys.argv) != 3:
+        sys.exit("Usage: python dna.py DATABASE.CSV SEQUENCE.TXT")
     # TODO: Read database file into a variable
-
+    id = []
+    filename = sys.argv[1]
+    with open(filename) as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            id.append(row)
     # TODO: Read DNA sequence file into a variable
-
+    
     # TODO: Find longest match of each STR in DNA sequence
 
     # TODO: Check database for matching profiles

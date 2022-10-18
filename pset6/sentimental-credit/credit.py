@@ -4,7 +4,7 @@ cardNum = list(input("Type your card number: "))
 print(cardNum)
 altsum = 0
 for i in cardNum[::2]:
-    altsum += int(i) * 2
+    str(int(i) * 2).split
 print(altsum)
 #get alternate digits starting at -2, multiply by 2 and store as string
 #take each digit, cast as int and sum

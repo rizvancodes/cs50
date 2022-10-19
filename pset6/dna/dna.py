@@ -22,6 +22,8 @@ def main():
             item.pop('name')
             break
 
+    a_dict = dict(zip(fields, values))
+
     print(names)
 
 

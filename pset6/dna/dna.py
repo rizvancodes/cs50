@@ -28,8 +28,8 @@ def main():
 
     # TODO: Find longest match of each STR in DNA sequence
     subjectcount = {}
-    for i in subjectcount:
-        subjectcount[columnList[i]] = None
+    for i in columnList:
+        subjectcount[columnList[i + 1]] = None
     print(subjectcount)
     # TODO: Check database for matching profiles
 

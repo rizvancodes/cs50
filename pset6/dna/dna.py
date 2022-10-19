@@ -19,7 +19,7 @@ def main():
     profiles = {}
     for item in id:
         for j in item:
-            profiles[j] = None
+            profiles[item[j]] = None
             break
     print(profiles)
 

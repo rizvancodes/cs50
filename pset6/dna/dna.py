@@ -20,7 +20,8 @@ def main():
     for item in id:
         for j in item:
             profiles[item[j]] = None
-            dict
+            item[j].pop
+            profiles[item[j]] == item
             break
     print(profiles)
 

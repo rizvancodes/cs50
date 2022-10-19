@@ -20,11 +20,8 @@ def main():
 
     profiles = dict(zip(names, strs))
 
-    print(profiles)
-
     # TODO: Read DNA sequence file into a variable
     sequence = (open(sys.argv[2], "r")).read()
-    print(sequence)
 
     # read column names into list
     columnList = []
@@ -33,24 +30,21 @@ def main():
         for row in reader:
             columnList = row
             break
-    print(columnList)
 
     # TODO: Find longest match of each STR in DNA sequence
     subjectcount = {}
     for i in columnList[1:]:
         subjectcount[i] = None
-    print(subjectcount)
 
     for keys in subjectcount.keys():
         subjectcount[keys] = str(longest_match(sequence, keys))
-    print(subjectcount)
 
     # TODO: Check database for matching profiles
     result = check_profiles(subjectcount, profiles)
     if result[0]:
-        print(profiles[keys])
-
-
+        print(result[1])
+    else:
+        print("No Match")
 
 def longest_match(sequence, subsequence):
     """Returns length of longest run of subsequence in sequence."""

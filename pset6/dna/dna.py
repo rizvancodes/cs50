@@ -25,7 +25,7 @@ def main():
         for row in reader:
             columnList.append(row)
             break
-    print(columnList)
+    print(columnList[0])
 
     subjectcount = {}
 

@@ -16,6 +16,7 @@ def main():
             id.append(row)
     # TODO: Read DNA sequence file into a variable
     sequence = (open(sys.argv[2], "r")).read()
+    print(sequence)
 
     # read column names into list
     columnList = []
@@ -28,7 +29,7 @@ def main():
 
     # TODO: Find longest match of each STR in DNA sequence
     subjectcount = {}
-    for i in columnList:
+    for i in columnList[1:]:
         subjectcount[i] = None
     print(subjectcount)
     # TODO: Check database for matching profiles

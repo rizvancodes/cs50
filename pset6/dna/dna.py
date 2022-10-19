@@ -19,6 +19,7 @@ def main():
     sequence = f.read()
 
     # TODO: Find longest match of each STR in DNA sequence
+    subjectcount = {}
     
     # TODO: Check database for matching profiles
 

@@ -21,6 +21,11 @@ def main():
             profiles[item[j]] = None
             item.pop('name')
             break
+
+    for profile in profiles:
+        for item in id:
+            profile = id
+            
     print(id)
     print(profiles)
 

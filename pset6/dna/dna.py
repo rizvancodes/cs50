@@ -21,6 +21,7 @@ def main():
     # read column names into list
     with open(filename) as f:
         reader = csv.reader(f, delimiter = ',')
+        columnList = []
         for row in reader:
             columnList.append(row)
             break

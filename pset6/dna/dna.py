@@ -49,7 +49,7 @@ def main():
     print(subjectcount)
 
     for keys in subjectcount.keys():
-        subjectcount[keys] = longest_match(sequence, keys)
+        subjectcount[keys] = str(longest_match(sequence, keys))
     print(subjectcount)
 
     # TODO: Check database for matching profiles

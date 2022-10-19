@@ -16,10 +16,10 @@ def main():
                 id.append(row)
     # TODO: Read DNA sequence file into a variable
     f = open(sys.argv[2], "r")
-    
+    sequence = f.read()
 
     # TODO: Find longest match of each STR in DNA sequence
-
+    
     # TODO: Check database for matching profiles
 
     return

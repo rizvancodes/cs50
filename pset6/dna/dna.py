@@ -24,9 +24,8 @@ def main():
 
     for keys in profiles.keys():
         for item in id:
-            profiles(keys) = item
+            profiles[keys] = item
 
-    print(id)
     print(profiles)
 
 
@@ -54,7 +53,9 @@ def main():
     print(subjectcount)
 
     # TODO: Check database for matching profiles
-
+    for keys in profiles.keys():
+        if subjectcount == profiles(keys):
+            print(profile)
 
     return
 

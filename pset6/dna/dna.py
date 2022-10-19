@@ -53,8 +53,11 @@ def main():
     print(subjectcount)
 
     # TODO: Check database for matching profiles
-    if check_profiles(subjectcount, profiles):
-        print()
+    result = check_profiles(subjectcount, profiles)
+    if result[0]:
+        print(result[1])
+    else:
+        print('No Match')
 
     return
 
@@ -96,10 +99,9 @@ def longest_match(sequence, subsequence):
     # After checking for runs at each character in seqeuence, return longest run found
     return longest_run
 
-def check_profiles(sequencecount, profiles)
-    def check_profiles(sequencecount, profiles)
+def check_profiles(sequencecount, profiles):
     for keys in profiles.keys():
-        if subjectcount == profiles[keys]:
+        if sequencecount == profiles[keys]:
             return True, keys
 
 main()

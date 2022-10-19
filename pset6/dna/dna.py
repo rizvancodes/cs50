@@ -14,7 +14,6 @@ def main():
         reader = csv.DictReader(f)
         for row in reader:
             id.append(row)
-    print(id)
 
     profiles = {}
     for i in id:

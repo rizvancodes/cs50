@@ -17,7 +17,7 @@ def main():
     print(id)
 
     profiles = {}
-
+    
 
     # TODO: Read DNA sequence file into a variable
     sequence = (open(sys.argv[2], "r")).read()

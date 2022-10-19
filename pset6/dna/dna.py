@@ -54,12 +54,7 @@ def main():
 
     # TODO: Check database for matching profiles
     result = check_profiles(subjectcount, profiles)
-    if result[0] == 1:
-        print(result[1])
-    else:
-        print('No Match')
-
-    return
+    print(result)
 
 
 def longest_match(sequence, subsequence):

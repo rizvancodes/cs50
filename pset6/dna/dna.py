@@ -17,18 +17,20 @@ def main():
     # TODO: Read DNA sequence file into a variable
     sequence = (open(sys.argv[2], "r")).read()
 
-    # TODO: Find longest match of each STR in DNA sequence
     # read column names into list
+    columnList = []
     with open(filename) as f:
         reader = csv.reader(f, delimiter = ',')
-        columnList = []
         for row in reader:
-            columnList.append(row)
+            columnList = row
             break
-    print(columnList[0])
+    print(columnList)
 
+    # TODO: Find longest match of each STR in DNA sequence
     subjectcount = {}
-
+    for i in columnList:
+        subjectcount[columnList[i]] = None
+    print(subjectcount)
     # TODO: Check database for matching profiles
 
     return

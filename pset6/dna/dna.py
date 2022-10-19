@@ -19,7 +19,9 @@ def main():
     sequence = f.read()
 
     # TODO: Find longest match of each STR in DNA sequence
-    #
+    # read column names into list
+    with open(filename) as f
+        
     subjectcount = {}
 
     # TODO: Check database for matching profiles

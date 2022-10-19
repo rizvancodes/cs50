@@ -32,6 +32,8 @@ def main():
     for i in columnList[1:]:
         subjectcount[i] = None
     print(subjectcount)
+
+    for 
     # TODO: Check database for matching profiles
 
     return

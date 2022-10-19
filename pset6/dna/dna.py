@@ -24,8 +24,8 @@ def main():
 
     for profile in profiles:
         for item in id:
-            profile = id
-            
+            profile() == item
+
     print(id)
     print(profiles)
 

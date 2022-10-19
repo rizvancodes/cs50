@@ -18,15 +18,11 @@ def main():
     names = []
     for item in id:
         for j in item:
-            profiles[item[j]] = None
+            names.append(item[j])
             item.pop('name')
             break
 
-    for keys in profiles.keys():
-        for item in id:
-            profiles[keys] = item
-
-    print(profiles)
+    print(names)
 
 
     # TODO: Read DNA sequence file into a variable
@@ -53,8 +49,7 @@ def main():
     print(subjectcount)
 
     # TODO: Check database for matching profiles
-    result = check_profiles(subjectcount, profiles)
-    print(result)
+
 
 
 
@@ -94,11 +89,5 @@ def longest_match(sequence, subsequence):
 
     # After checking for runs at each character in seqeuence, return longest run found
     return longest_run
-
-def check_profiles(sequencecount, profiles):
-    for keys in profiles.keys():
-        if sequencecount == profiles[keys]:
-            return True, keys
-    return False, "No Match"
 
 main()

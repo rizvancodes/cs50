@@ -23,7 +23,7 @@ def main():
         reader = csv.reader(f, delimiter = ',')
         columnList = []
         for row in reader:
-            column.append(row)
+            columnList.append(row)
             break
     print(columnList)
 

@@ -17,7 +17,9 @@ def main():
     print(id)
 
     profiles = {}
-    
+    for i in id
+        profile[id[0]]
+    print(id[0]['name'])
     # TODO: Read DNA sequence file into a variable
     sequence = (open(sys.argv[2], "r")).read()
     print(sequence)
@@ -42,7 +44,6 @@ def main():
     print(subjectcount)
 
     # TODO: Check database for matching profiles
-    for subseq in subjectcount
 
 
     return

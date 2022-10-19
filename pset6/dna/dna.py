@@ -54,8 +54,10 @@ def main():
 
     # TODO: Check database for matching profiles
     for keys in profiles.keys():
-        if subjectcount == profiles(keys):
+        if subjectcount == profiles[keys]:
             print(profile)
+        else:
+            print('No Match')
 
     return
 

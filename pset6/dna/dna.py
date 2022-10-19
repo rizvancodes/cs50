@@ -18,8 +18,8 @@ def main():
 
     profiles = {}
     for i in id:
-        for key in id[i].keys():
-            profile[key] = id[i].pop("name")
+        for key in i.keys():
+            profile[key] = id.pop("name")
             break
     print(profiles)
 

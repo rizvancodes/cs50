@@ -20,6 +20,7 @@ def main():
     for item in id:
         for j in item:
             profiles[item[j]] = None
+            dict
             break
     print(profiles)
 

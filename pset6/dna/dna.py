@@ -22,9 +22,9 @@ def main():
             item.pop('name')
             break
 
-    for profile in profiles:
+    for keys in profiles.keys():
         for item in id:
-            profile() == item
+            profiles(keys) = item
 
     print(id)
     print(profiles)

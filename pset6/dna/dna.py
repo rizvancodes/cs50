@@ -18,8 +18,9 @@ def main():
             row.pop('name')
             strs.append(row)
 
-    print(strs)
-    print(names)
+    profiles = dict(zip(names, strs))
+
+    print(profiles)
 
     # TODO: Read DNA sequence file into a variable
     sequence = (open(sys.argv[2], "r")).read()

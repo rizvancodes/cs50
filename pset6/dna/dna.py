@@ -15,7 +15,7 @@ def main():
         for row in reader:
             id.append(row)
 
-    profiles = {}
+    names = []
     for item in id:
         for j in item:
             profiles[item[j]] = None

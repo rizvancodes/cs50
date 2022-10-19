@@ -103,5 +103,6 @@ def check_profiles(sequencecount, profiles):
     for keys in profiles.keys():
         if sequencecount == profiles[keys]:
             return 1, keys
+        else
 
 main()

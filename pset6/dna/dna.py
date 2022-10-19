@@ -8,12 +8,12 @@ def main():
     if len(sys.argv) != 3:
         sys.exit("Usage: python dna.py DATABASE.CSV SEQUENCE.TXT")
     # TODO: Read database file into a variable
-    id = []
+    id = {}
     filename = sys.argv[1]
     with open(filename) as f:
         reader = csv.DictReader(f)
         for row in reader:
-            id.append(row)
+            
     print(id)
     # TODO: Read DNA sequence file into a variable
     sequence = (open(sys.argv[2], "r")).read()
@@ -40,7 +40,7 @@ def main():
 
     # TODO: Check database for matching profiles
     for subseq in subjectcount
-        
+
 
     return
 

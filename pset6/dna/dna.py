@@ -14,13 +14,10 @@ def main():
         reader = csv.DictReader(f)
         for row in reader:
             id.append(row)
+    print(id)
 
     profiles = {}
-    for i in id:
-        for key in i.keys():
-            profiles[key] = i.pop('name')
-            break
-    print(profiles)
+
 
     # TODO: Read DNA sequence file into a variable
     sequence = (open(sys.argv[2], "r")).read()

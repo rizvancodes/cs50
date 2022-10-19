@@ -14,15 +14,14 @@ def main():
         reader = csv.DictReader(f)
         for row in reader:
             id.append(row)
-    print(id)
 
     profiles = {}
     for item in id:
         for j in item:
             profiles[item[j]] = None
             item.pop('name')
-            profiles[item[j]] == item
             break
+    print(id)
     print(profiles)
 
 

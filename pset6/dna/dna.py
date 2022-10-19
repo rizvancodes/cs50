@@ -8,23 +8,20 @@ def main():
     if len(sys.argv) != 3:
         sys.exit("Usage: python dna.py DATABASE.CSV SEQUENCE.TXT")
     # TODO: Read database file into a variable
-    id = []
+     = []
+    names = []
     filename = sys.argv[1]
     with open(filename) as f:
         reader = csv.DictReader(f)
         for row in reader:
+            names.append(row['name'])
+            row.pop('name')
             id.append(row)
 
-    names = []
-    for item in id:
-        for j in item:
-            names.append(item[j])
-            item.pop('name')
-            break
 
 
     print(id)
-
+    print(names)
 
     # TODO: Read DNA sequence file into a variable
     sequence = (open(sys.argv[2], "r")).read()

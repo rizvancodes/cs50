@@ -33,7 +33,7 @@ def main():
 
     # TODO: Find longest match of each STR in DNA sequence
     subjectcount = {}
-    for i in names:
+    for i in columnList[1:]:
         subjectcount[i] = None
 
     for keys in subjectcount.keys():

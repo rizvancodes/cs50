@@ -19,11 +19,10 @@ def main():
     profiles = {}
     for i in id:
         for key in i.keys():
-            profile[key] = id.pop("name")
+            profiles[key] = i.pop('name')
             break
     print(profiles)
 
-    print(id[0]['name'])
     # TODO: Read DNA sequence file into a variable
     sequence = (open(sys.argv[2], "r")).read()
     print(sequence)

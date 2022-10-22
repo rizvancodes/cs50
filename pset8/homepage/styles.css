@@ -4,7 +4,7 @@ body{
 }
 
 nav{
-    background-color: white;
+    background-color: #e3f2fd;
 }
 
 .navbar-brand img {
@@ -81,6 +81,6 @@ button{
 }
 /* footer styling */
 #footer {
-    background-color: #808080;
+    background-color: #e3f2fd;
     text-align: center;
 }

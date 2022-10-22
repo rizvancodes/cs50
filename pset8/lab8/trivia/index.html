@@ -35,7 +35,7 @@
                 <p class="confirmation2"></p>
                 <form>
                     <input class="answer" type="text" placeholder="Type Answer"><br>
-                    <button class="confirm">Submit</button>
+                    <input class="confirm" type="button" value="Submit">
                 </form>
             </div>
         </div>
@@ -66,7 +66,6 @@
                         answer.style.backgroundColor = 'red';
                         document.querySelector('.confirmation2').innerHTML = 'Incorrect!';
                     }
-                    return false;
                     });
             });
         </script>

@@ -58,8 +58,10 @@
                 let confirm = document.querySelector('.confirm');
                 let answer = document.querySelector('.answer')
                 confirm.addEventListener('click', function () {
+                    if (confirm.value == 'float') {
+                    confirm.style.backgroundColor = 'green';
                     
-                    correct.style.backgroundColor = 'green';
+                    }
             });
         </script>
     </body>

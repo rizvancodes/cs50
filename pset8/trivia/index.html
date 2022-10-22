@@ -32,19 +32,16 @@
         </div>
         <script>
             // TODO: Add code to check answers to questions
-            window.addEventListener("loaded", function () {
-
+            window.addEventListener("load", function () {
                 let correct = document.querySelector('.correct');
                 correct.addEventListener('click', function () {
                     correct.style.backgroundColor = 'green';
                 });
 
                 let wrong = document.querySelector('.wrong');
-                for (let i = 0, i < wrong.length, i++) {
-                    wrong[i].addEventListener('click', function () {
-                        wrong[i].style.backgroundColor = 'red';
+                wrong.addEventListener('click', function () {
+                        wrong.style.backgroundColor = 'red';
                     });
-                }
             });
         </script>
     </body>

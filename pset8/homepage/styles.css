@@ -1,6 +1,8 @@
 body{
     display: block;
     overflow-x: hidden;
+    padding-bottom:0;
+
 }
 
 nav{

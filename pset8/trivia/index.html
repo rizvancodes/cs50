@@ -19,6 +19,7 @@
                 <h3 class="question">
                     Who is the lecturer for Harvard's CS50 Course?
                 </h3>
+                <p class="message"></p>
                 <p><small>Correct!</small></p>
                 <p><small>Incorrect!</small></p>
                 <button class="correct">David Malan</button>
@@ -38,12 +39,14 @@
                 let correct = document.querySelector('.correct');
                 correct.addEventListener('click', function () {
                     correct.style.backgroundColor = 'green';
+                    document.querySelector('.message').innerHTML = 'Correct!';
                 });
                 let wrong = document.querySelector('.wrong');
                 for (let i = 0, i < wrong.length; i++)
                 {
                     wrong.addEventListener('click', function () {
                         wrong.style.backgroundColor = 'red';
+                        document.querySelector('.message').innerHTML = 'Incorrect!';
                 }
                 });
             });

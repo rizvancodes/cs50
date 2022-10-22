@@ -38,10 +38,12 @@
                     correct.style.backgroundColor = 'green';
                 });
 
-                let wrong = document.querySelectorAll('.wrong');
-                wrong.addEventListener('click', function () {
+                let wrongs = document.querySelectorAll('.wrong');
+                for(i of wrongs) {
+                    i.addEventListener('click', function () {
                         wrong.style.backgroundColor = 'red';
                     });
+                }
             });
         </script>
     </body>

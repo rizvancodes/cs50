@@ -40,8 +40,11 @@
                     correct.style.backgroundColor = 'green';
                 });
                 let wrong = document.querySelector('.wrong');
-                wrong.addEventListener('click', function () {
-                    wrong.style.backgroundColor = 'red';
+                for (let i = 0, i < wrong.length; i++)
+                {
+                    wrong.addEventListener('click', function () {
+                        wrong.style.backgroundColor = 'red';
+                }
                 });
             });
         </script>

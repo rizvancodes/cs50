@@ -37,14 +37,11 @@
             window.addEventListener("load", function () {
                 let correct = document.querySelector('.correct');
                 correct.addEventListener('click', function () {
-                    correct.style.backgroundColour = 'green';
-
-                    let correct = document.querySelector('.correct');
-            correct.addEventListener('click', function () {
-                correct.style.backgroundColor = 'green';
+                    correct.style.backgroundColor = 'green';
                 });
-                document.querySelector('.wrong').addEventListener('click', function () {
-                    button.style.backgroundColour = 'red';
+                let wrong = document.querySelector('.wrong');
+                wrong.addEventListener('click', function () {
+                    wrong.style.backgroundColor = 'red';
                 });
             });
         </script>

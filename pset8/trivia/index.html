@@ -19,6 +19,7 @@
                 <h3 class="question">
                     Who is the lecturer for Harvard's CS50 Course?
                 </h3>
+                <p class="message"></p>
                 <button class="correct">David Malan</button>
                 <button class="wrong">Brian Yu</button>
                 <button class="wrong">Doug Lloyd</button>
@@ -36,12 +37,14 @@
                 let correct = document.querySelector('.correct');
                 correct.addEventListener('click', function () {
                     correct.style.backgroundColor = 'green';
+                    document.querySelector('.message').innerHTML = 'Correct!';
                 });
 
                 let wrongs = document.querySelectorAll('.wrong');
                 for (let i = 0; i < wrongs.length; i++) {
                     wrongs[i].addEventListener('click', function () {
                         wrongs[i].style.backgroundColor = 'red';
+                        document.querySelector('.message').innerHTML = 'Incorrect!';
                     });
                 }
             });

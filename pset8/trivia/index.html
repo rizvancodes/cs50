@@ -7,7 +7,7 @@
         <title>Trivia!</title>
         <script>
             // TODO: Add code to check answers to questions
-            let button = document.querySelector('input');
+            let button = document.querySelector('button');
             document.querySelector('#correct').addEventListener('click', function onClick() {
                 button.style.backgroundColour = 'green';
             });
@@ -31,9 +31,9 @@
                 </h3>
                 <p><small>Correct!</small></p>
                 <p><small>Incorrect!</small></p>
-                <input class="correct" type="button" value="David Malan">
-                <input class="wrong" type="button" value="Brian Yu">
-                <input class="wrong" type="button" value="Doug Lloyd">
+                <button class="correct">David Malan</button>
+                <button class="wrong">Brian Yu</button>
+                <button class="wrong">Doug Lloyd</button>
             </div>
 
             <div class="section">

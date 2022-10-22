@@ -40,13 +40,12 @@
                     document.querySelector('.message').innerHTML = 'Correct!';
                 });
                 let wrong = document.querySelector('.wrong');
-                for (let i = 0, i < wrong.length; i++)
-                {
+                for (let i = 0, i < wrong.length; i++) {
                     wrong.addEventListener('click', function () {
                         wrong.style.backgroundColor = 'red';
                         document.querySelector('.message').innerHTML = 'Incorrect!';
+                    });
                 }
-                });
             });
         </script>
     </body>

@@ -31,7 +31,7 @@ nav ul li a:hover{
 /* Styling for Hero Section */
 section{
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 0px;
 }
 
 section h1{

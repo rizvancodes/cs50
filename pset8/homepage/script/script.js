@@ -5,7 +5,7 @@ var speed = 50; /* The speed/duration of the effect in milliseconds */
 
 window.addEventListener("DOMContentLoaded", function () {
   if (i < txt.length) {
-    document.getElementById("#typed").innerHTML += txt.charAt(i);
+    document.getElementById("typed").innerHTML += txt.charAt(i);
     i++;
     setTimeout(typeWriter, speed);
   }

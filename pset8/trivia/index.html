@@ -54,7 +54,12 @@
                         document.querySelector('.message').innerHTML = 'Incorrect!';
                     });
                 }
-                
+
+                let confirm = document.querySelector('.confirm');
+                let answer = document.querySelector('.answer')
+                confirm.addEventListener('click', function () {
+                    
+                    correct.style.backgroundColor = 'green';
             });
         </script>
     </body>

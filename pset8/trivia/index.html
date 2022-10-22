@@ -19,7 +19,7 @@
                 <h3 class="question">
                     Who is the lecturer for Harvard's CS50 Course?
                 </h3>
-                <p class="message"></p>
+                <p class="confirmation"></p>
                 <button class="correct">David Malan</button>
                 <button class="wrong">Brian Yu</button>
                 <button class="wrong">Doug Lloyd</button>
@@ -32,6 +32,7 @@
                 <h3 class="question">
                     Which data type is used for a decimal in C?
                 </h3>
+                <p class="confirmation2"></p>
                 <form>
                     <input class="answer" type="text" placeholder="Type Answer"><br>
                     <input class="confirm" type="submit">
@@ -44,24 +45,28 @@
                 let correct = document.querySelector('.correct');
                 correct.addEventListener('click', function () {
                     correct.style.backgroundColor = 'green';
-                    document.querySelector('.message').innerHTML = 'Correct!';
+                    document.querySelector('.confirmation').innerHTML = 'Correct!';
                 });
 
                 let wrongs = document.querySelectorAll('.wrong');
                 for (let i = 0; i < wrongs.length; i++) {
                     wrongs[i].addEventListener('click', function () {
                         wrongs[i].style.backgroundColor = 'red';
-                        document.querySelector('.message').innerHTML = 'Incorrect!';
+                        document.querySelector('.confirmation').innerHTML = 'Incorrect!';
                     });
                 }
 
                 let confirm = document.querySelector('.confirm');
                 let answer = document.querySelector('.answer')
                 confirm.addEventListener('click', function () {
-                    if (confirm.value == 'float') {
-                    confirm.style.backgroundColor = 'green';
-                    
+                    if (answer.value == 'float') {
+                        answer.style.backgroundColor = 'green';
+                        document.querySelector('.confirmation2').innerHTML = 'Correct!';
+                    } else {
+                        answer.style.backgroundColor = 'red';
+                        document.querySelector('.confirmation2').innerHTML = 'Incorrect!';
                     }
+                    });
             });
         </script>
     </body>

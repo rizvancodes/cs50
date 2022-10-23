@@ -71,11 +71,6 @@ button{
     width: 115%;
 }
 
-.accordion-button:after {
-    display: none;
-    content: /2b;
-   }
-
 /* footer social media icons styling */
 .social-icons {
     font-size: 36px;

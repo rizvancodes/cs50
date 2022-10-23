@@ -72,6 +72,9 @@ button{
     width: 115%;
 }
 
+/* Collapsible styling */
+.btn btn-link collapsed
+
 /* footer social media icons styling */
 .social-icons {
     font-size: 36px;

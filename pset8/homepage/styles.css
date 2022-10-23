@@ -73,6 +73,7 @@ button{
 
 .accordion-button:after {
     display: none;
+    content: /2b;
    }
 
 /* footer social media icons styling */

@@ -24,6 +24,7 @@ int main(void)
     float L = ((float)lettercount / (float)wordcount) * 100;
     float S = ((float)sentencecount / (float)wordcount) * 100;
     int index = round(0.0588 * L - 0.296 * S - 15.8);
+    printf("%i\n", index);
 
     if (index < 1)
     {

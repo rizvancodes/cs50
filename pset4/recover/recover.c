@@ -45,6 +45,7 @@ int main(int argc, char *argv[])
             fclose(output);
          }
          sprintf(filename, "%03i.jpg", jpegnum);
+         output = fopen(filename, "w");
          fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, output);
          jpegnum++;
       }

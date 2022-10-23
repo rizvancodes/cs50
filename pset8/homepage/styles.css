@@ -71,7 +71,11 @@ button{
     width: 115%;
 }
 
-
+/* Styling for About Section */
+.accordion-header{
+    font-size: 16px;
+    font-weight: 300;
+}
 
 /* footer social media icons styling */
 .social-icons {

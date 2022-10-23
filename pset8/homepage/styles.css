@@ -72,6 +72,9 @@ button{
 }
 
 /* Styling for About Section */
+acc p{
+    font-size: 16px;
+    font-weight: 300;
 
 /* footer social media icons styling */
 .social-icons {

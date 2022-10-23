@@ -14,7 +14,6 @@ int count_sentences(string text);
 int main(void)
 {
     string sample = get_string("Text: ");
-    printf("%s \n", sample);
     int lettercount = count_letters(sample);
     printf("%i letters\n", lettercount);
     int wordcount = count_words(sample);
@@ -24,7 +23,6 @@ int main(void)
     float L = ((float)lettercount / (float)wordcount) * 100;
     float S = ((float)sentencecount / (float)wordcount) * 100;
     int index = round(0.0588 * L - 0.296 * S - 15.8);
-    printf("%i\n", index);
 
     if (index < 1)
     {

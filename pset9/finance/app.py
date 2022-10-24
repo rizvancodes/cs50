@@ -67,7 +67,7 @@ def buy():
             elif cost > cash:
                 return apology("You do not have sufficient funds", 400)
             else:
-                
+                db.execute(INSERT INTO transactions (user_id, type, symbol, quantity, price, cost))
 
 
 

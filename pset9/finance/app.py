@@ -128,7 +128,7 @@ def register():
             return apology("must provide username", 403)
         """Register user"""
     else:
-        return redirect("/register")
+        return render_template("/register")
 
 
 @app.route("/sell", methods=["GET", "POST"])

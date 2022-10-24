@@ -120,7 +120,9 @@ def register():
     if not request.form.get("username"):
         return apology("must provide username", 403)
     for username in usernames
-        if username == request.form.get("username)
+        if username == request.form.get("username"):
+            return apology("username already exists", 403)
+        else
     """Register user"""
     return apology("TODO")
 

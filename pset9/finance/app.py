@@ -118,7 +118,8 @@ def quote():
         quote = lookup(symbol)
         if quote = None:
             return apology("This stock does not exist", 400)
-        
+        else:
+            render_template("quoted.html", quote)
 
 
 

@@ -61,7 +61,7 @@ def buy():
             quote = lookup("symbol")
             id = session["user_id"]
             cash = db.execute("SELECT cash FROM users WHERE id = ?", id)
-            cost = shares * quote["price"]
+            cost = int(shares) * float(quote["price"])
             if quote == None:
                 return apology("This stock does not exist", 400)
             elif cost > cash:

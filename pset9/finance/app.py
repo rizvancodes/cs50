@@ -59,14 +59,14 @@ def buy():
             return apology("You must enter a valid number of shares", 422)
         else:
             quote = lookup(symbol)
-            id = session["user_id"]
-            cash = db.execute("SELECT cash FROM users WHERE id = ?", id)
-            cost = float(shares) * float(quote["price"])
             if quote == None:
                 return apology("This stock does not exist", 400)
-            elif cost > float(cash[0]["cash"]):
-                return apology("You do not have sufficient funds", 400)
             else:
+                id = session["user_id"]
+                cash = db.execute("SELECT cash FROM users WHERE id = ?", id)
+                cost = float(shares) * float(quote["price"])
+                if cost > float(cash[0]["cash"]):
+                    return apology("You do not have sufficient funds", 400)
                 db.execute("INSERT INTO transactions (user_id, type, symbol, quantity, price, cost) VALUES (?, ?, ?, ?, ?, ?)", id, 'BUY', symbol, shares, quote["price"], cost)
                 remcash = float(cash[0]["cash"]) - cost
                 db.execute("UPDATE users SET cash = ? where id = ?", remcash, id)

@@ -24,13 +24,13 @@ def after_request(response):
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+    # Add the user's entry into the database
     if request.method == "POST":
         name = request.form.get("name")
         day = request.form.get("day")
         month = request.form.get("month")
         id = request.form.get("id")
-        if name:
-            # TODO: Add the user's entry into the database
+        if name and day and month:
             # Remember registrant
             db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
         elif id:

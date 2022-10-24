@@ -132,7 +132,7 @@ def register():
                 if username['username'] == request.form.get("username"):
                     return apology("username already exists", 422)
             username = request.form.get("username")
-            hash = generate_password_hash(request.form.get("password"), method='pbkdf2:sha256', salt_length=8)
+            hash = generate_password_hash(request.form.get("password"))
 
         if not request.form.get("password") == request.form.get("confirmation"):
             return apology("must provide username", 422)

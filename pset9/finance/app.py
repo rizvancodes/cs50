@@ -119,8 +119,9 @@ def quote():
         if quote == None:
             return apology("This stock does not exist", 400)
         else:
-            render_template("quoted.html", quote=quote)
-    return render_template("quote.html")
+            return render_template("quoted.html", quote=quote)
+    else:
+        return render_template("quote.html")
 
 
 @app.route("/register", methods=["GET", "POST"])

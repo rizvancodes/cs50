@@ -25,14 +25,16 @@ def after_request(response):
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-
-        # TODO: Add the user's entry into the database
         name = request.form.get("name")
         day = request.form.get("day")
         month = request.form.get("month")
-
-    # Remember registrant
-        db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
+        id = request.form.get("id")
+        if name:
+            # TODO: Add the user's entry into the database
+            # Remember registrant
+            db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
+        elif id:
+            db.execute("DELETE FROM birthdays WHERE id = ?", id)
 
     # Confirm registration
         return redirect("/")
@@ -42,11 +44,4 @@ def index():
         birthdaylist = db.execute("SELECT * FROM birthdays")
 
         return render_template("index.html", birthdaylist=birthdaylist)
-
-@app.route("/", methods=["POST"])
-def deregister():
-    # Forget registrant
-    id = request.form.get("id")
-    db.execute("DELETE FROM birthdays WHERE id = ?", id)
-    return redirect("/")
 

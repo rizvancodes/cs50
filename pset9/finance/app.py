@@ -116,14 +116,11 @@ def quote():
         if not request.form.get("symbol"):
             return apology("You must provide a symbol", 400)
         quote = lookup(symbol)
-        if quote = None:
+        if quote == None:
             return apology("This stock does not exist", 400)
         else:
-            render_template("quoted.html", quote)
-
-
-
-    return apology("TODO")
+            render_template("quoted.html", quote=quote)
+    return render_template("quote.html")
 
 
 @app.route("/register", methods=["GET", "POST"])

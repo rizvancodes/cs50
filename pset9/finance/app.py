@@ -64,11 +64,11 @@ def buy():
             cost = float(shares) * float(quote["price"])
             if quote == None:
                 return apology("This stock does not exist", 400)
-            elif cost > float(cash[0][cash]):
+            elif cost > float(cash[0]["cash"]):
                 return apology("You do not have sufficient funds", 400)
             else:
                 db.execute("INSERT INTO transactions (user_id, type, symbol, quantity, price, cost) VALUES (?, ?, ?, ?, ?, ?)", id, 'BUY', symbol, shares, quote["price"], cost)
-                remcash = cash - cost
+                remcash = float(cash[0]["cash"]) - cost
                 db.execute("INSERT INTO users (cash)", remcash)
                 db.execute("INSERT INTO portfolios (user_id, symbol, quantity)", id, symbol, shares)
             return render_template("index.html")

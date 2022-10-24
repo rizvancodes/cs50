@@ -131,6 +131,8 @@ def register():
             for username in usernames:
                 if username['username'] == request.form.get("username"):
                     return apology("username already exists", 422)
+            username = request.form.get("username")
+            hash = request.form.get("password")
 
         if not request.form.get("password") == request.form.get("confirmation"):
             return apology("must provide username", 422)

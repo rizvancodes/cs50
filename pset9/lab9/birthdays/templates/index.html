@@ -28,10 +28,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for birthday in birthdays %}
+                        {% for birthday in birthdaylist %}
                             <tr>
-                                <td>{{ birthdays["name"] }}</td>
-                                <td>{{ birthdays["month"] }}/{{ registrant["day"] }}</td>
+                                <td>{{ birthdaylist["name"] }}</td>
+                                <td>{{ birthdaylist["month"] }}/{{ birthdaylist["day"] }}</td>
                             </tr>
                         {% endfor %}
                     </tbody>

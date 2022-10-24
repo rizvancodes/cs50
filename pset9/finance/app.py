@@ -67,7 +67,12 @@ def buy():
             elif cost > cash:
                 return apology("You do not have sufficient funds", 400)
             else:
-                db.execute(INSERT INTO transactions (user_id, type, symbol, quantity, price, cost))
+                db.execute("INSERT INTO transactions (user_id, type, symbol, quantity, price, cost) VALUES (?, ?, ?, ?, ?, ?)", id, 'BUY', symbol, shares, quote["price"], cost)
+                remcash = cash - cost
+                db.execute("INSERT INTO users (cash)", remcash)
+                db.execute("INSERT INTO portfolios (user_id, symbol, quantity)", id, symbol, shares)
+        else:
+            return
 
 
 

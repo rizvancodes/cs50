@@ -28,10 +28,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for registrant in registrants %}
+                        {% for birthday in birthdays %}
                         <tr>
-                            <td>{{ registrant["name"] }}</td>
-                            <td>{{ registrant["month"] }}/{{ registrant["day"] }}</td>
+                            <td>{{ birthdays["name"] }}</td>
+                            <td>{{ birthdays["month"] }}/{{ registrant["day"] }}</td>
                             <td>
                                 <form action="/delete" method="post">
                                     <input name="id" type="hidden" value="{{ birthdays.id }}">

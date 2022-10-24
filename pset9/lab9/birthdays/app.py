@@ -47,7 +47,6 @@ def index():
 def deregister():
     # Forget registrant
     id = request.form.get("id")
-    if id:
-        db.execute("DELETE FROM birthdays WHERE id = ?", id)
+    db.execute("DELETE FROM birthdays WHERE id = ?", id)
     return redirect("/")
 

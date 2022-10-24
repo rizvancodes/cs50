@@ -121,7 +121,7 @@ def register():
 
         usernames = db.execute("SELECT username FROM users")
 
-        if not request.form.get("username") or request.form.get("password") or request.form.get("confirmation"):
+        if not request.form.get("username") or not request.form.get("password") or not request.form.get("confirmation"):
             return apology("must provide username", 422)
         for username in usernames:
             if username == request.form.get("username"):

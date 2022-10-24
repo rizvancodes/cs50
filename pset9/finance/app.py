@@ -128,7 +128,7 @@ def register():
                 return apology("username already exists", 422)
         if not request.form.get("password") == request.form.get("confirmation"):
             return apology("must provide username", 422)
-            
+
         """Register user"""
     else:
         return render_template("/register.html")

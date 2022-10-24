@@ -53,7 +53,10 @@ def buy():
     if request.method.get == "POST":
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
-        if symbol
+        if not request.form.get("symbol"):
+            return apology("must provide stock", 422)
+        elif shares <= 0
+
 
     return apology("TODO")
 

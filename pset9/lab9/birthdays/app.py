@@ -43,6 +43,7 @@ def index():
 
         return render_template("index.html", birthdaylist=birthdaylist)
 
+@app.route("/", methods=["POST"])
 def deregister():
     # Forget registrant
     id = request.form.get("id")

@@ -117,17 +117,18 @@ def quote():
 @app.route("/register", methods=["GET", "POST"])
 def register():
 
-if 
-    usernames = db.execute("SELECT username FROM users")
-    if not request.form.get("username") or request.form.get("password") or request.form.get("confirmation"):
-        return apology("must provide username", 403)
-    for username in usernames
-        if username == request.form.get("username"):
-            return apology("username already exists", 403)
-    if not request.form.get("password") == request.form.get("confirmation):
-        return apology("must provide username", 403)
-    """Register user"""
-    return apology("TODO")
+    if request.method == "POST":
+        usernames = db.execute("SELECT username FROM users")
+        if not request.form.get("username") or request.form.get("password") or request.form.get("confirmation"):
+            return apology("must provide username", 403)
+        for username in usernames:
+            if username == request.form.get("username"):
+                return apology("username already exists", 403)
+        if not request.form.get("password") == request.form.get("confirmation"):
+            return apology("must provide username", 403)
+        """Register user"""
+    else:
+        return redirect("/register")
 
 
 @app.route("/sell", methods=["GET", "POST"])

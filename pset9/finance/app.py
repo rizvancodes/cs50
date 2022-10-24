@@ -50,7 +50,7 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
-    
+    if request.method.get == "POST"
     return apology("TODO")
 
 

@@ -69,8 +69,8 @@ def buy():
             else:
                 db.execute("INSERT INTO transactions (user_id, type, symbol, quantity, price, cost) VALUES (?, ?, ?, ?, ?, ?)", id, 'BUY', symbol, shares, quote["price"], cost)
                 remcash = float(cash[0]["cash"]) - cost
-                db.execute("INSERT INTO users (cash)", remcash)
-                db.execute("INSERT INTO portfolios (user_id, symbol, quantity)", id, symbol, shares)
+                db.execute("INSERT INTO users (cash) VALUES (?)", remcash)
+                db.execute("INSERT INTO portfolios (user_id, symbol, quantity) VALUES(?, ?, ?)", id, symbol, shares)
             return render_template("index.html")
     else:
         return render_template("buy.html")

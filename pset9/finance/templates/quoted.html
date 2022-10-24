@@ -14,13 +14,11 @@
             </tr>
         </thead>
         <tbody>
-            {% for stock in quote %}
                 <tr>
-                    <td>{{ stock["symbol"] }}</td>
-                    <td>{{ stock["name"] }}</td>
-                    <td>{{ stock["price"] }}</td>
+                    <td>{{ quote["symbol"] }}</td>
+                    <td>{{ quote["name"] }}</td>
+                    <td>{{ quote["price"] }}</td>
                 </tr>
-            {% endfor %}
         </tbody>
     </table>
 {% endblock %}

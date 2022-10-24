@@ -43,3 +43,11 @@ def index():
 
         return render_template("index.html", birthdaylist=birthdaylist)
 
+@app.route("/", methods=["POST"])
+def deregister():
+    # Forget registrant
+    id = request.form.get("id")
+    if id:
+        db.execute("DELETE FROM registrants WHERE id = ?", id)
+    return redirect("/")
+

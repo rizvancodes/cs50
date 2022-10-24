@@ -71,8 +71,9 @@ def buy():
                 remcash = cash - cost
                 db.execute("INSERT INTO users (cash)", remcash)
                 db.execute("INSERT INTO portfolios (user_id, symbol, quantity)", id, symbol, shares)
+            return render_template("index.html")
         else:
-            return
+            return render_template("buy.html")
 
 
 

@@ -115,7 +115,13 @@ def quote():
         symbol = request.form.get("symbol")
         if not request.form.get("symbol"):
             return apology("You must provide a symbol", 400)
-        else
+        quote = lookup(symbol)
+        if quote = None:
+            return apology("This stock does not exist", 400)
+        
+
+
+
     return apology("TODO")
 
 

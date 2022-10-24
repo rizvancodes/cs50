@@ -50,12 +50,12 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
-    if request.method.get == "POST":
+    if request.method == "POST":
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
         if not request.form.get("symbol"):
             return apology("must provide stock", 422)
-        elif shares <= 0:
+        elif int(shares) <= 0:
             return apology("You must enter a valid number of shares", 422)
         else:
             quote = lookup("symbol")

@@ -58,7 +58,7 @@ def buy():
         elif int(shares) <= 0:
             return apology("You must enter a valid number of shares", 422)
         else:
-            quote = lookup("symbol")
+            quote = lookup(symbol)
             id = session["user_id"]
             cash = db.execute("SELECT cash FROM users WHERE id = ?", id)
             cost = int(shares) * float(quote["price"])

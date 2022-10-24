@@ -58,7 +58,12 @@ def buy():
         elif shares <= 0:
             return apology("You must enter a valid number of shares", 422)
         else
-            
+            quote = lookup("symbol")
+            cash = db.execute(SELECT )
+            if quote == None:
+                return apology("This stock does not exist", 400)
+
+
 
 
     return apology("TODO")

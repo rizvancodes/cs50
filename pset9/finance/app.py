@@ -57,11 +57,20 @@ def buy():
             return apology("must provide stock", 422)
         elif shares <= 0:
             return apology("You must enter a valid number of shares", 422)
-        else
+        else:
             quote = lookup("symbol")
-            cash = db.execute(SELECT )
+            id = session["user_id"]
+            cash = db.execute("SELECT cash FROM users WHERE id = ?", id)
+            cost = shares * quote["price"]
             if quote == None:
                 return apology("This stock does not exist", 400)
+            elif cost > cash:
+                return apology("You do not have sufficient funds", 400)
+            else:
+                
+
+
+
 
 
 

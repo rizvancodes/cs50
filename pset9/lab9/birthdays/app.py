@@ -27,12 +27,6 @@ def index():
     if request.method == "POST":
 
         # TODO: Add the user's entry into the database
-        <form action="/" method="post">
-            <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
-            <input name="day" placeholder="Day" type="text">
-            <input name="month" placeholder="Month" type="text">
-            <input type="submit" value="Add Birthday">
-        </form>
 
         return redirect("/")
 

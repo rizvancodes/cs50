@@ -127,9 +127,11 @@ def register():
             return apology("must provide password", 422)
         elif not request.form.get("confirmation"):
             return apology("must confirm password", 422)
-        for username in usernames:
-            if username == request.form.get("username"):
-                return apology("username already exists", 422)
+        else
+            for username in usernames:
+                if username == request.form.get("username"):
+                    return apology("username already exists", 422)
+                    
         if not request.form.get("password") == request.form.get("confirmation"):
             return apology("must provide username", 422)
 

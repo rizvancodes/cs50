@@ -27,6 +27,14 @@ def index():
     if request.method == "POST":
 
         # TODO: Add the user's entry into the database
+        <form action="/register" method="post">
+
+        <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+        <input name="sport" type="text">
+        {% endfor %}
+        <input type="submit" value="Register">
+
+    </form>
 
         return redirect("/")
 

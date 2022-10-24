@@ -29,16 +29,10 @@
                     </thead>
                     <tbody>
                         {% for birthday in birthdays %}
-                        <tr>
-                            <td>{{ birthdays["name"] }}</td>
-                            <td>{{ birthdays["month"] }}/{{ registrant["day"] }}</td>
-                            <td>
-                                <form action="/delete" method="post">
-                                    <input name="id" type="hidden" value="{{ birthdays.id }}">
-                                    <input type="submit" value="Delete">
-                                </form>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>{{ birthdays["name"] }}</td>
+                                <td>{{ birthdays["month"] }}/{{ registrant["day"] }}</td>
+                            </tr>
                         {% endfor %}
                     </tbody>
                 </table>

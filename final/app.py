@@ -11,6 +11,18 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 @app.route("/")
 def index():
+    """
+    initialize drop down menus
+    """
+
+    units = get_dropdown_values()
+
+    default_classes = sorted(class_entry_relations.keys())
+    default_values = class_entry_relations[default_classes[0]]
+
+    return render_template('index.html',
+                       all_classes=default_classes,
+                       all_entries=default_values)
     return render_template("index.html")
 
 @app.route("/extcert")

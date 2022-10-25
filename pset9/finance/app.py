@@ -84,7 +84,7 @@ def buy():
                         db.execute("UPDATE portfolios SET quantity = ? WHERE id = ? AND symbol = ?", new, id, symbol)
                     else:
                         db.execute("INSERT INTO portfolios (user_id, symbol, quantity) VALUES(?, ?, ?)", id, symbol, shares)
-        return redirect("/index.html")
+        return redirect("/")
     else:
         return render_template("buy.html")
 
@@ -220,6 +220,6 @@ def sell():
                     db.execute("UPDATE portfolios SET quantity = ? WHERE id = ? AND symbol = ?", new, id, symbol)
                     if new == 0:
                         db.execute("DELETE FROM portfolios WHERE symbol = ?", symbol)
-            return redirect("/index.html")
+            return redirect("/")
 
     return render_template("sell.html", portfolio=portfolio)

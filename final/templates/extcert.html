@@ -5,5 +5,9 @@
 {% endblock %}
 
 {% block main %}
-    
+    <select name="symbol">
+        {% for unit in units %}
+        <option value="{{ unit["id"] }}">{{ unit["id"] }}.{{ unit["name"] }}</option>
+        {% endfor %}
+    </select>
 {% endblock %}

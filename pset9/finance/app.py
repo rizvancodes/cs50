@@ -44,10 +44,10 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
     stocks = db.execute("SELECT * FROM portfolios")
-    cash = float((db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"]))[0]["cash"])
+    cash = (db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"]))[0]["cash"]
     holdings = cash
     for stock in stocks:
-        stock["value"] = float(stock["quantity"]) * float(lookup(stock["symbol"])["price"])
+        stock["value"] = stock["quantity"] * lookup(stock["symbol"])["price"]
         holdings += stock["value"]
     return render_template("index.html", stocks=stocks, cash=cash, holdings=holdings)
 

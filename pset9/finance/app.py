@@ -45,7 +45,7 @@ def index():
     """Show portfolio of stocks"""
     stocks = db.execute("SELECT * FROM portfolios")
     for stock in stocks
-        stock[
+        s
     return apology("TODO")
 
 

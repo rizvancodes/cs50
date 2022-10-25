@@ -56,6 +56,7 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
+    portfolio = db.execute("SELECT * FROM portfolios WHERE user_id = ?", session["user_id"])
     if request.method == "POST":
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
@@ -76,8 +77,7 @@ def buy():
                 db.execute("INSERT INTO transactions (user_id, type, symbol, quantity, price, cost, timestamp) VALUES (?, ?, ?, ?, ?, ?, datetime('now'))", id, 'BUY', symbol, shares, quote["price"], cost)
                 remcash = float(cash[0]["cash"]) - cost
                 db.execute("UPDATE users SET cash = ? WHERE id = ?", remcash, id)
-                currentHoldings = db.execute("SELECT * FROM portfolios WHERE user_id = ?", id)
-                for stock in currentHoldings:
+                for stock in portfolio:
                     if symbol == stock["symbol"]:
                         old = db.execute("SELECT quantity FROM portfolios WHERE user_id = ? AND symbol = ?", id, symbol)
                         new = int(shares) + int(old[0]["quantity"])

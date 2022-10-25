@@ -205,6 +205,8 @@ def sell():
                 if symbol == stock["symbol"]:
                     if float(shares) > (db.execute("SELECT quantity FROM portfolios WHERE symbol = ?", symbol))[0]["quantity"]:
                         return apology("You must enter a valid number of shares", 422)
+            
+
 
 
     return render_template("sell.html", portfolio=portfolio)

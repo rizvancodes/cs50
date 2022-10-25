@@ -63,7 +63,7 @@ def buy():
         quote = lookup(symbol)
         if not request.form.get("symbol"):
             return apology("must provide stock", 400)
-        elif shares.isdigit():
+        elif not shares.isdigit():
             return apology("You must enter a valid number of shares", 400)
         elif quote == None:
                 return apology("This stock does not exist", 400)

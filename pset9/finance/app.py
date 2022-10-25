@@ -43,9 +43,8 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    id = session["user_id"]
-    stocks = db.execute("SELECT * FROM portfolios WHERE user_id = ?", id)
-    cash = db.execute("SELECT cash FROM users WHERE id = ?", id)[0]["cash"]
+    stocks = db.execute("SELECT * FROM portfolios WHERE user_id = ?", session["user_id"])
+    cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"]
     holdings = cash
     for stock in stocks:
         stock["value"] = stock["quantity"] * lookup(stock["symbol"])["price"]
@@ -61,7 +60,7 @@ def buy():
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
         if not request.form.get("symbol"):
-            return apology("must provide stock", 422)
+            return apology("must provide stock", 400)
         elif int(shares) <= 0:
             return apology("You must enter a valid number of shares", 400)
         else:

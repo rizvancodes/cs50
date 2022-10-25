@@ -18,8 +18,8 @@
         <tbody>
             {% for stock in stocks %}
                 <tr>
-                    <td>{{ stock["symbol"]}}</td>
-                    <td>{{ stock["quantity"]}}</td>
+                    <td>{{ stock["symbol"] }}</td>
+                    <td>{{ stock["quantity"] }}</td>
                     <td>{{ stock["value"] | usd }}</td>
                 </tr>
             {% endfor %}

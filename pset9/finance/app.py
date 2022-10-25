@@ -203,7 +203,7 @@ def sell():
         if not request.form.get("symbol"):
             return apology("must provide stock", 422)
         elif float(shares) <= 0 or not float(shares).is_integer():
-            return apology("You must enter a valid number of shares", 422)
+            return apology("You must enter a valid number of shares", 400)
         else:
             for stock in portfolio:
                 if symbol == stock["symbol"]:

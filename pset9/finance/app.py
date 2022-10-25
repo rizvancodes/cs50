@@ -76,14 +76,6 @@ def buy():
         return render_template("buy.html")
 
 
-
-
-
-
-
-    return apology("TODO")
-
-
 @app.route("/history")
 @login_required
 def history():

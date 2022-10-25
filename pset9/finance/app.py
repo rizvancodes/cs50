@@ -210,20 +210,20 @@ def sell():
                     if int(shares) > (db.execute("SELECT quantity FROM portfolios WHERE symbol = ?", symbol))[0]["quantity"]:
                         return apology("You must enter a valid number of shares", 422)
 
-            quote = lookup(symbol)
-            id = session["user_id"]
-            cash = db.execute("SELECT cash FROM users WHERE id = ?", id)
-            cost = float(shares) * float(quote["price"])
-            db.execute("INSERT INTO transactions (user_id, type, symbol, quantity, price, cost, timestamp) VALUES (?, ?, ?, ?, ?, ?, datetime('now'))", id, 'SELL', symbol, shares, quote["price"], cost)
-            remcash = float(cash[0]["cash"]) + cost
-            db.execute("UPDATE users SET cash = ? WHERE id = ?", 10000, id)
-            for stock in portfolio:
-                if symbol == stock["symbol"]:
-                    old = db.execute("SELECT quantity FROM portfolios WHERE user_id = ? AND symbol = ?", id, symbol)
-                    new = int(old[0]["quantity"]) - int(shares)
-                    db.execute("UPDATE portfolios SET quantity = ? WHERE user_id = ? AND symbol = ?", new, id, symbol)
-                    if new == 0:
-                        db.execute("DELETE FROM portfolios WHERE user_id = ? AND symbol = ?", id, symbol)
-            return redirect("/")
+        quote = lookup(symbol)
+        id = session["user_id"]
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", id)
+        cost = float(shares) * float(quote["price"])
+        db.execute("INSERT INTO transactions (user_id, type, symbol, quantity, price, cost, timestamp) VALUES (?, ?, ?, ?, ?, ?, datetime('now'))", id, 'SELL', symbol, shares, quote["price"], cost)
+        remcash = float(cash[0]["cash"]) + cost
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", 10000, id)
+        for stock in portfolio:
+            if symbol == stock["symbol"]:
+                old = db.execute("SELECT quantity FROM portfolios WHERE user_id = ? AND symbol = ?", id, symbol)
+                new = int(old[0]["quantity"]) - int(shares)
+                db.execute("UPDATE portfolios SET quantity = ? WHERE user_id = ? AND symbol = ?", new, id, symbol)
+                if new == 0:
+                    db.execute("DELETE FROM portfolios WHERE user_id = ? AND symbol = ?", id, symbol)
+        return redirect("/")
 
     return render_template("sell.html", portfolio=portfolio)

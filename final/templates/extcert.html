@@ -5,7 +5,12 @@
 {% endblock %}
 
 {% block main %}
-    <select name="symbol">
+    <select name="unit">
+        {% for unit in units %}
+        <option value="{{ unit["id"] }}">{{ unit["id"] }}.{{ unit["name"] }}</option>
+        {% endfor %}
+    </select>
+    <select name="grade">
         {% for unit in units %}
         <option value="{{ unit["id"] }}">{{ unit["id"] }}.{{ unit["name"] }}</option>
         {% endfor %}

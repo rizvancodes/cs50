@@ -60,20 +60,20 @@ def buy():
     if request.method == "POST":
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
+        quote = lookup(symbol)
         if not request.form.get("symbol"):
             return apology("must provide stock", 400)
         elif int(shares) <= 0:
             return apology("You must enter a valid number of shares", 400)
-        else:
-            quote = lookup(symbol)
-            if quote == None:
+        elif quote == None:
                 return apology("This stock does not exist", 400)
-            else:
-                id = session["user_id"]
-                cash = db.execute("SELECT cash FROM users WHERE id = ?", id)
-                cost = float(shares) * float(quote["price"])
-                if cost > float(cash[0]["cash"]):
+        else:
+            id = session["user_id"]
+            cash = db.execute("SELECT cash FROM users WHERE id = ?", id)
+            cost = float(shares) * float(quote["price"])
+            if cost > float(cash[0]["cash"]):
                     return apology("You do not have sufficient funds", 400)
+
                 db.execute("INSERT INTO transactions (user_id, type, symbol, quantity, price, cost, timestamp) VALUES (?, ?, ?, ?, ?, ?, datetime('now'))", id, 'BUY', symbol, shares, quote["price"], cost)
                 remcash = float(cash[0]["cash"]) - cost
                 db.execute("UPDATE users SET cash = ? WHERE id = ?", remcash, id)

@@ -15,7 +15,7 @@ def index():
     initialize drop down menus
     """
 
-    units = get_dropdown_values()
+    units = {Applied Science: [Principles and Applications of Science I, Practical Scientific Procedures and Techniques]}
 
     default_classes = sorted(class_entry_relations.keys())
     default_values = class_entry_relations[default_classes[0]]

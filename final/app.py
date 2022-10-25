@@ -28,11 +28,12 @@ def index():
 @app.route('/_update_dropdown')
 def update_dropdown():
 
+    units = {"Applied Science": ["Principles and Applications of Science I", "Practical Scientific Procedures and Techniques"], "Health and Social Care": ["Human Lifespan Development", "Working in Health and Social Care]}
     # the value of the first dropdown (selected by the user)
     selected_course = request.args.get('selected_course', type=str)
 
     # get values for the second dropdown
-    updated_values = get_dropdown_values()[selected_class]
+    updated_values = units[selected_course]
 
     # create the value sin the dropdown as a html string
     html_string_selected = ''

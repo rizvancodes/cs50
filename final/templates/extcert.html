@@ -21,14 +21,62 @@
         <tbody>
                 <tr>
                     <td>
-                        <select name="units", class="form-control", id="all_units">
+                        <select name="units", class="form-control", id="unit1">
                         {% for unit in all_units %}
                         <option value="{{ unit["id"] }}">{{ unit["id"] }}.{{ unit["name"] }}</option>
                         {% endfor %}
                         </select>
                     </td>
                     <td>
-                        <select name="units", class="form-control", id="all_units">
+                        <select name="units", class="form-control", id="grade1">
+                        <option value="D">Distinction</option>
+                        <option value="M">Merit</option>
+                        <option value="P">Pass</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="units", class="form-control", id="unit2">
+                        {% for unit in all_units %}
+                        <option value="{{ unit["id"] }}">{{ unit["id"] }}.{{ unit["name"] }}</option>
+                        {% endfor %}
+                        </select>
+                    </td>
+                    <td>
+                        <select name="units", class="form-control", id="grade2">
+                        <option value="D">Distinction</option>
+                        <option value="M">Merit</option>
+                        <option value="P">Pass</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="units", class="form-control", id="unit3">
+                        {% for unit in all_units %}
+                        <option value="{{ unit["id"] }}">{{ unit["id"] }}.{{ unit["name"] }}</option>
+                        {% endfor %}
+                        </select>
+                    </td>
+                    <td>
+                        <select name="units", class="form-control", id="grade3">
+                        <option value="D">Distinction</option>
+                        <option value="M">Merit</option>
+                        <option value="P">Pass</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="units", class="form-control", id="unit4">
+                        {% for unit in all_units %}
+                        <option value="{{ unit["id"] }}">{{ unit["id"] }}.{{ unit["name"] }}</option>
+                        {% endfor %}
+                        </select>
+                    </td>
+                    <td>
+                        <select name="units", class="form-control", id="grade4">
                         <option value="D">Distinction</option>
                         <option value="M">Merit</option>
                         <option value="P">Pass</option>
@@ -59,10 +107,6 @@
             $.getJSON('/_process_data', {
                 selected_class: $('#all_courses').val(),
                 selected_entry: $('#all_units').val(),
-
-
-            }).success(function(data) {
-                $('#processed_results').text(data.random_text);
             })
           return false;
 

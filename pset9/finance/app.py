@@ -63,7 +63,7 @@ def buy():
         if not request.form.get("symbol"):
             return apology("must provide stock", 422)
         elif int(shares) <= 0:
-            return apology("You must enter a valid number of shares", 422)
+            return apology("You must enter a valid number of shares", 400)
         else:
             quote = lookup(symbol)
             if quote == None:

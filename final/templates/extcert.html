@@ -57,8 +57,8 @@
         $('#process_input').bind('click', function() {
 
             $.getJSON('/_process_data', {
-                selected_class: $('#all_classes').val(),
-                selected_entry: $('#all_entries').val(),
+                selected_class: $('#all_courses').val(),
+                selected_entry: $('#all_units').val(),
 
 
             }).success(function(data) {

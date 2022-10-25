@@ -201,9 +201,9 @@ def sell():
         elif float(shares) <= 0 or not float(shares).is_integer():
             return apology("You must enter a valid number of shares", 422)
         else:
-            for stock in symbols:
+            for stock in portfolio:
                 if symbol == stock["symbol"]:
-                    if float(shares) > db.execute("SELECT quantity FROM portfolios WHERE symbol = ?", symbol):
+                    if float(shares) > (db.execute("SELECT quantity FROM portfolios WHERE symbol = ?", symbol))[0]["quantity"]:
                         return apology("You must enter a valid number of shares", 422)
 
 

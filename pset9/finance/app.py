@@ -72,7 +72,7 @@ def buy():
                 db.execute("UPDATE users SET cash = ? WHERE id = ?", remcash, id)
                 currentHoldings = ("SELECT * FROM portfolios WHERE user_id = ?", id);
                 for stock in currentHoldings:
-                    if symbol == stock:
+                    if symbol == stock[]:
                         db.execute("UPDATE portfolios SET quantity = ? WHERE id = ? AND symbol = ?", shares, id, symbol)
                     else:
                         db.execute("INSERT INTO portfolios (user_id, symbol, quantity) VALUES(?, ?, ?)", id, symbol, shares)

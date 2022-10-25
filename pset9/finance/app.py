@@ -81,7 +81,7 @@ def buy():
                     if symbol == stock["symbol"]:
                         old = db.execute("SELECT quantity FROM portfolios WHERE user_id = ? AND symbol = ?", id, symbol)
                         new = int(shares) + int(old[0]["quantity"])
-                        db.execute("UPDATE portfolios SET quantity = ? WHERE id = ? AND symbol = ?", new, id, symbol)
+                        db.execute("UPDATE portfolios SET quantity = ? WHERE user_id = ? AND symbol = ?", new, id, symbol)
                     else:
                         db.execute("INSERT INTO portfolios (user_id, symbol, quantity) VALUES(?, ?, ?)", id, symbol, shares)
         return redirect("/")
@@ -221,9 +221,9 @@ def sell():
                 if symbol == stock["symbol"]:
                     old = db.execute("SELECT quantity FROM portfolios WHERE user_id = ? AND symbol = ?", id, symbol)
                     new = int(old[0]["quantity"]) - int(shares)
-                    db.execute("UPDATE portfolios SET quantity = ? WHERE id = ? AND symbol = ?", new, id, symbol)
+                    db.execute("UPDATE portfolios SET quantity = ? WHERE user_id = ? AND symbol = ?", new, id, symbol)
                     if new == 0:
-                        db.execute("DELETE FROM portfolios WHERE symbol = ?", symbol)
+                        db.execute("DELETE FROM portfolios WHERE user_id = ? AND symbol = ?", id, symbol)
             return redirect("/")
 
     return render_template("sell.html", portfolio=portfolio)

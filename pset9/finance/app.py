@@ -193,5 +193,9 @@ def register():
 def sell():
     """Sell shares of stock"""
     symbols = db.execute("SELECT symbol FROM portfolios WHERE user_id = ?", session["user_id"])
-    
+     if not request.form.get("symbol"):
+            return apology("must provide stock", 422)
+        elif int(shares) <= 0:
+            return apology("You must enter a valid number of shares", 422)
+
     return render_template("sell.html", symbols=symbols)

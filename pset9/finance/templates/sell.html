@@ -10,7 +10,7 @@
         {% for symbol in symbols %}
             <option value="{{ symbol["symbol"] }}">{{ symbol["symbol"] }}</option>
         {% endfor %}
-        <input autocomplete="off" autofocus name="shares" placeholder="Amount" type="number">
+        <input autocomplete="off" autofocus name="shares" placeholder="Amount" type="text">
         <input type="submit" value="Sell">
     </form>
 {% endblock %}

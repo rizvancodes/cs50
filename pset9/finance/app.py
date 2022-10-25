@@ -217,14 +217,11 @@ def sell():
             db.execute("INSERT INTO transactions (user_id, type, symbol, quantity, price, cost) VALUES (?, ?, ?, ?, ?, ?)", id, 'SELL', symbol, shares, quote["price"], cost)
             remcash = float(cash[0]["cash"]) + cost
             db.execute("UPDATE users SET cash = ? WHERE id = ?", remcash, id)
-            currentHoldings = db.execute("SELECT * FROM portfolios WHERE user_id = ?", id)
-            for stock in currentHoldings:
+            for stock in portfolio:
                 if symbol == stock["symbol"]:
                     old = db.execute("SELECT quantity FROM portfolios WHERE user_id = ? AND symbol = ?", id, symbol)
-                    new = int(shares) + int(old[0]["quantity"])
+                    new = int(old[0]["quantity"]) - int(shares)
                     db.execute("UPDATE portfolios SET quantity = ? WHERE id = ? AND symbol = ?", new, id, symbol)
-                else:
-                    db.execute("INSERT INTO portfolios (user_id, symbol, quantity) VALUES(?, ?, ?)", id, symbol, shares)
 
 
 

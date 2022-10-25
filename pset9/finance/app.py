@@ -203,7 +203,7 @@ def sell():
         else:
             for stock in symbols:
                 if symbol == stock["symbol"]:
-                    if 
+                    if shares > 
 
 
     return render_template("sell.html", portfolio=portfolio)

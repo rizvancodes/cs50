@@ -82,6 +82,7 @@ def buy():
                 old = db.execute("SELECT quantity FROM portfolios WHERE user_id = ? AND symbol = ?", id, symbol)
                 new = int(shares) + int(old[0]["quantity"])
                 db.execute("UPDATE portfolios SET quantity = ? WHERE user_id = ? AND symbol = ?", new, id, symbol)
+                return redirect("/")
         db.execute("INSERT INTO portfolios (user_id, symbol, quantity) VALUES(?, ?, ?)", id, symbol, shares)
         return redirect("/")
     else:

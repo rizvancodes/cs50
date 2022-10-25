@@ -44,7 +44,7 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
     stocks = db.execute("SELECT * FROM portfolios")
-    cash = db.execute("SELECT cash FROM )
+    cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
     for stock in stocks
         stock["value"] = float(stock["quantity"]) * float(lookup(stock["symbol"])["price"])
     return apology("TODO")

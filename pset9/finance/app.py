@@ -208,7 +208,7 @@ def sell():
             for stock in portfolio:
                 if symbol == stock["symbol"]:
                     if int(shares) > (db.execute("SELECT quantity FROM portfolios WHERE symbol = ?", symbol))[0]["quantity"]:
-                        return apology("You must enter a valid number of shares", 422)
+                        return apology("You must enter a valid number of shares", 400)
 
         quote = lookup(symbol)
         id = session["user_id"]

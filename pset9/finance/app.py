@@ -45,7 +45,7 @@ def index():
     """Show portfolio of stocks"""
     stocks = db.execute("SELECT * FROM portfolios")
     for stock in stocks
-        s
+        stock["value"] = int(stock["quantity"]) *(lookup(stock["symbol"])["price"])
     return apology("TODO")
 
 

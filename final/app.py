@@ -15,7 +15,7 @@ def index():
     initialize drop down menus
     """
 
-    units = {"Applied Science": ["Principles and Applications of Science I", "Practical Scientific Procedures and Techniques"], "Health and Social Care": ["Human Lifespan Development", "Working in Health and Social Care]}
+    units = {"Applied Science": ["Principles and Applications of Science I", "Practical Scientific Procedures and Techniques"], "Health and Social Care": ["Human Lifespan Development", "Working in Health and Social Care"]}
 
     default_courses = sorted(units.keys())
     default_units = units[default_courses[0]]
@@ -28,7 +28,7 @@ def index():
 @app.route('/_update_dropdown')
 def update_dropdown():
 
-    units = {"Applied Science": ["Principles and Applications of Science I", "Practical Scientific Procedures and Techniques"], "Health and Social Care": ["Human Lifespan Development", "Working in Health and Social Care]}
+    units = {"Applied Science": ["Principles and Applications of Science I", "Practical Scientific Procedures and Techniques"], "Health and Social Care": ["Human Lifespan Development", "Working in Health and Social Care"]}
     # the value of the first dropdown (selected by the user)
     selected_course = request.args.get('selected_course', type=str)
 

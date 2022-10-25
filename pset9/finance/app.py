@@ -203,7 +203,7 @@ def sell():
         else:
             for stock in symbols:
                 if symbol == stock["symbol"]:
-                    if shares > 
+                    if float(share) > db.execute("SELECT quantity FROM portfolios WHERE symbol = ?", symbol)
 
 
     return render_template("sell.html", portfolio=portfolio)

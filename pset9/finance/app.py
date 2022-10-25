@@ -43,8 +43,9 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    stocks = db.execute("SELECT * FROM portfolios")
-    cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"]
+    id = session["user_id"]
+    stocks = db.execute("SELECT * FROM portfolios WHERE user_id = ?", id)
+    cash = db.execute("SELECT cash FROM users WHERE id = ?", id)[0]["cash"]
     holdings = cash
     for stock in stocks:
         stock["value"] = stock["quantity"] * lookup(stock["symbol"])["price"]

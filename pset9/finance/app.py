@@ -205,7 +205,27 @@ def sell():
                 if symbol == stock["symbol"]:
                     if float(shares) > (db.execute("SELECT quantity FROM portfolios WHERE symbol = ?", symbol))[0]["quantity"]:
                         return apology("You must enter a valid number of shares", 422)
-            
+
+            quote = lookup(symbol)
+            if quote == None:
+                return apology("This stock does not exist", 400)
+            else:
+            id = session["user_id"]
+            cash = db.execute("SELECT cash FROM users WHERE id = ?", id)
+            cost = float(shares) * float(quote["price"])
+
+            db.execute("INSERT INTO transactions (user_id, type, symbol, quantity, price, cost) VALUES (?, ?, ?, ?, ?, ?)", id, 'SELL', symbol, shares, quote["price"], cost)
+            remcash = float(cash[0]["cash"]) + cost
+            db.execute("UPDATE users SET cash = ? WHERE id = ?", remcash, id)
+            currentHoldings = db.execute("SELECT * FROM portfolios WHERE user_id = ?", id)
+            for stock in currentHoldings:
+                if symbol == stock["symbol"]:
+                    old = db.execute("SELECT quantity FROM portfolios WHERE user_id = ? AND symbol = ?", id, symbol)
+                    new = int(shares) + int(old[0]["quantity"])
+                    db.execute("UPDATE portfolios SET quantity = ? WHERE id = ? AND symbol = ?", new, id, symbol)
+                else:
+                    db.execute("INSERT INTO portfolios (user_id, symbol, quantity) VALUES(?, ?, ?)", id, symbol, shares)
+
 
 
 

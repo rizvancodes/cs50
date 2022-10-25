@@ -7,7 +7,7 @@
 {% block main %}
     <form action="/sell" method="post">
         <select name="shares">
-            {% for stock in stocks %}
+            {% for stock in symbols %}
             <option value="{{ stock["symbol"] }}">{{ stock["symbol"] }}</option>
             {% endfor %}
         </select>

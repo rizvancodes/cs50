@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Type</th>
+                <th>Date</th>
+                <th>Quantity</th>
+                <th>Quote</th>
+                <th>Total Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction["symbol"] }}</td>
+                    <td>{{ transaction["type"] }}</td>
+                    <td>{{ transaction["timestamp"] }}</td>
+                    <td>{{ transaction["quantity"] }}</td>
+                    <td>{{ transaction["price"] | usd }}</td>
+                    <td>{{ transaction["cost"] | usd }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

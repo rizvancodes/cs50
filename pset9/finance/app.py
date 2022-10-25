@@ -220,7 +220,7 @@ def sell():
         for stock in portfolio:
             if symbol == stock["symbol"]:
                 old = db.execute("SELECT quantity FROM portfolios WHERE user_id = ? AND symbol = ?", id, symbol)
-                new = int((db.execute("SELECT quantity FROM portfolios WHERE user_id = ? AND symbol = ?", id, symbol)[0]["quantity"]) - int(shares)
+                new = int((db.execute("SELECT quantity FROM portfolios WHERE user_id = ? AND symbol = ?", id, symbol)[0]["quantity"]) - int(shares))
                 db.execute("UPDATE portfolios SET quantity = ? WHERE user_id = ? AND symbol = ?", new, id, symbol)
                 if new == 0:
                     db.execute("DELETE FROM portfolios WHERE user_id = ? AND symbol = ?", id, symbol)

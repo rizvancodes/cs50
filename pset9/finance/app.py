@@ -49,7 +49,7 @@ def index():
     for stock in stocks:
         stock["value"] = float(stock["quantity"]) * float(lookup(stock["symbol"])["price"])
         holdings += stock["value"]
-    return render_template("index.html", stocks, cash, holdings)
+    return render_template("index.html", stocks=stocks, cash=cash, holdings=holdings)
 
 
 @app.route("/buy", methods=["GET", "POST"])

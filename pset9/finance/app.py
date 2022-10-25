@@ -63,7 +63,7 @@ def buy():
         quote = lookup(symbol)
         if not request.form.get("symbol"):
             return apology("must provide stock", 400)
-        elif int(shares) <= 0:
+        elif int(shares) <= 0 or not f:
             return apology("You must enter a valid number of shares", 400)
         elif quote == None:
                 return apology("This stock does not exist", 400)
@@ -216,7 +216,7 @@ def sell():
         cost = float(shares) * float(quote["price"])
         db.execute("INSERT INTO transactions (user_id, type, symbol, quantity, price, cost, timestamp) VALUES (?, ?, ?, ?, ?, ?, datetime('now'))", id, 'SELL', symbol, shares, quote["price"], cost)
         remcash = float(cash[0]["cash"]) + cost
-        db.execute("UPDATE users SET cash = ? WHERE id = ?", 10000, id)
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", remcash, id)
         for stock in portfolio:
             if symbol == stock["symbol"]:
                 old = db.execute("SELECT quantity FROM portfolios WHERE user_id = ? AND symbol = ?", id, symbol)

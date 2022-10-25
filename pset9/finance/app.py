@@ -61,7 +61,7 @@ def buy():
         shares = request.form.get("shares")
         if not request.form.get("symbol"):
             return apology("must provide stock", 422)
-        elif int(shares) <= 0:
+        elif float(shares) <= 0 or not float(shares).is_integer():
             return apology("You must enter a valid number of shares", 422)
         else:
             quote = lookup(symbol)
@@ -193,7 +193,7 @@ def register():
 def sell():
     """Sell shares of stock"""
     portfolio = db.execute("SELECT * FROM portfolios WHERE user_id = ?", session["user_id"])
-    if request.method == "POST"
+    if request.method == "POST":
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
         if not request.form.get("symbol"):
@@ -203,7 +203,8 @@ def sell():
         else:
             for stock in symbols:
                 if symbol == stock["symbol"]:
-                    if float(share) > db.execute("SELECT quantity FROM portfolios WHERE symbol = ?", symbol)
+                    if float(shares) > db.execute("SELECT quantity FROM portfolios WHERE symbol = ?", symbol):
+                        return apology("You must enter a valid number of shares", 422)
 
 
     return render_template("sell.html", portfolio=portfolio)

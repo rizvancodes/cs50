@@ -74,16 +74,16 @@ def buy():
             if cost > float(cash[0]["cash"]):
                     return apology("You do not have sufficient funds", 400)
 
-                db.execute("INSERT INTO transactions (user_id, type, symbol, quantity, price, cost, timestamp) VALUES (?, ?, ?, ?, ?, ?, datetime('now'))", id, 'BUY', symbol, shares, quote["price"], cost)
-                remcash = float(cash[0]["cash"]) - cost
-                db.execute("UPDATE users SET cash = ? WHERE id = ?", remcash, id)
-                for stock in portfolio:
-                    if symbol == stock["symbol"]:
-                        old = db.execute("SELECT quantity FROM portfolios WHERE user_id = ? AND symbol = ?", id, symbol)
-                        new = int(shares) + int(old[0]["quantity"])
-                        db.execute("UPDATE portfolios SET quantity = ? WHERE user_id = ? AND symbol = ?", new, id, symbol)
-                    else:
-                        db.execute("INSERT INTO portfolios (user_id, symbol, quantity) VALUES(?, ?, ?)", id, symbol, shares)
+        db.execute("INSERT INTO transactions (user_id, type, symbol, quantity, price, cost, timestamp) VALUES (?, ?, ?, ?, ?, ?, datetime('now'))", id, 'BUY', symbol, shares, quote["price"], cost)
+        remcash = float(cash[0]["cash"]) - cost
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", remcash, id)
+        for stock in portfolio:
+            if symbol == stock["symbol"]:
+                old = db.execute("SELECT quantity FROM portfolios WHERE user_id = ? AND symbol = ?", id, symbol)
+                new = int(shares) + int(old[0]["quantity"])
+                db.execute("UPDATE portfolios SET quantity = ? WHERE user_id = ? AND symbol = ?", new, id, symbol)
+            else:
+                db.execute("INSERT INTO portfolios (user_id, symbol, quantity) VALUES(?, ?, ?)", id, symbol, shares)
         return redirect("/")
     else:
         return render_template("buy.html")

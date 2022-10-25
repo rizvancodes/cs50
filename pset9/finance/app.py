@@ -73,7 +73,9 @@ def buy():
                 currentHoldings = db.execute("SELECT * FROM portfolios WHERE user_id = ?", id)
                 for stock in currentHoldings:
                     if symbol == stock["symbol"]:
-                        db.execute("UPDATE portfolios SET quantity = ? WHERE id = ? AND symbol = ?", shares, id, symbol)
+                        old = db.execute("SELECT quantity FROM portfolios WHERE user_id = ? AND symbol = ?", id, symbol)
+                        new = int(shares) + int(old[0]["quantity"])
+                        db.execute("UPDATE portfolios SET quantity = ? WHERE id = ? AND symbol = ?", new, id, symbol)
                     else:
                         db.execute("INSERT INTO portfolios (user_id, symbol, quantity) VALUES(?, ?, ?)", id, symbol, shares)
             return render_template("index.html")

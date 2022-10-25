@@ -192,7 +192,7 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    symbols = db.execute("SELECT symbol FROM portfolios WHERE user_id = ?", session["user_id"])
+    portfolio = db.execute("SELECT * FROM portfolios WHERE user_id = ?", session["user_id"])
     if request.method == "POST"
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
@@ -203,7 +203,7 @@ def sell():
         else:
             for stock in symbols:
                 if symbol == stock["symbol"]:
-                    
+                    if 
 
 
-    return render_template("sell.html", symbols=symbols)
+    return render_template("sell.html", portfolio=portfolio)

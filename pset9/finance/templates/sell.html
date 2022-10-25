@@ -6,10 +6,11 @@
 
 {% block main %}
     <form action="/sell" method="post">
-        <option disabled selected value="">Stock</option>
-        {% for symbol in symbols %}
-            <option value="{{ symbol["symbol"] }}">{{ symbol["symbol"] }}</option>
-        {% endfor %}
+        <select name="shares">
+            {% for stock in stocks %}
+            <option value="{{ stock["symbol"] }}">{{ stock["symbol"] }}</option>
+            {% endfor %}
+        </select>
         <input autocomplete="off" autofocus name="shares" placeholder="Amount" type="text">
         <input type="submit" value="Sell">
     </form>

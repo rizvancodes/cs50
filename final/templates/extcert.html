@@ -5,14 +5,38 @@
 {% endblock %}
 
 {% block main %}
-    <select name="unit">
+    <h1 class="text-center text-muted">Select Course</h1>
+    <select name="courses">
         {% for unit in units %}
         <option value="{{ unit["id"] }}">{{ unit["id"] }}.{{ unit["name"] }}</option>
         {% endfor %}
     </select>
-    <select name="grade">
-        {% for unit in units %}
-        <option value="{{ unit["id"] }}">{{ unit["id"] }}.{{ unit["name"] }}</option>
-        {% endfor %}
-    </select>
+    <table>
+        <thead>
+            <tr>
+                <th>Unit</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in transactions %}
+                <tr>
+                    <td>
+                        <select name="grade">
+                        {% for unit in units %}
+                        <option value="{{ unit["id"] }}">{{ unit["id"] }}.{{ unit["name"] }}</option>
+                        {% endfor %}
+                        </select>
+                    </td>
+                    <td>
+                        <select name="grade">
+                        {% for unit in units %}
+                        <option value="{{ unit["id"] }}">{{ unit["id"] }}.{{ unit["name"] }}</option>
+                        {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

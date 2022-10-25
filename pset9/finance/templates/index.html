@@ -1,9 +1,30 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Search Stock
+    Portfolio
 {% endblock %}
 
 {% block main %}
-    "SUCCESS"
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Birthday</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for birthday in birthdaylist %}
+                <tr>
+                    <td>{{ birthday["name"] }}</td>
+                    <td>{{ birthday["month"] }}/{{ birthday["day"] }}</td>
+                    <td>
+                        <form action="/" method="post">
+                            <input name="id" type="hidden" value="{{ birthday["id"] }}">
+                            <input type="submit" value="Delete">
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

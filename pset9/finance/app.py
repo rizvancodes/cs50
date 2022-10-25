@@ -169,17 +169,17 @@ def register():
         usernames = db.execute("SELECT username FROM users")
 
         if not request.form.get("username"):
-            return apology("must provide username", 422)
+            return apology("must provide username", 400)
         elif not request.form.get("password"):
-            return apology("must provide password", 422)
+            return apology("must provide password", 400)
         elif not request.form.get("confirmation"):
-            return apology("must confirm password", 422)
+            return apology("must confirm password", 400)
         elif not request.form.get("password") == request.form.get("confirmation"):
-            return apology("must provide username", 422)
+            return apology("must provide username", 400)
         else:
             for username in usernames:
                 if username['username'] == request.form.get("username"):
-                    return apology("username already exists", 422)
+                    return apology("username already exists", 400)
             username = request.form.get("username")
             hash = generate_password_hash(request.form.get("password"))
             db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, hash)

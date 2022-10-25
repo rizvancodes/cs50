@@ -73,7 +73,8 @@ def buy():
                 cost = float(shares) * float(quote["price"])
                 if cost > float(cash[0]["cash"]):
                     return apology("You do not have sufficient funds", 400)
-                db.execute("INSERT INTO transactions (user_id, type, timestamp, symbol, quantity, price, cost) VALUES (?, ?, datetime('now'), ?, ?, ?, ?)", id, 'BUY', symbol, shares, quote["price"], cost)
+                db.execute("INSERT INTO transactions (user_id, type, symbol, quantity, price, cost) VALUES (?, ?, ?, ?, ?, ?)", id, 'BUY', symbol, shares, quote["price"], cost)
+                db.execute("INSERT INTO transactions (timestamp) VALUES (datetime('now')")
                 remcash = float(cash[0]["cash"]) - cost
                 db.execute("UPDATE users SET cash = ? WHERE id = ?", remcash, id)
                 currentHoldings = db.execute("SELECT * FROM portfolios WHERE user_id = ?", id)
@@ -210,7 +211,8 @@ def sell():
             id = session["user_id"]
             cash = db.execute("SELECT cash FROM users WHERE id = ?", id)
             cost = float(shares) * float(quote["price"])
-            db.execute("INSERT INTO transactions (user_id, type, timestamp symbol, quantity, price, cost) VALUES (?, ?, datetime('now'), ?, ?, ?, ?)", id, 'SELL', symbol, shares, quote["price"], cost)
+            db.execute("INSERT INTO transactions (user_id, type, symbol, quantity, price, cost) VALUES (?, ?, ?, ?, ?, ?)", id, 'SELL', symbol, shares, quote["price"], cost)
+            db.execute("INSERT INTO transactions (timestamp) VALUES (datetime('now')")
             remcash = float(cash[0]["cash"]) + cost
             db.execute("UPDATE users SET cash = ? WHERE id = ?", 10000, id)
             for stock in portfolio:

@@ -7,8 +7,8 @@
 {% block main %}
     <h1 class="text-center text-muted">Select Course</h1>
     <select name="courses", class="form-control", id="all_courses">
-        {% for unit in units %}
-        <option value="{{ unit["id"] }}">{{ unit["id"] }}.{{ unit["name"] }}</option>
+        {% for course in all_courses %}
+        <option value="{{ course }}">{{ course }}</option>
         {% endfor %}
     </select>
     <table>
@@ -19,11 +19,10 @@
             </tr>
         </thead>
         <tbody>
-            {% for transaction in transactions %}
                 <tr>
                     <td>
                         <select name="units", class="form-control", id="all_units">
-                        {% for unit in units %}
+                        {% for unit in all_units %}
                         <option value="{{ unit["id"] }}">{{ unit["id"] }}.{{ unit["name"] }}</option>
                         {% endfor %}
                         </select>
@@ -36,7 +35,6 @@
                         </select>
                     </td>
                 </tr>
-            {% endfor %}
         </tbody>
     </table>
 {% endblock %}

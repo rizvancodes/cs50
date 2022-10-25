@@ -5,26 +5,22 @@
 {% endblock %}
 
 {% block main %}
+    <h3>Cash Balance: {{ birthday["name"] }}</h3>
+    <h3>Total Holdings: {{ birthday["name"] }}</h3>
     <table>
         <thead>
             <tr>
                 <th>Symbol</th>
                 <th>Quantity</th>
+                <th>Total Value</th>
             </tr>
         </thead>
         <tbody>
-            {% for birthday in birthdaylist %}
                 <tr>
                     <td>{{ birthday["name"] }}</td>
                     <td>{{ birthday["month"] }}/{{ birthday["day"] }}</td>
-                    <td>
-                        <form action="/" method="post">
-                            <input name="id" type="hidden" value="{{ birthday["id"] }}">
-                            <input type="submit" value="Delete">
-                        </form>
-                    </td>
+                    <td></td>
                 </tr>
-            {% endfor %}
         </tbody>
     </table>
 {% endblock %}

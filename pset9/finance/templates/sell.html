@@ -1,15 +1,16 @@
+{% extends "layout.html" %}
 
+{% block title %}
+    Register
+{% endblock %}
 
-
-
-
-
-
-<form action="/sell" method="post">
-    <option disabled selected value="">Sport</option>
-    {% for sport in sports %}
-        <option value="{{ sport }}">{{ sport }}</option>
-    {% endfor %}
-    <input autocomplete="off" autofocus name="shares" placeholder="Amount" type="number">
-    <input type="submit" value="Sell">
-</form>
+{% block main %}
+    <form action="/sell" method="post">
+        <option disabled selected value="">Stock</option>
+        {% for symbol in symbols %}
+            <option value="{{ symbol["symbol"] }}">{{ symbol["symbol"] }}</option>
+        {% endfor %}
+        <input autocomplete="off" autofocus name="shares" placeholder="Amount" type="number">
+        <input type="submit" value="Sell">
+    </form>
+{% endblock %}

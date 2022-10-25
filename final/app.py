@@ -16,3 +16,19 @@ def index():
 @app.route("/extcert")
 def extcert():
     return render_template("extcert.html")
+
+@app.route('/_update_dropdown')
+def update_dropdown():
+
+    # the value of the first dropdown (selected by the user)
+    selected_course = request.args.get('selected_class', type=str)
+
+    # get values for the second dropdown
+    updated_values = get_dropdown_values()[selected_class]
+
+    # create the value sin the dropdown as a html string
+    html_string_selected = ''
+    for entry in updated_values:
+        html_string_selected += '<option value="{}">{}</option>'.format(entry, entry)
+
+    return jsonify(html_string_selected=html_string_selected)

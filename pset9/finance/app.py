@@ -201,8 +201,9 @@ def sell():
         elif int(shares) <= 0:
             return apology("You must enter a valid number of shares", 422)
         else:
-            for stock in symbols
-                if symbol 
+            for stock in symbols:
+                if symbol == stock["symbol"]:
+                    
 
 
     return render_template("sell.html", symbols=symbols)

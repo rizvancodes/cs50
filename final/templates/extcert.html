@@ -21,7 +21,7 @@
         <tbody>
                 <tr>
                     <td>
-                        <select name="units", class="form-control all_units", id="unit1">
+                        <select name="units", class="all_units", id="unit1">
                         {% for unit in all_units %}
                         <option value="{{ unit["id"] }}">{{ unit["id"] }}.{{ unit["name"] }}</option>
                         {% endfor %}
@@ -37,7 +37,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <select name="units", class="form-control all_units", id="unit2">
+                        <select name="units", class="all_units", id="unit2">
                         {% for unit in all_units %}
                         <option value="{{ unit["id"] }}">{{ unit["id"] }}.{{ unit["name"] }}</option>
                         {% endfor %}
@@ -99,7 +99,7 @@
             selected_course: $('#all_courses').val()
 
           }).success(function(data) {
-                $('.form-control.all_units').html(data.html_string_selected);
+                $('.all_units').html(data.html_string_selected);
            })
         });
         $('#process_input').bind('click', function() {

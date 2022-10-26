@@ -87,4 +87,4 @@ def process_data():
 
     # process the two selected values here and return the response; here we just create a dummy string
 
-    return jsonify(random_text="You selected the car brand: {} and the model: {}.".format(selected_class, selected_entry))
+    return render_template(result.html)

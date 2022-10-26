@@ -75,3 +75,12 @@ def update_dropdown():
 @app.route('/')
 def index():
     return render_template("index.html")
+
+@app.route('/_calculate_grade')
+def process_data():
+    selected_class = request.args.get('selected_class', type=str)
+    selected_entry = request.args.get('selected_entry', type=str)
+
+    # process the two selected values here and return the response; here we just create a dummy string
+
+    return jsonify(random_text="You selected the car brand: {} and the model: {}.".format(selected_class, selected_entry))

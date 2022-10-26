@@ -79,7 +79,7 @@ def index():
 @app.route('/_calculate_extcert_grade')
 def process_data():
     selected_course = request.args.get('selected_class', type=str)
-    selected_entry = request.args.get('selected_entry', type=str)
+    selected_units = {unit 1 = request.args.get('selected_entry', type=str)
 
     # process the two selected values here and return the response; here we just create a dummy string
 

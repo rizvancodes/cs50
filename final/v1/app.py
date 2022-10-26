@@ -78,7 +78,7 @@ def index():
 
 @app.route('/_calculate_grade')
 def process_data():
-    selected_class = request.args.get('selected_class', type=str)
+    selected_course = request.args.get('selected_class', type=str)
     selected_entry = request.args.get('selected_entry', type=str)
 
     # process the two selected values here and return the response; here we just create a dummy string

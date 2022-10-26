@@ -7,6 +7,7 @@
 {% block main %}
     <h1 class="text-center text-muted">Select Course</h1>
     <select name="courses", class="form-control", id="all_courses">
+        <option value="" selected disabled hidden>Choose here</option>
         {% for course in all_courses %}
         <option value="{{ course }}">{{ course }}</option>
         {% endfor %}

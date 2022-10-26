@@ -79,8 +79,10 @@ def index():
 @app.route('/_calculate_extcert_grade')
 def process_data():
     selected_course = request.args.get('selected_class', type=str)
-    selected_units = {unit 1 = request.args.get('selected_entry', type=str)
-
+    selected_units = {(request.args.get('unit1', type=str): (request.args.get('grade1', type=str),
+                      (request.args.get('unit2', type=str): request.args.get('grade2', type=str),
+                      request.args.get('unit3', type=str): request.args.get('grade3', type=str
+                        
     # process the two selected values here and return the response; here we just create a dummy string
 
     return jsonify(random_text="You selected the car brand: {} and the model: {}.".format(selected_class, selected_entry))

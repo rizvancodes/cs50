@@ -1,6 +1,6 @@
 INSERT INTO UNITS (id, unit_id, course_id, title, glh, type) VALUES (1, 1, 46, 'Human Lifespan Development', '90', 'External');
 INSERT INTO UNITS (id, unit_id, course_id, title, glh, type) VALUES (2, 2, 46, 'Working in Health and Social Care', '120', 'External');
-INSERT INTO UNITS (id, unit_id, course_id, title, glh, type) VALUES (3, 3, 46, 'Anatomy and Physiology for Health and Social Care', '120' 'External');
+INSERT INTO UNITS (id, unit_id, course_id, title, glh, type) VALUES (3, 3, 46, 'Anatomy and Physiology for Health and Social Care', '120', 'External');
 INSERT INTO UNITS (id, unit_id, course_id, title, glh, type) VALUES (4, 4, 46, 'Enquiries into Current Research in Health and Social Care', '120', 'External');
 INSERT INTO UNITS (id, unit_id, course_id, title, glh, type) VALUES (5, 5, 46, 'Meeting Individual Care and Support Needs', '90', 'Internal');
 INSERT INTO UNITS (id, unit_id, course_id, title, glh, type) VALUES (6, 6, 46, 'Work Experience in Health and Social Care', '60', 'Internal');

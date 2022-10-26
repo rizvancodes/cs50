@@ -115,6 +115,38 @@
                         </select>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <select name="units", class="form-control all_units", id="unit7">
+                        {% for unit in all_units %}
+                        <option value="{{ unit["id"] }}">{{ unit["id"] }}.{{ unit["name"] }}</option>
+                        {% endfor %}
+                        </select>
+                    </td>
+                    <td>
+                        <select name="units", class="form-control", id="grade7">
+                        <option value="D">Distinction</option>
+                        <option value="M">Merit</option>
+                        <option value="P">Pass</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="units", class="form-control all_units", id="unit8">
+                        {% for unit in all_units %}
+                        <option value="{{ unit["id"] }}">{{ unit["id"] }}.{{ unit["name"] }}</option>
+                        {% endfor %}
+                        </select>
+                    </td>
+                    <td>
+                        <select name="units", class="form-control", id="grade8">
+                        <option value="D">Distinction</option>
+                        <option value="M">Merit</option>
+                        <option value="P">Pass</option>
+                        </select>
+                    </td>
+                </tr>
         </tbody>
     </table>
     <div>
@@ -151,6 +183,10 @@
                 grade5: $('#grade5').val(),
                 unit6: $('#unit6').val(),
                 grade6: $('#grade6').val(),
+                unit7: $('#unit7').val(),
+                grade7: $('#grade7').val(),
+                unit8: $('#unit8').val(),
+                grade8: $('#grade8').val(),
             })
         return false;
 

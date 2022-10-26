@@ -35,7 +35,7 @@ def update_dropdown():
     # get values for the second dropdown
     updated_values = units[selected_course]
 
-    # create the value sin the dropdown as a html string
+    # create the values in the dropdown as a html string
     html_string_selected = ''
     for entry in updated_values:
         html_string_selected += '<option value="{}">{}</option>'.format(entry, entry)

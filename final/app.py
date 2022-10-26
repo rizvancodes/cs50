@@ -9,8 +9,8 @@ app = Flask(__name__)
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
-@app.route("/")
-def index():
+@app.route("/extcert")
+def extcert():
     """
     initialize drop down menus
     """
@@ -20,7 +20,7 @@ def index():
     default_courses = sorted(units.keys())
     default_units = units[default_courses[0]]
 
-    return render_template('index.html',
+    return render_template('extcert.html',
                        all_courses=default_courses,
                        all_units=default_units)
 
@@ -41,3 +41,7 @@ def update_dropdown():
         html_string_selected += '<option value="{}">{}</option>'.format(entry, entry)
 
     return jsonify(html_string_selected=html_string_selected)
+
+@app.route('/')
+def index():
+    return render_template("index.html")

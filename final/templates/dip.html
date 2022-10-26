@@ -5,5 +5,119 @@
 {% endblock %}
 
 {% block main %}
-    
+    <h1 class="text-center text-muted">Select Course</h1>
+    <select name="courses", class="form-control", id="all_courses">
+        {% for course in all_courses %}
+        <option value="{{ course }}">{{ course }}</option>
+        {% endfor %}
+    </select>
+    <table>
+        <thead>
+            <tr>
+                <th>Unit</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>
+                        <select name="units", class="form-control all_units", id="unit1">
+                        {% for unit in all_units %}
+                        <option value="{{ unit["id"] }}">{{ unit["id"] }}.{{ unit["name"] }}</option>
+                        {% endfor %}
+                        </select>
+                    </td>
+                    <td>
+                        <select name="units", class="form-control", id="grade1">
+                        <option value="D">Distinction</option>
+                        <option value="M">Merit</option>
+                        <option value="P">Pass</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="units", class="form-control all_units", id="unit2">
+                        {% for unit in all_units %}
+                        <option value="{{ unit["id"] }}">{{ unit["id"] }}.{{ unit["name"] }}</option>
+                        {% endfor %}
+                        </select>
+                    </td>
+                    <td>
+                        <select name="units", class="form-control", id="grade2">
+                        <option value="D">Distinction</option>
+                        <option value="M">Merit</option>
+                        <option value="P">Pass</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="units", class="form-control all_units", id="unit3">
+                        {% for unit in all_units %}
+                        <option value="{{ unit["id"] }}">{{ unit["id"] }}.{{ unit["name"] }}</option>
+                        {% endfor %}
+                        </select>
+                    </td>
+                    <td>
+                        <select name="units", class="form-control", id="grade3">
+                        <option value="D">Distinction</option>
+                        <option value="M">Merit</option>
+                        <option value="P">Pass</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="units", class="form-control all_units", id="unit4">
+                        {% for unit in all_units %}
+                        <option value="{{ unit["id"] }}">{{ unit["id"] }}.{{ unit["name"] }}</option>
+                        {% endfor %}
+                        </select>
+                    </td>
+                    <td>
+                        <select name="units", class="form-control", id="grade4">
+                        <option value="D">Distinction</option>
+                        <option value="M">Merit</option>
+                        <option value="P">Pass</option>
+                        </select>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+    <div>
+        <button type="button" id="process_input">Submit</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+        $('#all_courses').change(function(){
+
+        $.getJSON('/_update_dropdown', {
+            selected_course: $('#all_courses').val()
+
+        }).success(function(data) {
+                $('.all_units').html(data.html_string_selected);
+        })
+        });
+        $('#process_input').bind('click', function() {
+
+            $.getJSON('/_process_data', {
+                selected_class: $('#all_courses').val(),
+                unit1: $('#unit1').val(),
+                grade1: $('#grade1').val(),
+                unit2: $('#unit2').val(),
+                grade2: $('#grade2').val(),
+                unit2: $('#unit3').val(),
+                grade2: $('#grade3').val(),
+                unit2: $('#unit4').val(),
+                grade2: $('#grade4').val(),
+            })
+        return false;
+
+        });
+    });
+    </script>
 {% endblock %}

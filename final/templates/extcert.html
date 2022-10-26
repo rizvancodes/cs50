@@ -5,9 +5,9 @@
 {% endblock %}
 
 {% block main %}
-    <h1 class="text-center text-muted">Select Course</h1>
+    <h1 class="text-center text-muted">Extended Certificate</h1>
     <select name="courses", class="form-control", id="all_courses">
-        <option value="" selected disabled hidden>Choose here</option>
+        <option value="" selected disabled hidden>Select Course</option>
         {% for course in all_courses %}
         <option value="{{ course }}">{{ course }}</option>
         {% endfor %}

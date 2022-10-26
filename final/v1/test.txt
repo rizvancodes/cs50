@@ -1,22 +1,22 @@
 INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (1, 1, 46, 'Human Lifespan Development', '90', 'External');
 INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (2, 2, 46, 'Working in Health and Social Care', '120', 'External');
-INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (2, 2, 46, 'Working in Health and Social Care', '120', 'External');3 Anatomy and Physiology for Health and Social Care 120 Mandatory External
-INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (2, 2, 46, 'Working in Health and Social Care', '120', 'External');4 Enquiries into Current Research in Health and Social Care 120 Mandatory and Synoptic External
-INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (2, 2, 46, 'Working in Health and Social Care', '120', 'External');5 Meeting Individual Care and Support Needs 90 Mandatory Internal
-INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (2, 2, 46, 'Working in Health and Social Care', '120', 'External');6 Work Experience in Health and Social Care 60 Mandatory Internal
-INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (2, 2, 46, 'Working in Health and Social Care', '120', 'External'); 7 Principles of Safe Practice in Health and Social Care 90 Mandatory Internal
-INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (2, 2, 46, 'Working in Health and Social Care', '120', 'External'); 8 Promoting Public Health 90 Mandatory Internal
-INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (2, 2, 46, 'Working in Health and Social Care', '120', 'External'); 9 Infection Prevention and Control 60 Optional Internal
-INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (2, 2, 46, 'Working in Health and Social Care', '120', 'External'); 10 Sociological Perspectives 60 Optional Internal
-INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (2, 2, 46, 'Working in Health and Social Care', '120', 'External'); 11 Psychological Perspectives 60 Optional Internal
-INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (2, 2, 46, 'Working in Health and Social Care', '120', 'External'); 12 Supporting Individuals with Additiona Needs 60 Optional Internal
-INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (2, 2, 46, 'Working in Health and Social Care', '120', 'External'); 14 Physiological Disorders and their Care 60 Optional Internal
-INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (2, 2, 46, 'Working in Health and Social Care', '120', 'External'); 17 Caring for Individuals with Dementia 60 Optional Internal
-INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (2, 2, 46, 'Working in Health and Social Care', '120', 'External'); 19 Nutritional Health 60 Optional Internal
+INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (3, 3, 46, 'Anatomy and Physiology for Health and Social Care', '120' 'External');
+INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (4, 4, 46, 'Enquiries into Current Research in Health and Social Care', '120', 'External');
+INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (5, 5, 46, 'Meeting Individual Care and Support Needs', '90', 'Internal');
+INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (6, 6, 46, 'Work Experience in Health and Social Care', '60', 'Internal');
+INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (7, 7, 46, 'Principles of Safe Practice in Health and Social Care', '90', 'Internal');
+INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (8, 8, 46, 'Promoting Public Health', '90', 'Internal');
+INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (9, 9, 46, 'Infection Prevention and Control', '60', 'Internal');
+INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (10, 10, 46, 'Sociological Perspectives', '60', 'Internal');
+INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (11, 11, 46, 'Psychological Perspectives', '60', 'Internal');
+INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (12, 12, 46, 'Supporting Individuals with Additional Needs', '60', 'Internal');
+INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (13, 13, 46, 'Scientific Techniques for Health Science', '60', 'Internal');
+INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (14, 14, 46, 'Physiological Disorders and their Care', '60', 'Internal'); 
+INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (15, 15, 46, 'Microbiology for Health Science', '60' 'Internal'); 19 Nutritional Health 60 Optional Internal
 INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (2, 2, 46, 'Working in Health and Social Care', '120', 'External'); 20 Understanding Mental Wellbeing 60 Optional Internal
 INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (2, 2, 46, 'Working in Health and Social Care', '120', 'External'); 24 Biochemistry for Health 60 Optional Internal
-INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (2, 2, 46, 'Working in Health and Social Care', '120', 'External'); 13 Scientific Techniques for Health Science 60 Optional Internal
-INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (2, 2, 46, 'Working in Health and Social Care', '120', 'External'); 15 Microbiology for Health Science 60 Optional Internal
+INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (2, 2, 46, 'Working in Health and Social Care', '120', 'External');
+INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (2, 2, 46, 'Working in Health and Social Care', '120', 'External');
 INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (2, 2, 46, 'Working in Health and Social Care', '120', 'External'); 21 Medical Physics Applications in the Health Sector 60 Optional Internal
 INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (2, 2, 46, 'Working in Health and Social Care', '120', 'External'); 22 Genetics 60 Optional Internal
 INSERT INTO UNITS (unit_id, course_id, title, glh, type) VALUES (2, 2, 46, 'Working in Health and Social Care', '120', 'External'); 23 Biomedical Science 60 Optional Internal

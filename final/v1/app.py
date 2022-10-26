@@ -76,7 +76,7 @@ def update_dropdown():
 def index():
     return render_template("index.html")
 
-@app.route('/_calculate_grade')
+@app.route('/_calculate_extcert_grade')
 def process_data():
     selected_course = request.args.get('selected_class', type=str)
     selected_entry = request.args.get('selected_entry', type=str)

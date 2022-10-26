@@ -105,6 +105,7 @@
         $('#process_input').bind('click', function() {
 
             $.getJSON('/_process_data', {
+                selected stream: $('#all_courses').val()
                 selected_class: $('#all_courses').val(),
                 unit1: $('#unit1').val(),
                 grade1: $('#grade1').val(),

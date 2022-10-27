@@ -135,7 +135,7 @@ def calculate_extcert_grade():
     ec_grade = {'D*': 90, 'D': 74, 'M': 52, 'P': 36, 'U': 0}
     final_grade = 0
     for key in ec_grade:
-        if points >= ec_grade[key]:
+        if points > :
             final_grade = key
             break
 

@@ -20,27 +20,27 @@ This route initialises the Diploma calculator page and calls the get_unitlist fu
 # /extdip
 This route initialises the Extended Diploma calculator page and calls the get_unitlist function taking the keys from the dictionary returned from that function and using it to populate the course subject dropdown boxes.
 # /_update_dropdown
-This route is called when the subject is selected (state change) on the calculator pages. It receives the uses the get_unitlist function to
+This route is called when the subject is selected (state change) on the calculator pages. It receives a subject course name from the jquery script on the front end. This is delivered via the GET method. This is retrieved in Flask using request.args.get function as a string type. This is used to determine which list of courses to return to the jquery script. The list of units is parsed and returned using jsonify in JSON format to the jquery script on the front end.
 # index
+This is the index page which contains links formatted as buttons to each of the different calculator pages
+# /_calculate_extcert_grade AND /_calculate_dip_grade AND /_calculate_extdip_grade
 
-# /_calculate_extcert_grade
-
-# /_calculate_dip_grade
-
-# /_calculate_extdip_grade
+This route is called when the submit button is selected (state change) on the calculator pages. It receives subject course name, unit titles and unit grades from the jquery script on the front end. This is delivered via the GET method. This is retrieved in Flask using request.args.get function as a string type.
+The unit titles and grades are formatted into a dictionary.
+The calculate_points function is called and these two variables are taken as parameters. The function returns a points value. This points value is checked against ertain points thresholds using conditional statmeents. When the points score meets a condition the final_grade variable is updated to the correct grade
 
 ## courses.db
-
+SQL database which stores the list of courses and units
 # COURSES
-
+CREATE TABLE COURSES (course_id PRIMARY KEY NOT NULL, name TEXT NOT NULL);
 # UNITS
-
+CREATE TABLE UNITS (id PRIMARY KEY, unit_id INT NOT NULL, course_id REFERENCES COURSES(course_id), title TEXT NOT NULL, glh TEXT NOT NULL, type TEXT NOT NULL);
 ## requirements.txt
-
+A list of packages required for the correct functioning of the applciation
 ## templates
-
+The pages which make up the front end of the application
 # layout.html
-
+A standard layout which is extended on other pages, includes navbar
 # index.html
 
 # extcert.html

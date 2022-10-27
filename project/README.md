@@ -44,7 +44,11 @@ A standard layout which is extended on other pages, includes navbar, footer and 
 # index.html
 The homepage where links to the different calculators are included
 # extcert.html AND dip.html AND extdip.html
-The homepage where links to the different calculators are included. This page consists of 
+The homepage where links to the different calculators are included. This page consists of different numbers of dropdown selection boxes for the units as each qualification is a different size.
+
+The ext cert contains 4 units
+The dip contains 8 units
+The extdip contains 13 units
 
 
 ## static

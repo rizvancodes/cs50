@@ -132,12 +132,17 @@ def calculate_extcert_grade():
 
     points = calculate_points(selected_course, selected_units)
 
-    ec_grade = {'D*': 90, 'D': 74, 'M': 52, 'P': 36, 'U': 0}
     final_grade = 0
     if points >= 90:
         final_grade = 'D*'
-    elif =< points <= 90
+    elif 74 <= points < 90:
+        final_grade = 'D'
+    elif 52 <= points < 74:
+        final_grade = 'M'
+    elif 36 <= points < 52:
+        final_grade = 'P'
+    else:
+        final_grade = 'U'
 
-
-    # process the two selected values here and return the response; here we just create a dummy string
+    #return the points and final grade as a string
     return jsonify(random_text="Your total points are: {}. Your estimated grade is: {}".format(points, final_grade))

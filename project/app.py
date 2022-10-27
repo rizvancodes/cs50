@@ -63,8 +63,7 @@ def extcert():
     default_courses = sorted(unitlist.keys())
 
     return render_template('extcert.html',
-                       all_courses=default_courses,
-                       all_units=default_units)
+                       all_courses=default_courses,)
 
 @app.route("/dip")
 def dip():
@@ -74,11 +73,9 @@ def dip():
     unitlist = get_unitlist()
 
     default_courses = sorted(unitlist.keys())
-    default_units = unitlist[default_courses[0]]
 
     return render_template('dip.html',
-                       all_courses=default_courses,
-                       all_units=default_units)
+                       all_courses=default_courses,)
 
 @app.route("/extdip")
 def extdip():
@@ -88,11 +85,9 @@ def extdip():
     unitlist = get_unitlist()
 
     default_courses = sorted(unitlist.keys())
-    default_units = unitlist[default_courses[0]]
 
     return render_template('extdip.html',
-                       all_courses=default_courses,
-                       all_units=default_units)
+                       all_courses=default_courses,)
 
 
 @app.route('/_update_dropdown')

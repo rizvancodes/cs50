@@ -127,3 +127,5 @@ SELECT * FROM flights WHERE year = 2021 AND month = 7 AND day = 29;
 SELECT * FROM people WHERE passport_number = (SELECT passport_number FROM passengers WHERE flight_id = 43) AND phone_number = (SELECT caller FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28);
 SELECT * FROM people WHERE phone_number = (SELECT caller FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28);
 SELECT passport_number FROM people WHERE phone_number = (SELECT caller FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28);
+
+SELECT id FROM flights WHERE year = 2021 AND month = 7 AND day = 29;

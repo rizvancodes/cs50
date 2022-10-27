@@ -86,7 +86,6 @@ def calculate_extcert_grade():
     print(selected_units)
 
     # process the two selected values here and return the response; here we just create a dummy string
-     = {}
     return jsonify(random_text="You selected the car brand: {} and the model: {}.".format(selected_course, selected_units))
 
 @app.route('/result')

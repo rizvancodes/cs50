@@ -11,14 +11,19 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 def get_unitlist:
     courses = db.execute('SELECT * FROM COURSES')
+    unitlist = {}
 
     for course in courses
         courseid = course[course_id]
         coursename = course[name]
 
         units = db.execute('SELECT title FROM UNITS WHERE course_id = ?', courseid)
-        
+        ulist = []
+        for unit in units
+            ulist.append(unit[title])
+        unitlist[coursename] = ulist
 
+    return unitlist
 
 @app.route("/extcert")
 def extcert():

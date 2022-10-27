@@ -9,6 +9,12 @@ app = Flask(__name__)
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
+def get_unitlist:
+    courses = db.execute('SELECT * FROM COURSES')
+
+    for course in courses
+
+
 @app.route("/extcert")
 def extcert():
     """

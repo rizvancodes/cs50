@@ -94,3 +94,5 @@ SELECT * FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28;
 | 292 | 2021 | 7     | 28  | 17   | 47     | exit     | 4963D92       |
 +-----+------+-------+-----+------+--------+----------+---------------+
 '
+
+SELECT * FROM atm_transactions WHERE year = 2021 AND month = 7 AND day = 28 AND atm_location = 'Humphrey Lane';

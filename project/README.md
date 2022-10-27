@@ -2,7 +2,7 @@
 #### Video Demo:  [Calculator Demo](https://youtu.be/CLbdc2nqJSE)
 #### Description: BTEC is a UK pre university qualification which comes in three different streams. You can study a range of different subjects under a BTEC qualification. Each different stream consists of different numbers of units. Each unit is of a different size and awards a different number of points. The aim of this project was to create a grade calculator for students to determine an estimated final grade.
 
- !(/project/assets/Screenshot 2022-10-27 at 15.37.09.png)
+ !(assets/unitsizes.png)
 
 # app.py
 The backend is implemented in python and Flask using sqlite3 for database implementation.
@@ -19,31 +19,31 @@ This route initialises the Extended Certificate calculator page and calls the ge
 This route initialises the Diploma calculator page and calls the get_unitlist function taking the keys from the dictionary returned from that function and using it to populate the course subject dropdown boxes.
 ## /extdip
 This route initialises the Extended Diploma calculator page and calls the get_unitlist function taking the keys from the dictionary returned from that function and using it to populate the course subject dropdown boxes.
-# /_update_dropdown
+## /_update_dropdown
 This route is called when the subject is selected (state change) on the calculator pages. It receives a subject course name from the jquery script on the front end. This is delivered via the GET method. This is retrieved in Flask using request.args.get function as a string type. This is used to determine which list of courses to return to the jquery script. The list of units is parsed and returned using jsonify in JSON format to the jquery script on the front end.
-# index
+## index
 This is the index page which contains links formatted as buttons to each of the different calculator pages
-# /_calculate_extcert_grade AND /_calculate_dip_grade AND /_calculate_extdip_grade
+## /_calculate_extcert_grade AND /_calculate_dip_grade AND /_calculate_extdip_grade
 
 This route is called when the submit button is selected (state change) on the calculator pages. It receives subject course name, unit titles and unit grades from the jquery script on the front end. This is delivered via the GET method. This is retrieved in Flask using request.args.get function as a string type.
 The unit titles and grades are formatted into a dictionary.
 The calculate_points function is called and these two variables are taken as parameters. The function returns a points value. This points value is checked against ertain points thresholds using conditional statmeents. When the points score meets a condition the final_grade variable is updated to the correct grade. The total number of points and final grade is returned in JSON format.
 
-## courses.db
+# courses.db
 SQL database which stores the list of courses and units
-# COURSES
+## COURSES
 CREATE TABLE COURSES (course_id PRIMARY KEY NOT NULL, name TEXT NOT NULL);
-# UNITS
+## UNITS
 CREATE TABLE UNITS (id PRIMARY KEY, unit_id INT NOT NULL, course_id REFERENCES COURSES(course_id), title TEXT NOT NULL, glh TEXT NOT NULL, type TEXT NOT NULL);
-## requirements.txt
+# requirements.txt
 A list of packages required for the correct functioning of the applciation
-## templates
+# templates
 The pages which make up the front end of the application
-# layout.html
+## layout.html
 A standard layout which is extended on other pages using Jinja, includes navbar, footer and stylesheets
-# index.html
+## index.html
 The homepage where links to the different calculators are included
-# extcert.html AND dip.html AND extdip.html
+## extcert.html AND dip.html AND extdip.html
 The homepage where links to the different calculators are included. This page consists of different numbers of dropdown selection boxes for the units as each qualification is a different size.
 
 The ext cert contains 4 units
@@ -52,9 +52,9 @@ The extdip contains 13 units
 
 A jquery script at the bottom of the page is used to prepopulate the dropdown when there is a state change. The state change is when the subhect is selected. This triggers the script to send the course via GET to the Flask application. The Flask application then sends back a list of units in JSON format. Jinja is used to loop through this data to populate the dropdown unit selection boxes. The submit button then sends the selected units and grades in JSON fromat to Flask. The data is processed and sent back where it is displayed as a report to the user underneath the submit button
 
-## static
+# static
 stylesheets stored here used to edit the page style
 
-## References
+# References
 https://flask.palletsprojects.com/en/2.0.x/patterns/jquery/
 https://stackoverflow.com/questions/68852940/how-to-create-two-dependent-dynamic-dropdown-lists-using-flask

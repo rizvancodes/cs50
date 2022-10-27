@@ -87,7 +87,7 @@ def calculate_extcert_grade():
 
     # process the two selected values here and return the response; here we just create a dummy string
 
-    return redirect("result.html")
+    return redirect("/")
 
 @app.route('/result')
 def result():

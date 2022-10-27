@@ -40,7 +40,7 @@ A list of packages required for the correct functioning of the applciation
 ## templates
 The pages which make up the front end of the application
 # layout.html
-A standard layout which is extended on other pages, includes navbar, footer and stylesheets
+A standard layout which is extended on other pages using Jinja, includes navbar, footer and stylesheets
 # index.html
 The homepage where links to the different calculators are included
 # extcert.html AND dip.html AND extdip.html
@@ -50,5 +50,6 @@ The ext cert contains 4 units
 The dip contains 8 units
 The extdip contains 13 units
 
+A jquery script at the bottom of the page is used to 
 
 ## static

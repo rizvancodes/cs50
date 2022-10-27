@@ -9,17 +9,17 @@ app = Flask(__name__)
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
-def get_unitlist:
+def get_unitlist():
     courses = db.execute('SELECT * FROM COURSES')
     unitlist = {}
 
-    for course in courses
+    for course in courses:
         courseid = course[course_id]
         coursename = course[name]
 
         units = db.execute('SELECT title FROM UNITS WHERE course_id = ?', courseid)
         ulist = []
-        for unit in units
+        for unit in units:
             ulist.append(unit[title])
         unitlist[coursename] = ulist
 
@@ -31,10 +31,8 @@ def extcert():
     initialize drop down menus
     """
 
-    units = {"Applied Science": ["Principles and Applications of Science I", "Practical Scientific Procedures and Techniques"], "Health and Social Care": ["Human Lifespan Development", "Working in Health and Social Care"]}
-
-    default_courses = sorted(units.keys())
-    default_units = units[default_courses[0]]
+    default_courses = sorted(unitlist.keys())
+    default_units = unitlist[default_courses[0]]
 
     return render_template('extcert.html',
                        all_courses=default_courses,
@@ -46,10 +44,8 @@ def dip():
     initialize drop down menus
     """
 
-    units = {"Applied Science": ["Principles and Applications of Science I", "Practical Scientific Procedures and Techniques"], "Health and Social Care": ["Human Lifespan Development", "Working in Health and Social Care"]}
-
-    default_courses = sorted(units.keys())
-    default_units = units[default_courses[0]]
+    default_courses = sorted(unitlist.keys())
+    default_units = unitlist[default_courses[0]]
 
     return render_template('dip.html',
                        all_courses=default_courses,
@@ -61,10 +57,8 @@ def extdip():
     initialize drop down menus
     """
 
-    units = {"Applied Science": ["Principles and Applications of Science I", "Practical Scientific Procedures and Techniques"], "Health and Social Care": ["Human Lifespan Development", "Working in Health and Social Care"]}
-
-    default_courses = sorted(units.keys())
-    default_units = units[default_courses[0]]
+    default_courses = sorted(unitlist.keys())
+    default_units = unitlist[default_courses[0]]
 
     return render_template('extdip.html',
                        all_courses=default_courses,
@@ -74,12 +68,11 @@ def extdip():
 @app.route('/_update_dropdown')
 def update_dropdown():
 
-    units = {"Applied Science": ["Principles and Applications of Science I", "Practical Scientific Procedures and Techniques"], "Health and Social Care": ["Human Lifespan Development", "Working in Health and Social Care"]}
     # the value of the first dropdown (selected by the user)
     selected_course = request.args.get('selected_course', type=str)
 
     # get values for the second dropdown
-    updated_values = units[selected_course]
+    updated_values = unitlist[selected_course]
 
     # create the values in the dropdown as a html string
     html_string_selected = ''

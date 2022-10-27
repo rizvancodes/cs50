@@ -1,10 +1,8 @@
 -- Keep a log of any SQL queries you execute as you solve the mystery.
 -- suspect list
-Ruth
-Eugene
-Raymond
-Doris
-Rose
+Taylor
+Diana
+Bruce
 -- check tables structure
 .schema
 -- search description of crime scene
@@ -97,8 +95,8 @@ SELECT * FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28;
 +-----+------+-------+-----+------+--------+----------+---------------+
 '
 
-SELECT * FROM atm_transactions WHERE year = 2021 AND month = 7 AND day = 28 AND atm_location = 'Humphrey Lane';
-
+SELECT account_number FROM atm_transactions WHERE year = 2021 AND month = 7 AND day = 28 AND atm_location = 'Leggett Street';
+SELECT person_id FROM bank_accounts WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE year = 2021 AND month = 7 AND day = 28 AND atm_location = 'Leggett Street');
 SELECT * FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60;
 '+-----+----------------+----------------+------+-------+-----+----------+
 | id  |     caller     |    receiver    | year | month | day | duration |
@@ -130,4 +128,4 @@ SELECT passport_number FROM people WHERE phone_number = (SELECT caller FROM phon
 
 SELECT * FROM passengers WHERE flight_id = (SELECT id FROM flights WHERE year = 2021 AND month = 7 AND day = 29);
 
-SELECT * FROM people WHERE passport_number IN (SELECT passport_number FROM passengers JOIN flights ON passengers.flight_id = flights.id WHERE year = 2021 AND month = 7 AND day = 29) AND phone_number IN (SELECT caller FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28) AND license_plate IN (SELECT license_plate FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28);
+SELECT * FROM people WHERE passport_number IN (SELECT passport_number FROM passengers JOIN flights ON passengers.flight_id = flights.id WHERE year = 2021 AND month = 7 AND day = 29) AND phone_number IN (SELECT caller FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28) AND license_plate IN (SELECT license_plate FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28) AND id IN (SELECT person_id FROM bank_accounts WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE year = 2021 AND month = 7 AND day = 28 AND atm_location = 'Leggett Street'));

@@ -176,42 +176,42 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js" type="text/javascript"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript">
-    $(document).ready(function() {
+        $(document).ready(function() {
 
-        $('#all_courses').change(function(){
+            $('#all_courses').change(function(){
 
-        $.getJSON('/_update_dropdown', {
-            selected_course: $('#all_courses').val()
+            $.getJSON('/_update_dropdown', {
+                selected_course: $('#all_courses').val()
 
-        }).success(function(data) {
-                $('.all_units').html(data.html_string_selected);
-        })
-        });
-        $('#calculate_grade').bind('click', function() {
-
-            $.getJSON('/_calculate_dip_grade', {
-                selected_course: $('#all_courses').val(),
-                unit1: $('#unit1').val(),
-                grade1: $('#grade1').val(),
-                unit2: $('#unit2').val(),
-                grade2: $('#grade2').val(),
-                unit3: $('#unit3').val(),
-                grade3: $('#grade3').val(),
-                unit4: $('#unit4').val(),
-                grade4: $('#grade4').val(),
-                unit5: $('#unit5').val(),
-                grade5: $('#grade5').val(),
-                unit6: $('#unit6').val(),
-                grade6: $('#grade6').val(),
-                unit7: $('#unit7').val(),
-                grade7: $('#grade7').val(),
-                unit8: $('#unit8').val(),
-                grade8: $('#grade8').val(),
             }).success(function(data) {
-                $('#calculated_grade').text(data.grade_report);
-        return false;
+                    $('.all_units').html(data.html_string_selected);
+            })
+            });
+            $('#calculate_grade').bind('click', function() {
 
+                $.getJSON('/_calculate_dip_grade', {
+                    selected_course: $('#all_courses').val(),
+                    unit1: $('#unit1').val(),
+                    grade1: $('#grade1').val(),
+                    unit2: $('#unit2').val(),
+                    grade2: $('#grade2').val(),
+                    unit3: $('#unit3').val(),
+                    grade3: $('#grade3').val(),
+                    unit4: $('#unit4').val(),
+                    grade4: $('#grade4').val(),
+                    unit5: $('#unit5').val(),
+                    grade5: $('#grade5').val(),
+                    unit6: $('#unit6').val(),
+                    grade6: $('#grade6').val(),
+                    unit7: $('#unit7').val(),
+                    grade7: $('#grade7').val(),
+                    unit8: $('#unit8').val(),
+                    grade8: $('#grade8').val(),
+                }).success(function(data) {
+                    $('#calculated_grade').text(data.grade_report);
+            return false;
+
+            });
         });
-    });
     </script>
 {% endblock %}

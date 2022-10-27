@@ -1,4 +1,6 @@
 -- Keep a log of any SQL queries you execute as you solve the mystery.
+-- suspect list
+
 -- check tables structure
 .schema
 -- search description of crime scene

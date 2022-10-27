@@ -87,4 +87,4 @@ def process_data():
 
     # process the two selected values here and return the response; here we just create a dummy string
 
-    return render_template(result.html)
+    return render_template("result.html")

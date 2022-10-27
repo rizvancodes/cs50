@@ -50,7 +50,7 @@ The ext cert contains 4 units
 The dip contains 8 units
 The extdip contains 13 units
 
-A jquery script at the bottom of the page is used to prepopulate the dropdown when there is a state change. The state change is when the subhect is selected. This triggers the script to send the course via GET to the Flask application. The Flask application then sends back a 
+A jquery script at the bottom of the page is used to prepopulate the dropdown when there is a state change. The state change is when the subhect is selected. This triggers the script to send the course via GET to the Flask application. The Flask application then sends back a list of units in JSON format which
 
 ## static
 

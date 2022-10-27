@@ -1,6 +1,8 @@
 -- Keep a log of any SQL queries you execute as you solve the mystery.
 -- suspect list
-
+Ruth
+Eugene
+Raymond
 -- check tables structure
 .schema
 -- search description of crime scene

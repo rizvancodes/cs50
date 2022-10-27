@@ -3,13 +3,10 @@ import os
 from cs50 import SQL
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
 
-# Configure application
 app = Flask(__name__)
 
-# Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
-# Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///courses.db")
 
 #global variable points per grade for different unit types
@@ -104,13 +101,10 @@ def update_dropdown():
 
     unitlist = get_unitlist()
 
-    # the value of the first dropdown (selected by the user)
     selected_course = request.args.get('selected_course', type=str)
 
-    # get values for the second dropdown
     updated_values = unitlist[selected_course]
 
-    # create the values in the dropdown as a html string
     html_string_selected = ''
     for entry in updated_values:
         html_string_selected += '<option value="{}">{}</option>'.format(entry, entry)
@@ -143,7 +137,6 @@ def calculate_extcert_grade():
     else:
         final_grade = 'U'
 
-    #return the points and final grade as a string
     return jsonify(grade_report="Your total points are: {}. Your estimated grade is: {}".format(points, final_grade))
 
 @app.route('/_calculate_dip_grade')
@@ -178,7 +171,6 @@ def calculate_dip_grade():
     else:
         final_grade = 'U'
 
-    #return the points and final grade as a string
     return jsonify(grade_report="Your total points are: {}. Your estimated grade is: {}".format(points, final_grade))
 
 @app.route('/_calculate_extdip_grade')

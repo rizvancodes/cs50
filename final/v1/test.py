@@ -6,5 +6,7 @@ from flask import Flask, flash, jsonify, redirect, render_template, request, ses
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///courses.db")
 
-unit_details = db.execute("SELECT type FROM UNITS WHERE title = ?", 'Principles and Applications of Applied Science I')
+name = 'Principles and Applications of Applied Science I'
+
+unit_details = db.execute("SELECT type FROM UNITS WHERE title = ?", name)
 print(unit_details)

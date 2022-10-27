@@ -30,6 +30,7 @@ def extcert():
     """
     initialize drop down menus
     """
+    unitlist = get_unitlist()
 
     default_courses = sorted(unitlist.keys())
     default_units = unitlist[default_courses[0]]
@@ -43,6 +44,7 @@ def dip():
     """
     initialize drop down menus
     """
+    unitlist = get_unitlist()
 
     default_courses = sorted(unitlist.keys())
     default_units = unitlist[default_courses[0]]
@@ -56,6 +58,7 @@ def extdip():
     """
     initialize drop down menus
     """
+    unitlist = get_unitlist()
 
     default_courses = sorted(unitlist.keys())
     default_units = unitlist[default_courses[0]]
@@ -67,6 +70,8 @@ def extdip():
 
 @app.route('/_update_dropdown')
 def update_dropdown():
+
+    unitlist = get_unitlist()
 
     # the value of the first dropdown (selected by the user)
     selected_course = request.args.get('selected_course', type=str)

@@ -85,7 +85,7 @@ def calculate_extcert_grade():
                       request.args.get('unit4', type=str): request.args.get('grade4', type=str)}
     print(selected_units)
 
-    e90 = {D: }
+    e90 = {'D': 24, 'M': 15, }
     e120 = {}
     i60 = {}
     i90 = {}

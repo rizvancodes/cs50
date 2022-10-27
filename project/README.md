@@ -50,6 +50,10 @@ The ext cert contains 4 units
 The dip contains 8 units
 The extdip contains 13 units
 
-A jquery script at the bottom of the page is used to prepopulate the dropdown 
+A jquery script at the bottom of the page is used to prepopulate the dropdown when there is a state change. The state change
 
 ## static
+
+## References
+https://flask.palletsprojects.com/en/2.0.x/patterns/jquery/
+https://stackoverflow.com/questions/68852940/how-to-create-two-dependent-dynamic-dropdown-lists-using-flask

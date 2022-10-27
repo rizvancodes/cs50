@@ -145,4 +145,4 @@ def calculate_extcert_grade():
         final_grade = 'U'
 
     #return the points and final grade as a string
-    return jsonify(random_text="Your total points are: {}. Your estimated grade is: {}".format(points, final_grade))
+    return jsonify(grade_report="Your total points are: {}. Your estimated grade is: {}".format(points, final_grade))

@@ -129,3 +129,5 @@ SELECT * FROM people WHERE phone_number = (SELECT caller FROM phone_calls WHERE 
 SELECT passport_number FROM people WHERE phone_number = (SELECT caller FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28);
 
 SELECT * FROM passengers WHERE flight_id = (SELECT id FROM flights WHERE year = 2021 AND month = 7 AND day = 29);
+
+SELECT passport_number.passengers FROM passengers JOIN flights ON songs.artist_id = artists.id WHERE artists.name = "Post Malone";

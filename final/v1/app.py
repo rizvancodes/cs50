@@ -111,8 +111,11 @@ def calculate_extcert_grade():
     det = db.execute("SELECT * FROM UNITS WHERE course_id = (SELECT course_id FROM COURSES WHERE name = ?)", selected_course)
     total = 0
     for key in selected_units:
-        if (("SELECT type FROM UNITS WHERE title = ?", key) == 'External')
-            if 
+        if (("SELECT type FROM UNITS WHERE title = ?", key) == 'External'):
+            if (("SELECT glh FROM UNITS WHERE title = ?", key) == '120'):
+                total += e120[selected_units[key]]
+            else:
+                total += e90[selected_units[key]]
 
 
 

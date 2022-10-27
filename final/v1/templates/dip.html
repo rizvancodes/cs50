@@ -180,12 +180,12 @@
 
             $('#all_courses').change(function(){
 
-            $.getJSON('/_update_dropdown', {
-                selected_course: $('#all_courses').val()
+                $.getJSON('/_update_dropdown', {
+                    selected_course: $('#all_courses').val()
 
-            }).success(function(data) {
-                    $('.all_units').html(data.html_string_selected);
-            })
+                }).success(function(data) {
+                        $('.all_units').html(data.html_string_selected);
+                })
             });
             $('#calculate_grade').bind('click', function() {
 

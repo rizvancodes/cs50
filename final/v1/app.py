@@ -77,7 +77,7 @@ def index():
     return render_template("index.html")
 
 @app.route('/_calculate_extcert_grade')
-def process_data():
+def calculate_extcert_grade():
     selected_course = request.args.get('selected_class', type=str)
     selected_units = {request.args.get('unit1', type=str): request.args.get('grade1', type=str),
                       request.args.get('unit2', type=str): request.args.get('grade2', type=str),

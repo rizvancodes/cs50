@@ -201,20 +201,26 @@ def calculate_extdip_grade():
     points = calculate_points(selected_course, selected_units)
 
     final_grade = 0
-    if points >= 180:
-        final_grade = 'D*D*'
-    elif 162 <= points < 180:
-        final_grade = 'D*D'
-    elif 144 <= points < 162:
-        final_grade = 'DD'
-    elif 124 <= points < 144:
-        final_grade = 'DM'
-    elif 104 <= points < 124:
-        final_grade = 'MM'
-    elif 88 <= points < 104:
-        final_grade = 'MP'
-    elif 72 <= points < 88:
-        final_grade = 'PP'
+    if points >= 270:
+        final_grade = 'D*D*D*'
+    elif 252 <= points < 270:
+        final_grade = 'D*D*D'
+    elif 234 <= points < 252:
+        final_grade = 'D*DD'
+    elif 216 <= points < 234:
+        final_grade = 'DDD'
+    elif 196 <= points < 216:
+        final_grade = 'DDM'
+    elif 176 <= points < 196:
+        final_grade = 'DMM'
+    elif 156 <= points < 176:
+        final_grade = 'MMM'
+    elif 140 <= points < 156:
+        final_grade = 'MMP'
+    elif 124 <= points < 140:
+        final_grade = 'MPP'
+    elif 108 <= points < 124:
+        final_grade = 'PPP'
     else:
         final_grade = 'U'
 

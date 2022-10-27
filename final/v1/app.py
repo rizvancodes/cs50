@@ -110,7 +110,7 @@ def calculate_extcert_grade():
 
     unit_details = db.execute("SELECT * FROM UNITS WHERE course_id = (SELECT course_id FROM COURSES WHERE name = ?)", selected_course)
     total = 0
-    for unit in selected_units
+    for key in selected_units:
         if un
 
 

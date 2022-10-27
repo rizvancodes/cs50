@@ -163,8 +163,8 @@ def calculate_dip_grade():
     final_grade = 0
     if points >= 180:
         final_grade = 'D*D*'
-    elif 74 <= points < 90:
-        final_grade = 'D'
+    elif 162 <= points < 180:
+        final_grade = 'D*D'
     elif 52 <= points < 74:
         final_grade = 'M'
     elif 36 <= points < 52:

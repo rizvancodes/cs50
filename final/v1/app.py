@@ -12,6 +12,13 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///courses.db")
 
+#global variable points per grade for different unit types
+e90 = {'D': 24, 'M': 15, 'P': 9, 'N': 6, 'U': 0}
+e120 = {'D': 32, 'M': 20, 'P': 12, 'N': 8, 'U': 0}
+i60 = {'D': 16, 'M': 10, 'P': 6, 'U': 0}
+i90 = {'D': 24, 'M': 15, 'P': 9, 'U': 0}
+i120 = {'D': 32, 'M': 20, 'P': 12, 'U': 0}
+
 def get_unitlist():
     courses = db.execute('SELECT * FROM COURSES')
     unitlist = {}
@@ -27,6 +34,9 @@ def get_unitlist():
         unitlist[coursename] = ulist
 
     return unitlist
+
+def calculate_points(selected_course, selected_units):
+
 
 @app.route("/extcert")
 def extcert():
@@ -101,12 +111,6 @@ def calculate_extcert_grade():
                       request.args.get('unit3', type=str): request.args.get('grade3', type=str),
                       request.args.get('unit4', type=str): request.args.get('grade4', type=str)}
     print(selected_units)
-
-    e90 = {'D': 24, 'M': 15, 'P': 9, 'N': 6, 'U': 0}
-    e120 = {'D': 32, 'M': 20, 'P': 12, 'N': 8, 'U': 0}
-    i60 = {'D': 16, 'M': 10, 'P': 6, 'U': 0}
-    i90 = {'D': 24, 'M': 15, 'P': 9, 'U': 0}
-    i120 = {'D': 32, 'M': 20, 'P': 12, 'U': 0}
 
     total = 0
 

@@ -91,4 +91,4 @@ def calculate_extcert_grade():
 
 @app.route('/result')
 def result():
-    return render_template("result.html")
+    return render_template('result.html')

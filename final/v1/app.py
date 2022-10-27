@@ -128,13 +128,41 @@ def calculate_extcert_grade():
                       request.args.get('unit2', type=str): request.args.get('grade2', type=str),
                       request.args.get('unit3', type=str): request.args.get('grade3', type=str),
                       request.args.get('unit4', type=str): request.args.get('grade4', type=str)}
-    print(selected_units)
 
     points = calculate_points(selected_course, selected_units)
 
     final_grade = 0
     if points >= 90:
         final_grade = 'D*'
+    elif 74 <= points < 90:
+        final_grade = 'D'
+    elif 52 <= points < 74:
+        final_grade = 'M'
+    elif 36 <= points < 52:
+        final_grade = 'P'
+    else:
+        final_grade = 'U'
+
+    #return the points and final grade as a string
+    return jsonify(grade_report="Your total points are: {}. Your estimated grade is: {}".format(points, final_grade))
+
+@app.route('/_calculate_dip_grade')
+def calculate_dip_grade():
+    selected_course = request.args.get('selected_course', type=str)
+    selected_units = {request.args.get('unit1', type=str): request.args.get('grade1', type=str),
+                      request.args.get('unit2', type=str): request.args.get('grade2', type=str),
+                      request.args.get('unit3', type=str): request.args.get('grade3', type=str),
+                      request.args.get('unit4', type=str): request.args.get('grade4', type=str),
+                      request.args.get('unit5', type=str): request.args.get('grade5', type=str),
+                      request.args.get('unit6', type=str): request.args.get('grade6', type=str),
+                      request.args.get('unit7', type=str): request.args.get('grade7', type=str),
+                      request.args.get('unit8', type=str): request.args.get('grade8', type=str)}
+
+    points = calculate_points(selected_course, selected_units)
+
+    final_grade = 0
+    if points >= 180:
+        final_grade = 'D*D*'
     elif 74 <= points < 90:
         final_grade = 'D'
     elif 52 <= points < 74:

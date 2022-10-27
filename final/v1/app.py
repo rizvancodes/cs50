@@ -108,19 +108,25 @@ def calculate_extcert_grade():
     i90 = {'D': 24, 'M': 15, 'P': 9, 'U': 0}
     i120 = {'D': 32, 'M': 20, 'P': 12, 'U': 0}
 
-    det = db.execute("SELECT * FROM UNITS WHERE course_id = (SELECT course_id FROM COURSES WHERE name = ?)", selected_course)
     total = 0
+
     for key in selected_units:
-        if (("SELECT type FROM UNITS WHERE title = ?", key) == 'External'):
-            if (("SELECT glh FROM UNITS WHERE title = ?", key) == '120'):
+        if ((("SELECT type FROM UNITS WHERE title = ?", key)[0]['type']) == 'External'):
+            if ((("SELECT glh FROM UNITS WHERE title = ?", key)[0]['glh']) == '120'):
                 total += e120[selected_units[key]]
             else:
                 total += e90[selected_units[key]]
-
+        elif ((("SELECT type FROM UNITS WHERE title = ?", key)[0]['type']) == 'Internal'):
+            if ((("SELECT glh FROM UNITS WHERE title = ?", key)[0]['glh']) == '120'):
+                total += i120[selected_units[key]]
+            elif ((("SELECT glh FROM UNITS WHERE title = ?", key)[0]['glh']) == '90'):
+                total += i90[selected_units[key]]
+            else:
+                total += i60[selected_units[key]]
 
 
     # process the two selected values here and return the response; here we just create a dummy string
-    return jsonify(random_text="You selected the car brand: {} and the model: {}.".format(selected_course, selected_units))
+    return jsonify(random_text="You selected the car brand: {} and the model: {}. Your total points are: {}".format(selected_course, selected_units, total))
 
 @app.route('/result')
 def result():

@@ -17,13 +17,13 @@ def get_unitlist():
     unitlist = {}
 
     for course in courses:
-        courseid = course[course_id]
-        coursename = course[name]
+        courseid = course['course_id']
+        coursename = course['name']
 
         units = db.execute('SELECT title FROM UNITS WHERE course_id = ?', courseid)
         ulist = []
         for unit in units:
-            ulist.append(unit[title])
+            ulist.append(unit['title'])
         unitlist[coursename] = ulist
 
     return unitlist

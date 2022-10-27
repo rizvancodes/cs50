@@ -13,6 +13,11 @@ def get_unitlist:
     courses = db.execute('SELECT * FROM COURSES')
 
     for course in courses
+        courseid = course[course_id]
+        coursename = course[name]
+
+        units = db.execute('SELECT title FROM UNITS WHERE course_id = ?', courseid)
+        
 
 
 @app.route("/extcert")

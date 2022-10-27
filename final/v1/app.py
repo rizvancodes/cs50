@@ -42,16 +42,16 @@ def calculate_points(selected_course, selected_units):
     for key in selected_units:
         if ((db.execute("SELECT type FROM UNITS WHERE title = ?", key)[0]['type']) == 'External'):
             if ((db.execute("SELECT glh FROM UNITS WHERE title = ?", key)[0]['glh']) == '120'):
-                total += e120[selected_units[key]]
+                points += e120[selected_units[key]]
             else:
-                total += e90[selected_units[key]]
+                points += e90[selected_units[key]]
         elif ((db.execute("SELECT type FROM UNITS WHERE title = ?", key)[0]['type']) == 'Internal'):
             if ((db.execute("SELECT glh FROM UNITS WHERE title = ?", key)[0]['glh']) == '120'):
-                total += i120[selected_units[key]]
+                points += i120[selected_units[key]]
             elif ((db.execute("SELECT glh FROM UNITS WHERE title = ?", key)[0]['glh']) == '90'):
-                total += i90[selected_units[key]]
+                points += i90[selected_units[key]]
             else:
-                total += i60[selected_units[key]]
+                points += i60[selected_units[key]]
 
     return points
 

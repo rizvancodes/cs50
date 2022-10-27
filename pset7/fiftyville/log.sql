@@ -122,4 +122,4 @@ SELECT * FROM flights WHERE year = 2021 AND month = 7 AND day = 29;
 | 53 | 8                 | 9                      | 2021 | 7     | 29  | 15   | 20     |
 +----+-------------------+------------------------+------+-------+-----+------+--------+'
 
-SELECT * FROM people WHERE passport_number = (SELECT passport_number FROM passengers WHERE flight_id = 36) AND phone_number = (SELECT caller FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60);
+SELECT * FROM people WHERE passport_number = (SELECT passport_number FROM passengers WHERE flight_id = 43) AND phone_number = (SELECT caller FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28);

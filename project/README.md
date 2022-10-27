@@ -40,13 +40,11 @@ A list of packages required for the correct functioning of the applciation
 ## templates
 The pages which make up the front end of the application
 # layout.html
-A standard layout which is extended on other pages, includes navbar
+A standard layout which is extended on other pages, includes navbar, footer and stylesheets
 # index.html
+The homepage where links to the different calculators are included
+# extcert.html AND dip.html AND extdip.html
+The homepage where links to the different calculators are included. This page consists of 
 
-# extcert.html
-
-# dip.html
-
-# extdip.html
 
 ## static

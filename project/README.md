@@ -2,7 +2,7 @@
 #### Video Demo:  [Calculator Demo](https://youtu.be/CLbdc2nqJSE)
 #### Description: BTEC is a UK pre university qualification which comes in three different streams. You can study a range of different subjects under a BTEC qualification. Each different stream consists of different numbers of units. Each unit is of a different size and awards a different number of points. The aim of this project was to create a grade calculator for students to determine an estimated final grade.
 
- !(/assets/Screenshot 2022-10-27 at 15.37.09.png)
+ !(/project/assets/Screenshot 2022-10-27 at 15.37.09.png)
 
 # app.py
 The backend is implemented in python and Flask using sqlite3 for database implementation.

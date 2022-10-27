@@ -130,4 +130,4 @@ SELECT passport_number FROM people WHERE phone_number = (SELECT caller FROM phon
 
 SELECT * FROM passengers WHERE flight_id = (SELECT id FROM flights WHERE year = 2021 AND month = 7 AND day = 29);
 
-SELECT passengers.passport_number FROM passengers JOIN flights ON passengers.flight_id = flights.id WHERE passport_number = (SELECT passport_number FROM people WHERE phone_number = (SELECT caller FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28));
+SELECT passengers.flight_id FROM passengers JOIN flights ON passengers.flight_id = flights.id WHERE passport_number = (SELECT passport_number FROM people WHERE phone_number = (SELECT caller FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28));

@@ -86,10 +86,10 @@ def calculate_extcert_grade():
     print(selected_units)
 
     e90 = {'D': 24, 'M': 15, 'P': 9, 'N': 6, 'U': 0}
-    e120 = {}
-    i60 = {}
+    e120 = {'D': 32, 'M': 20, 'P': 12, 'N': 8, 'U': 0}
+    i60 = {'D': 16, 'M': 10, 'P': 6, 'U': 0}
     i90 = {'D': 24, 'M': 15, 'P': 9, 'U': 0}
-    i120 = {}
+    i120 = {'D': 32, 'M': 20, 'P': 12, 'U': 0}
 
     # process the two selected values here and return the response; here we just create a dummy string
     return jsonify(random_text="You selected the car brand: {} and the model: {}.".format(selected_course, selected_units))

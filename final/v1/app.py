@@ -85,6 +85,8 @@ def calculate_extcert_grade():
                       request.args.get('unit4', type=str): request.args.get('grade4', type=str)}
     print(selected_units)
 
+    ninety_ext = {}
+    120ext = {}
     # process the two selected values here and return the response; here we just create a dummy string
     return jsonify(random_text="You selected the car brand: {} and the model: {}.".format(selected_course, selected_units))
 

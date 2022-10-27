@@ -111,15 +111,15 @@ def calculate_extcert_grade():
     total = 0
 
     for key in selected_units:
-        if ((("SELECT type FROM UNITS WHERE title = ?", key)[0]['type']) == 'External'):
-            if ((("SELECT glh FROM UNITS WHERE title = ?", key)[0]['glh']) == '120'):
+        if ((db.execute("SELECT type FROM UNITS WHERE title = ?", key)[0]['type']) == 'External'):
+            if ((db.execute("SELECT glh FROM UNITS WHERE title = ?", key)[0]['glh']) == '120'):
                 total += e120[selected_units[key]]
             else:
                 total += e90[selected_units[key]]
-        elif ((("SELECT type FROM UNITS WHERE title = ?", key)[0]['type']) == 'Internal'):
-            if ((("SELECT glh FROM UNITS WHERE title = ?", key)[0]['glh']) == '120'):
+        elif ((db.execute("SELECT type FROM UNITS WHERE title = ?", key)[0]['type']) == 'Internal'):
+            if ((db.execute("SELECT glh FROM UNITS WHERE title = ?", key)[0]['glh']) == '120'):
                 total += i120[selected_units[key]]
-            elif ((("SELECT glh FROM UNITS WHERE title = ?", key)[0]['glh']) == '90'):
+            elif ((db.execute("SELECT glh FROM UNITS WHERE title = ?", key)[0]['glh']) == '90'):
                 total += i90[selected_units[key]]
             else:
                 total += i60[selected_units[key]]

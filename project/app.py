@@ -61,7 +61,6 @@ def extcert():
     unitlist = get_unitlist()
 
     default_courses = sorted(unitlist.keys())
-    default_units = unitlist[default_courses[0]]
 
     return render_template('extcert.html',
                        all_courses=default_courses,

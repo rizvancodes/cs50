@@ -165,10 +165,56 @@ def calculate_dip_grade():
         final_grade = 'D*D*'
     elif 162 <= points < 180:
         final_grade = 'D*D'
-    elif 52 <= points < 74:
-        final_grade = 'M'
-    elif 36 <= points < 52:
-        final_grade = 'P'
+    elif 144 <= points < 162:
+        final_grade = 'DD'
+    elif 124 <= points < 144:
+        final_grade = 'DM'
+    elif 104 <= points < 124:
+        final_grade = 'MM'
+    elif 88 <= points < 104:
+        final_grade = 'MP'
+    elif 72 <= points < 88:
+        final_grade = 'PP'
+    else:
+        final_grade = 'U'
+
+    #return the points and final grade as a string
+    return jsonify(grade_report="Your total points are: {}. Your estimated grade is: {}".format(points, final_grade))
+
+@app.route('/_calculate_extdip_grade')
+def calculate_extdip_grade():
+    selected_course = request.args.get('selected_course', type=str)
+    selected_units = {request.args.get('unit1', type=str): request.args.get('grade1', type=str),
+                      request.args.get('unit2', type=str): request.args.get('grade2', type=str),
+                      request.args.get('unit3', type=str): request.args.get('grade3', type=str),
+                      request.args.get('unit4', type=str): request.args.get('grade4', type=str),
+                      request.args.get('unit5', type=str): request.args.get('grade5', type=str),
+                      request.args.get('unit6', type=str): request.args.get('grade6', type=str),
+                      request.args.get('unit7', type=str): request.args.get('grade7', type=str),
+                      request.args.get('unit8', type=str): request.args.get('grade8', type=str),
+                      request.args.get('unit9', type=str): request.args.get('grade9', type=str),
+                      request.args.get('unit10', type=str): request.args.get('grade10', type=str),
+                      request.args.get('unit11', type=str): request.args.get('grade11', type=str),
+                      request.args.get('unit12', type=str): request.args.get('grade12', type=str),
+                      request.args.get('unit13', type=str): request.args.get('grade13', type=str),}
+
+    points = calculate_points(selected_course, selected_units)
+
+    final_grade = 0
+    if points >= 180:
+        final_grade = 'D*D*'
+    elif 162 <= points < 180:
+        final_grade = 'D*D'
+    elif 144 <= points < 162:
+        final_grade = 'DD'
+    elif 124 <= points < 144:
+        final_grade = 'DM'
+    elif 104 <= points < 124:
+        final_grade = 'MM'
+    elif 88 <= points < 104:
+        final_grade = 'MP'
+    elif 72 <= points < 88:
+        final_grade = 'PP'
     else:
         final_grade = 'U'
 

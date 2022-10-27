@@ -89,6 +89,9 @@
     <div>
         <button type="button" id="calculate_grade">Calculate</button>
     </div>
+    <div id="calculated_grade">
+        Here we display some output based on the selection
+      </div>
     <script src="https://code.jquery.com/jquery-1.12.4.js" type="text/javascript"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript">
@@ -116,7 +119,7 @@
                 unit4: $('#unit4').val(),
                 grade4: $('#grade4').val(),
             }).success(function(data) {
-                $('#processed_results').text(data.random_text);
+                $('#calculated_grade').text(data.random_text);
             })
           return false;
 

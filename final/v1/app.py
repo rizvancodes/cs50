@@ -133,8 +133,11 @@ def calculate_extcert_grade():
     points = calculate_points(selected_course, selected_units)
 
     ec_grade = {'D*': 90, 'D': 74, 'M': 52, 'P': 36, 'U': 0}
-
-    
+    final_grade = 0
+    for grade in ec_grade
+        if points is <= ec_grade[key]
+            final_grade = grade
+            break
 
     # process the two selected values here and return the response; here we just create a dummy string
-    return jsonify(random_text="You selected the car brand: {} and the model: {}. Your total points are: {}".format(selected_course, selected_units, points))
+    return jsonify(random_text="Your total points are: {}. Your estimated grade is: {}".format(points, final_grade))

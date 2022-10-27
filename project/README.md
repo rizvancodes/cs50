@@ -50,6 +50,6 @@ The ext cert contains 4 units
 The dip contains 8 units
 The extdip contains 13 units
 
-A jquery script at the bottom of the page is used to 
+A jquery script at the bottom of the page is used to prepopulate the dropdown 
 
 ## static

@@ -130,25 +130,10 @@ def calculate_extcert_grade():
                       request.args.get('unit4', type=str): request.args.get('grade4', type=str)}
     print(selected_units)
 
-    total = 0
-
-    for key in selected_units:
-        if ((db.execute("SELECT type FROM UNITS WHERE title = ?", key)[0]['type']) == 'External'):
-            if ((db.execute("SELECT glh FROM UNITS WHERE title = ?", key)[0]['glh']) == '120'):
-                total += e120[selected_units[key]]
-            else:
-                total += e90[selected_units[key]]
-        elif ((db.execute("SELECT type FROM UNITS WHERE title = ?", key)[0]['type']) == 'Internal'):
-            if ((db.execute("SELECT glh FROM UNITS WHERE title = ?", key)[0]['glh']) == '120'):
-                total += i120[selected_units[key]]
-            elif ((db.execute("SELECT glh FROM UNITS WHERE title = ?", key)[0]['glh']) == '90'):
-                total += i90[selected_units[key]]
-            else:
-                total += i60[selected_units[key]]
-
+    points = calculate_points(selected_course, selected_units)
 
     # process the two selected values here and return the response; here we just create a dummy string
-    return jsonify(random_text="You selected the car brand: {} and the model: {}. Your total points are: {}".format(selected_course, selected_units, total))
+    return jsonify(random_text="You selected the car brand: {} and the model: {}. Your total points are: {}".format(selected_course, selected_units, points))
 
 @app.route('/result')
 def result():

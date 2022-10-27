@@ -20,7 +20,7 @@ This route initialises the Diploma calculator page and calls the get_unitlist fu
 # /extdip
 This route initialises the Extended Diploma calculator page and calls the get_unitlist function taking the keys from the dictionary returned from that function and using it to populate the course subject dropdown boxes.
 # /_update_dropdown
-This route is called when the subject is selected on the calculator page.
+This route is called when the subject is selected (state change) on the calculator pages. It receives the uses the get_unitlist function to
 # index
 
 # /_calculate_extcert_grade

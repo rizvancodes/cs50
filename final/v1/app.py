@@ -108,6 +108,13 @@ def calculate_extcert_grade():
     i90 = {'D': 24, 'M': 15, 'P': 9, 'U': 0}
     i120 = {'D': 32, 'M': 20, 'P': 12, 'U': 0}
 
+    unit_details = db.execute("SELECT * FROM UNITS WHERE course_id = (SELECT course_id FROM COURSES WHERE name = ?)", selected_course)
+    total = 0
+    for unit in selected_units
+        
+
+
+
     # process the two selected values here and return the response; here we just create a dummy string
     return jsonify(random_text="You selected the car brand: {} and the model: {}.".format(selected_course, selected_units))
 

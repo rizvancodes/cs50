@@ -134,9 +134,9 @@ def calculate_extcert_grade():
 
     ec_grade = {'D*': 90, 'D': 74, 'M': 52, 'P': 36, 'U': 0}
     final_grade = 0
-    for grade in ec_grade
-        if points is <= ec_grade[key]
-            final_grade = grade
+    for key in ec_grade:
+        if points <= ec_grade[key]:
+            final_grade = key
             break
 
     # process the two selected values here and return the response; here we just create a dummy string

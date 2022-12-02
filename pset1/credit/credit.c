@@ -61,7 +61,7 @@ int main(void)
 }
 
 long get_card(void)
-{
+{   
     long num;
     do
     {
@@ -75,7 +75,7 @@ long get_alt(long num)
 {
     long alt = 0;
     while (num > 0)
-    {
+    {   //
         num = num / 10;
         alt = alt * 10 + num % 10;
         num = num / 10;

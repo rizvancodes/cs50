@@ -11,7 +11,7 @@ string rotate(string p, string k);
 bool duplicate_check(string arg);
 
 int main(int argc, string argv[])
-{
+{   // verifying that command line args meet the conditions
     if ((argc > 2) || (argc < 2) || (!only_alpha(argv[1])) || (duplicate_check(argv[1])))
     {
         printf("Usage: ./caesar key\n");
@@ -36,7 +36,7 @@ bool only_alpha(string arg)
 {
     int l = strlen(arg), i;
     for (i = 0; i < l; i++)
-    {
+    {   //isalpha returns 1 if alpha or 0 if non alpha
         if (isalpha(arg[i]) == 0)
         {
             return false;
@@ -48,6 +48,8 @@ bool only_alpha(string arg)
 string rotate(string p, string k)
 {
 //convert key to uppercase
+//need to preserve the case of text
+//therefore need a key for upper case and lower case
     int i;
     char upperkey[26];
     for (i = 0; i < strlen(k); i++)
@@ -67,9 +69,9 @@ string rotate(string p, string k)
 //substitute letters
     int m;
     for (m = 0; m < strlen(p); m++)
-    {
+    {   
         if (isupper(p[m]) != 0)
-        {
+        {   //
             int n = p[m] - 65;
             p[m] = upperkey[n];
         }

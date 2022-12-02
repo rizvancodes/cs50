@@ -21,7 +21,7 @@ node;
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 26;
 
-// Hash table
+// Hash table. Global variables are initialised to NULL at program start
 node *table[N];
 
 //dictionary size
@@ -58,31 +58,42 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    //open dictionary file
+    //open dictionary file for reading. Store pointer in input
     FILE *input = fopen(dictionary, "r");
+    // if file could not be opened the pointer will be NULL. print error message
     if (input == NULL)
     {
         printf("Could not open file.\n");
         return false;
     }
-    //read from the dictionary one string at a time and copy into array of char, word
+    //read from the dictionary one string at a time and copy into array of chars wscn
+    //size of array is max length of word plus 1 for null chars
     char wscn[LENGTH + 1];
     while (fscanf(input, "%s", wscn) != EOF)
     {
-        //create a new node for each word
+        //create a new node for each word at the address allocated by malloc
         node *n = malloc(sizeof(node));
         if (n == NULL)
         {
             return false;
         }
-        //copy word into node
+        //copy word into word element in node using arrow operator
+        //Use strcopy function to copy word
         strcpy(n->word, wscn);
         //hash word to find index
         int hval = hash(wscn);
-        //insert new node
-        n->next = table[hval];
-        //set head pointer to point to new node
-        table[hval] = n;
+        if (table[hval] == NULL)
+        {   //if it is the first node in that location in the hash table then insert the new node directly
+            table[hval] = n
+        }
+        else
+        {
+            //pointing new node to first node in linked list
+            n->next = table[hval];
+            //set head pointer to point to new node
+            //this avoids orphaning the linked list
+            table[hval] = n;
+        }
         dsize++;
     }
         fclose(input);
